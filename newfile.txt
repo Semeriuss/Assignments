@@ -1,2 +1,4 @@
 A git demonstration 
-A new string addition
+A new string additions
+
+Another addition
