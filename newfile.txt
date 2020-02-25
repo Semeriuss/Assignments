@@ -2,3 +2,4 @@ A git demonstration
 A new string additions
 
 Another addition
+Last
