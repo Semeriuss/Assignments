@@ -2,4 +2,5 @@ A git demonstration
 A new string additions
 
 Another addition
-Last
+Last change
+Or is it?
