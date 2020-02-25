@@ -1,1 +1,2 @@
 A git demonstration 
+A new string addition
