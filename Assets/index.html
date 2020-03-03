@@ -11,7 +11,8 @@
     <!-- Navigation -->
     <hr>
     <a href="index.html" target="_blank" rel="noopener noreferrer">Home</a>  |
-    <a href="contact.html" target="_blank">Contact</a>
+    <a href="contact.html" target="_blank">Contact</a>  |
+    <a href="gallery.html" target="_blank">Gallery</a>  |
     <hr>
     <table cellspacing="10">
         <tr>
@@ -31,15 +32,15 @@
         <table cellspacing="10">
             <tr>
                 <th><label for="fName">First Name &nbsp;</label></th>
-                <td><input type="text" name="fName" id="fName" pattern="[A-Z][a-z]{3,15}"></td>
+                <td><input type="text" name="fName" id="fName" required pattern="[A-Z][a-z]{3,15}"></td>
             </tr>
             <tr>
                 <th><label for="lName">Last Name&nbsp;</label></th>
-                <td><input type="text" name="lName" id="lName" pattern="[A-Z][a-z]{3,15}"></td>
+                <td><input type="text" name="lName" id="lName" required pattern="[A-Z][a-z]{3,15}"></td>
             </tr>
             <tr>
                 <th><label for="password">Password&nbsp;</label></th>
-                <td><input type="password" name="password" id="password" pattern="[A-Z][a-z]{3,15}"</td>
+                <td><input type="password" name="password" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"</td>
             </tr>
             <tr>
                 <th><label for="birthdate">Date of Birth&nbsp;</label></th>
