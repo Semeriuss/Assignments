@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semere H.</title>
+    <link rel="icon" href="image/icon.png"> 
 </head>
 <body>
     <!-- This is the first step -->
@@ -27,32 +28,62 @@
     <!-- Contact Form -->
     <h3>Leave Your Comments Here</h3>
     <form enctype="utf-8" method="POST" action="mailto:semerehabtu131@gmail.com">
-        <label for="fName">First Name &nbsp;</label> 
-        <input type="text" name="fName" id="fName">
-        <br><br>
-        <label for="lName">Last Name&nbsp;</label>
-        <input type="text" name="lName" id="lName">
-        <br><br>
-        <label for="email">Email:&nbsp;</label>
-        <input type="email" name="email" id="email">
-        <br><br>
-        <label for="country">Choose your Country&nbsp;</label>
-        <select name="country" id="country">
-            <option value="United Kingdom">United Kingdom</option>
-            <option value="France">France</option>
-            <option value="Germany">Germany</option>
-            <option value="Austria">Austria</option>
-            <option value="Switzerland">Switzerland</option>
-            <option value="Luxembourg">Luxembourg</option>
-            <option value="Liechtenstein">Liechtenstein</option>
-            <option value="Czech Republic">Czech Republic</option>
-        </select>
-        <br><br>
-        <label for="comment">Your Feedback</label><br>
-        <textarea name="comment" id="comment" cols="40" rows="5"></textarea>
-        <br>
-        <input type="submit">
-
+        <table cellspacing="10">
+            <tr>
+                <th><label for="fName">First Name &nbsp;</label></th>
+                <td><input type="text" name="fName" id="fName"></td>
+            </tr>
+            <tr>
+                <th><label for="lName">Last Name&nbsp;</label></th>
+                <td><input type="text" name="lName" id="lName"></td>
+            </tr>
+            <tr>
+                <th><label for="password">Password&nbsp;</label></th>
+                <td><input type="password" name="password" id="password"</td>
+            </tr>
+            <tr>
+                <th><label for="birthdate">Date of Birth&nbsp;</label></th>
+                <td><input type="datetime-local" name="birthdate" id="birthdate"></td>
+            </tr>
+            <tr>
+                <th><label for="email">Email:&nbsp;</label></th>
+                <td><input type="email" name="email" id="email"></td>
+            </tr>
+            <tr>
+                <th><label for="tel">Telephone &nbsp;</label></th>
+                <td><input type="tel" name="tel" id="tel"></td>
+            </tr>
+            <tr>
+                <th><label for="country">Choose your Country&nbsp;</label></th>
+                <td><select name="country" id="country">
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="Luxembourg">Luxembourg</option>
+                    <option value="Liechtenstein">Liechtenstein</option>
+                    <option value="Czech Republic">Czech Republic</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="color">Your Color Suggestion</label></th>
+                <td><input type="color" name="color" id="color"></td>
+            </tr>
+            <tr>
+                <th><label for="comment">Your Feedback</label></th>
+                <td><textarea name="comment" id="comment" cols="40" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <th><label for="rating">Rate my Website</label></th>
+                <td><input type="range" name="rating" id="rating" min="0" max="10" value="1"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit"></td>
+            </tr>
+        </table>
     </form>
     <!-- Social Network -->
     <hr>
