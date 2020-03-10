@@ -42,3 +42,6 @@ nav>ul>li>a{
 nav>ul>li:hover{
     background-color: #ffffff;
 }
+#heading{
+    text-transform: uppercase;
+}
