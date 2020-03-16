@@ -14,6 +14,8 @@ header h1{
  }
  .rows{
     clear: both;
+    border-bottom: thin solid black;
+    padding-bottom: 4px;
  }
 
  header img{
@@ -21,6 +23,15 @@ header h1{
      float: left;
      margin-right: 1.2rem;
  }
- header{
-     border: black, thin, 0.5px;
- }
+/*.border{ 
+    
+    border-bottom: thin solid black;
+    padding-bottom: 4px;
+}*/
+.footer p{
+    border-bottom: thin solid black;
+    border-top: thin solid black;
+    padding-bottom: 4px;
+    text-align: center;
+    clear: both;
+}
