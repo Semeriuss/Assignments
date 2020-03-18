@@ -1,7 +1,9 @@
 body{
     font-size: 1.1rem;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: blanchedalmond;
+    background-color: #f6f5f3;
+    background-color: #7dce94;
+    background-color: #CAE4DB;
     color: teal;
 }
 .box{
@@ -22,7 +24,7 @@ body{
     background-color: #33FF33;
     padding: 10px;
     margin: 30px;
-    height: 442px;
+    height: 440px;
     margin-bottom: 1px;
     margin-left: 650px;
     margin-right: 55px;
@@ -35,10 +37,10 @@ body{
 }
 .background{
     border: white 1px dashed;
-    background-color:  #44FF44;
+    background-color:  #00ff00;
     padding: 10px;
     margin: 30px;
-    margin-top: 400px;
+    margin-top: 340px;
     margin-right: 250px;
     line-height: 1.3em;
     width: 1140px;
@@ -46,25 +48,29 @@ body{
     color: #353535;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.outerbox{
-    height: 470px;
-}
 .literary{
-    width: fit-content;
+    width: 563px;
+    height: fit-content;
     border: white 1px dashed;
     padding: 25px;
     margin-left: 30px;
-    background-color: lavenderblush;
+    background-color:#f2d53c;
+    position: relative;
+    bottom: 478px;
+}
+.literary ul li {
+    padding: 1.19px;
 }
 .skills{
     width: fit-content;
+    width: 495px;
     border: white 1px dashed;
     padding: 25px;
-    margin-left: 30px;
-    background-color: lavenderblush;
+    margin: 30px;
+    background-color: #fbaf08;
     position: relative;
-    left: 570px;
-    bottom: 960px;
+    left: 618px;
+    bottom: 1333.9px;
 }
 .stars{
     width: fit-content;
