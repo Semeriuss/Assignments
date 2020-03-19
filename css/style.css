@@ -251,3 +251,8 @@ header div{
 .border{
     border-bottom: solid 1.1px black;
 }
+/* Second Question Specific */
+.box-1, .box-2, .box-3{
+    width: min-content;
+    display: flex;
+}
