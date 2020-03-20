@@ -255,3 +255,16 @@ header div{
 .box-1, .box-2, .box-3{
     display: flex;
 }
+
+/* Question Three Specific */
+.flagset-1, .flagset-2, .flagset-3, .flagset-4, .col-3{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+.container{
+    margin: 25px;
+}
+.col-2{
+    display: flex;
+}
