@@ -1,14 +1,11 @@
-body{
-    font-size: 1.1rem;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f6f5f3;
-    background-color: #7dce94;
-    background-color: #CAE4DB;
-    color: teal;
-}
 @media only screen and (max-width: 500px) {
     body {
         background-color: cyan;
+    }
+    .nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
     .nestedbox{
         position: static;
@@ -45,6 +42,14 @@ body{
         height: fit-content;
         width: fit-content;
     }
+}
+body{
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6f5f3;
+    background-color: #7dce94;
+    background-color: #CAE4DB;
+    color: teal;
 }
 .nav a:link, a:visited{
     background-color: #f44336;
