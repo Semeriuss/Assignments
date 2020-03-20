@@ -257,14 +257,21 @@ header div{
 }
 
 /* Question Three Specific */
-.flagset-1, .flagset-2, .flagset-3, .flagset-4, .col-3{
+.flagset-1, .flagset-2, .flagset-3, .flagset-4{
     display: flex;
+    justify-content: space-between;
+    margin: 50px;
+    padding: 25px;
+    border-bottom: 2px solid black;
+}
+.col-2, .col-3{
+    display: flex;
+}
+.flagsets{
     justify-content: space-around;
-    margin-bottom: 30px;
 }
-.container{
-    margin: 25px;
-}
-.col-2{
-    display: flex;
+.flagsets div p{
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
 }
