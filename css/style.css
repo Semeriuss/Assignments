@@ -180,10 +180,6 @@ header{
 	font-style: italic;
 	color: #444444;
 	font-family: Georgia, "Times New Roman", Times, serif;
-	/* background-image: url(images/megamind.gif); */
-	background-position: top left;
-    background-repeat: no-repeat;
-    /* float: left; */
 }
 header h1{
     text-transform: uppercase;
@@ -340,7 +336,7 @@ section .title, section .date{
     display: flex;
     justify-content: space-evenly;
 }
-div#encompass div a:link, a:visited{
+div#encompass div a:link, a:visited, .further a:link{
     background-color: #f44336;
     color: white;
     padding: 14px 25px;
@@ -348,8 +344,13 @@ div#encompass div a:link, a:visited{
     text-decoration: none;
     display: inline-block;
 }
-div#encompass div a:active, a:hover{
+div#encompass div a:active, a:hover, .further a:hover{
     background-color: cornflowerblue;
     color: lime;
     z-index: 1;
+}
+.myWorks{
+    background-image: url(https://images.pexels.com/photos/3278087/pexels-photo-3278087.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+    background-position: top left;
+    background-repeat: no-repeat;
 }
