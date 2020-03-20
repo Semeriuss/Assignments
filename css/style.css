@@ -6,6 +6,46 @@ body{
     background-color: #CAE4DB;
     color: teal;
 }
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: cyan;
+    }
+    .nestedbox{
+        position: static;
+        width: fit-content;
+        height: max-content;
+    }
+    .content{
+        position: static;
+        width: max-content;
+        height: max-content;
+    }
+    .date{
+        padding: 10px;
+        position: static;
+    }
+    div .skills{
+        height: fit-content;
+        width: fit-content;
+        border: white 1px dashed;
+        background-color: #fbaf08;
+        position: static;
+    }
+    .stars{
+        width: fit-content;
+        height: fit-content;
+        border: white 1px dashed;
+        padding: 25px;
+        margin-left: 30px;
+        background-color: lavenderblush;
+        position: static;
+    }
+    .mapouter{
+        position: static;
+        height: fit-content;
+        width: fit-content;
+    }
+}
 .nav a:link, a:visited{
     background-color: #f44336;
     color: white;
@@ -17,11 +57,12 @@ body{
 .nav a:active, a:hover{
     background-color: #f88396;
     color: #0d5353;
+    z-index: 1;
 }
 .nav{
     margin-left: 25px;
     position: fixed;
-    width: 500px;
+    width: 800px;
     z-index: 1;
 }
 .box{
@@ -212,7 +253,7 @@ header div{
 .social{
     position: fixed;
     left: 4px;
-    bottom: 90px;
+    bottom: 45px;
 }
 .social :hover{
     background-color: #f88396;
@@ -293,4 +334,17 @@ section .title, section .date{
 .containerbox{
     display: flex;
     justify-content: space-evenly;
+}
+div#encompass div a:link, a:visited{
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+div#encompass div a:active, a:hover{
+    background-color: cornflowerblue;
+    color: lime;
+    z-index: 1;
 }

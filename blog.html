@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
+    <link rel="icon" href="image/blog.png"> 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,7 +22,9 @@
         <div class="nav" id="bloghead">
             <a href="index.html" rel="noopener noreferrer">Home</a>  
             <a href="contact.html" >Contact</a>  
-            <a href="gallery.html" >Gallery</a>  
+            <a href="gallery.html" >Gallery</a> 
+            <a href="myworks.html" target="_blank">My Works</a>
+            <a href="blog.html" target="_blank">Blog</a> 
         </div>
     <!-- Our blog -->
     <div id="content" style="margin-top: 40px;">
@@ -59,7 +62,7 @@
                     <li>24px = 1.5rem</li>
                     <li>30px = 1.875rem</li>
                     <li>32px = 2rem</li> <br>
-                    The use of <em>em</em> or <em>rem</em>   units inside media queries is closely related to the notion of “optimal line length” and how it influences the reading experience. There is, however, one interesting detail about <em>rem</em> and <em>em</em>  units when used as units for media queries: they always keep the same value of <br> 1<em>rem</em>  = 1<em>em</em>  = browser-set font size. Relative units in media queries are based on the initial value, which means that units are never based on results of declarations. For example, in HTML, the <em>em</em>  unit is relative to the initial value of font-size, defined by the user agent or the user’s preferences, not any styling on the page. <br><br> The ability to scale based on the root font size makes <em>rem</em> units very useful for accessibility. Google developers make the recommendation to use relative units for text sizing. There is an empirical study run by the people behind the Internet Archive showing that there is a significant number of users who change their default font size in the browser settings. By using <em>rem</em>  and other relative units you respect the users’ decisions about the way they want to browse the web. <br><br> A third use we can find for <em>rem</em> units is to build scalable components. By expressing widths, margins, and padding in <em>rem</em> units, it becomes possible to create an interface that grows or shrinks in tune with the root font size. As element padding values and margins are expressed using <em>rem</em> , the entire component scales with the device size. <br><br>It is very clear that there are many advantages in using <em>rem</em> units in our code, like responsiveness, scalability, improved reading experience, and greater flexibility in defining components. <em>rem</em> units is not a universal solution but can be a very powerful styling tool with careful deployment. 
+                    The use of <em>em</em> or <em>rem</em>   units inside media queries is concerned with what is the optimal line length and how it affects the user's reading experience. <em>rem</em> and <em>em</em>  units, when used as units for media queries, always keep the same value of <br> 1<em>rem</em>  = 1<em>em</em>  = browser-set font size unlike what they normally do in normal circumstances. Relative units in media queries are never based on results of declarations. For example, in HTML, the <em>em</em>  unit is relative to the initial value of font-size, defined by the user agent or the user’s preferences, not any styling on the page. <br><br> The ability to scale based on the root font size makes <em>rem</em> units very useful for accessibility. Google developers make the recommendation to use relative units for text sizing. There is an empirical study run by the people behind the Internet Archive showing that there is a significant number of users who change their default font size in the browser settings. By using <em>rem</em>  and other relative units the web designer respect the users’ decisions about the way they want to browse the web. <br><br> A third use we can find for <em>rem</em> units is to build scalable components. By expressing widths, margins, and padding in <em>rem</em> units, it becomes possible to create an interface that grows or shrinks in accord with the root font size, meaning the html's. As element padding values and margins are expressed using <em>rem</em> , the entire component scales with the device size. <br><br>In conclusion, the advantages in using <em>rem</em> units in our code is abundant, such as responsiveness, scalability, improved reading experience, and greater flexibility in defining components. However it must be noted that, <em>rem</em> units is not a panacea for every styling problem and is only a very powerful styling tool when utilized cautiously and meaningfully. 
                 </p>
                 
             </article>
@@ -144,6 +147,13 @@
                 March 2020, 2020 : 8:41 P.M
             </p>
         </section>
+    </div>
+    <div class="border"></div>
+    <!-- Footer -->
+    <div id="copyright">
+        <p>&copy; 2020, Semere H. Hagos<br />
+            All trademarks and registered trademarks appearing on
+            this site are the property of the mentioned owner.</p>
     </div>
     </div>
 </body>
