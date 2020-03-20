@@ -283,3 +283,14 @@ body #bloghead{
 div#content section{
     padding: 25px;
 }
+
+section .title, section .date{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+}
+.containerbox{
+    display: flex;
+    justify-content: space-evenly;
+}
