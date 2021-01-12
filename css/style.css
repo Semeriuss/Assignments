@@ -1,9 +1,22 @@
 body,html {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .menu{
     line-height: 1.1em;
+}
+
+.img-box{
+    display: grid;
+    height: 100%;
+}
+
+.bg{
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
 }
 
 .menu a{
