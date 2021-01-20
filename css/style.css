@@ -31,3 +31,11 @@ a{
     text-emphasis: none;
     text-decoration-color: black
 }
+.headNav{
+    display: block;
+}
+@media (max-width: 400px) {
+    .headNav {
+      display: flex;
+    }
+  }
