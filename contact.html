@@ -28,13 +28,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="classic.html">Classic</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="personal.html">Personal</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="blog.html">Blog</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact + About me.</a>
                         </li>
                         <li class="nav-item mt-4 ml-2">
@@ -49,34 +49,38 @@
                     </ul>
                 </div> 
             </nav>            
-    </header>
+        </header>
     </div>
-    <div class="content" style="margin:auto;">
-            <div style="margin-left: 20em;">
-                <p><img class="mt-5 mb-5" src="images/artWorks/Home.jpeg" width="740" height="260" alt="Me and My Cat"></p>
-            </div>
+    <div class="container mx-auto">
+        <div style="margin-left: 20em;">
+            <p class="mx-auto"><img class="mt-5 mb-5 img-responsive" src="images/artWorks/Home.jpeg" width="90%" height="350px"  alt="Me and My Cat"></p>
+        </div>
         <div class="row mb-2" style="margin-left: 20em; font-family: 'Times New Roman', Times, serif; font-size: 0.9em;">
-            <div class="d-flex flex-row">
-                <div class="p-2">
-                    <p style="text-align: center;">
-                        Semere loves collecting images and artworks that make the viewer <br>
-                        feel as if they are stepping into a dream. 
-                        He is a student and part-time<br>
-                        art enthusiast residing in Addis Ababa, Ethiopia. He began <br>
-                        his journey through 
-                        art at the age of 13. He then <br>
-                        went on to study for 4 years at Lideta Catholic Cathedral <br>
-                        School, 
-                        graduating with a Secondary School Diploma in <br>
-                        2018. He is now pursuing a Software Engineering degree at<br>
-                        the Addis Ababa institute of Technology, Addis Ababa University <br><br>
-                        Semere hopes to help create a collection of breathtaking images <br>
-                        and artworks for all mediums be, commercial, domestic, creative + fashion. <br><br>
-                        For rates, bookings and all other enquires send Semere an email <br>
+                <div class="col-6">
+                    <p class="text-center">
+                        Semere loves collecting beautiful pictures and works of art that make the viewer
+                        feel as if they are stepping into a dream world. 
+                        He is a student and part-time
+                        art enthusiast residing in Addis Ababa, Ethiopia. He began 
+                        his long lasting pursuit of 
+                        art at the age of 13 when he was in elementary school. He then 
+                        went on to study for 4 years at the Lideta Catholic Cathedral
+                        School, graduating with a Secondary School Diploma in 
+                        2018.
+                    </p>
+                    <p class="text-center"> 
+                        Semere is currently seeking a Software Engineering degree at
+                        the Addis Ababa institute of Technology, the technological branch of
+                        Addis Ababa University.
+                        Semere hopes to help create a gallery of breathtaking works of artistic
+                        beauty through all mediums for public as well as private entertainment.
+                    </p>
+                    <p class="text-center">
+                        For questions, requests and all other enquires send Semere an email
                         or simply fill out the form provided below.
                     </p>
                 </div>
-                <div class="p-2" style="text-align: center; margin-bottom: 10em;">
+                <div class="col-6 text-center" >
                     <strong>Favored Publications, Exhibitions & Features.</strong>  
                     <p>
                         -Hogarth, Sir John Soane’s Museum, London.
@@ -133,21 +137,21 @@
                         -Wesfarmers 2015-2016 International Arts Campaign.
                     </p>        
                 </div>
+                <hr width="20%" class="mx-auto" style="background-color: black; margin-top: 10em; margin-bottom: 1em;">
             </div>
         </div>        
 
-        <hr width="20%" style="align-self: center; background-color: black; margin-top: 1em; margin-bottom: 1em;">
+        
+        <div class="container mx-auto" style="margin-top: 12em;">
+            <form class="mb-5 mt-2" style="margin-left: 20em;" enctype="utf-8" method="POST" action="mailto:semerehabtu131@gmail.com">
+                <div class="form-group col-lg-8 mx-auto">
+                    <input class="form-control form-control-lg" type="text" name="name" id="name" placeholder="Name"></input>
 
-        <div class="container" style="margin-top: 12em;">
-            <form style="margin-left: 20em;" enctype="utf-8" method="POST" action="mailto:semerehabtu131@gmail.com">
-                <div class="col-lg-6"><textarea name="name" id="name" placeholder="Name" cols="60" rows="3"></textarea></div>
-
-                <div class="col-lg-6"><textarea name="email" id="email" placeholder="Email" cols="60" rows="3"></textarea></div>
+                    <input class="form-control form-control-lg" type="email" name="email" id="email" placeholder="Email"></input>
+                
+                    <textarea class="form-control form-control-lg" name="comment" id="comment" placeholder="Message" rows="6"></textarea>
             
-                <div class="col-lg-6"><textarea name="comment" id="comment" placeholder="Message" cols="60" rows="15"></textarea></div>
-            
-                <div class="form-group col-lg-6 mt-3">
-                    <input type="submit" value="Send Message" class="btn-lg btn-outline-secondary"> 
+                    <button type="button" class="btn btn-outline-secondary mt-3 mb-5" value="Send Message">Send Message</button> 
                 </div>
             </form>
         </div>
