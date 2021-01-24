@@ -5,18 +5,86 @@ class Account {
         this.accountNum = accountNum;
         this.balance = parseInt(balance);
     }
-    depositAmount(value){this.balance += parseInt(value); return this.balance;};
-    checkAmount(){return this.balance;};
-    withdrawAmount(value){if(this.balance<= parseInt(value)){console.log("Insufficient balance!")}else{this.balance -= parseInt(value); return this.balance;}};
 }
 
-let accX = new Account("Semere", "Habtu","A123", "200");
-let accY = new Account("Aymen", "Mohammed","B231", "500");
-let accZ = new Account("Meti", "Legesse","C312", "700");
+function depositAmount(Account, value){
+    Account.balance += parseInt(value); 
+    return Account.balance;
+};
+function checkAmount(Account){
+    return Account.balance;
+};
+function withdrawAmount(Account, value){
+    if(Account.balance<= parseInt(value)){
+        console.log("Insufficient balance!")
+    }else{
+        Account.balance -= parseInt(value); 
+        return Account.balance;}
+    };
+function transferAmount(Account, value){
+    if(Account != Account.Account){
+        Account.withdrawAmount(value);
+        Account.depositAmount(value);
+        return Account.balance;
+    }else{
+        console.log("Invalid Input");
+    }  
+};
 
-console.log(accX.depositAmount(400));
-console.log(accY.withdrawAmount(200));
-console.log(accZ.checkAmount());
+let accX = new Account("Semere", "Habtu","5123", "200");
+let accY = new Account("Aymen", "Mohammed","4231", "500");
+let accZ = new Account("Meti", "Legesse","6312", "700");
+
+// console.log(accX.depositAmount(400));
+// console.log(accY.withdrawAmount(200));
+// console.log(accZ.checkAmount());
+// console.log(accX.transferAmount(accY, 300));
+
+console.log(depositAmount(accX, 400));
+console.log(withdrawAmount(accY, 200));
+console.log(checkAmount(accZ));
+
+
+// (function main() {
+//     let operator = prompt("Enter the number of your choice:\n1. Create Account\n2.Deposit\n3.Withdraw\n4.Check Balance\n5.Transfer\n ")
+//     // const operator = prompt("Enter operator (either +(Deposit), -(Withdraw), *(CheckBalance), or /(Transfer)): ");
+    
+//     if(operator == '1'){
+//         let acc = new Account();
+//         acc.firstName = prompt("Enter your First Name: ");
+//         acc.lastName = prompt("Enter your First Name: ");
+//         acc.accountNum = 10000 * Math.random();
+//         acc.balance = 0;
+//         console.log("Successfully Created a Bank Account.");
+//     }else if(operator == '2') {
+//         var val = prompt("Amount of money you want to deposit: ");
+//         console.log("The deposit is successful");
+//         deposit(val);
+//         main();
+//     }else if(operator == '+'){
+//         console.log("Your Balance is " + checkBalance());
+//         main();
+//     }else if(operator == '-'){
+//         var val = prompt("Amount of money you want to withdraw: ");
+//             if(parseInt(val)>balance){
+//                 console.log("Your balance is insufficient to make a withdrawal");
+//                 main();
+                
+//             }else{
+//                 console.log("The withdrawal was successful!");
+//                 withdraw(val);
+//                 main();
+//         }
+//     }else if(operator == '/'){
+//         var val = prompt("Amount of money you want to transfer: ");
+//         acc = prompt("Name of the account you want to tranfer to: ");
+
+//         transfer(parseInt(val), acc);
+//         main();
+
+//     }
+// })();
+
 
 
 
