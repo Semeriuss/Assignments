@@ -1,3 +1,69 @@
+class Account {
+    constructor(firstName,lastName,accountNum,balance){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.accountNum = accountNum;
+        this.balance = parseInt(balance);
+    }
+    depositAmount(value){this.balance += parseInt(value); return this.balance;};
+    checkAmount(){return this.balance;};
+    withdrawAmount(value){if(this.balance<= parseInt(value)){console.log("Insufficient balance!")}else{this.balance -= parseInt(value); return this.balance;}};
+}
+
+let accX = new Account("Semere", "Habtu","A123", "200");
+let accY = new Account("Aymen", "Mohammed","B231", "500");
+let accZ = new Account("Meti", "Legesse","C312", "700");
+
+console.log(accX.depositAmount(400));
+console.log(accY.withdrawAmount(200));
+console.log(accZ.checkAmount());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*var balance = 0;
 
 (function main() {
@@ -56,40 +122,6 @@ function transfer(value, xBalance) {
     return balance;     
 }
 */
-
-
-let Account = {
-    construct
-    firstName: "",
-    lastName: "",
-    accountNum: "",
-    balance: 0,
-    depositAmount:function(value){this.balance += parseInt(value); return this.balance;},
-    checkAmount: function(){return this.balance;},
-    withdrawAmount:function(value){if(this.balance<= parseInt(value)){console.log("Insufficient balance!")}else{this.balance -= parseInt(value); return this.balance;}},
-}
-
-const accX = new Account();
-accY = new Account;
-accZ = new Account();
-
-accX.firstName = "Semere";
-accX.lastName = "Habtu";
-accX.accountNum = "A123";
-accX.balance = 200;
-
-accY.firstName = "Aymen";
-accY.lastName = "Mohammed";
-accY.accountNum = "B231";
-accY.balance = 500;
-
-accZ.firstName = "Meti";
-accZ.lastName = "Legesse";
-accZ.accountNum = "C312";
-accZ.balance = 700;
-
-console.log(accX.deposit(400));
-console.log(accY.withdraw(200));
 
 
 
