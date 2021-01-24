@@ -16,18 +16,22 @@ function checkAmount(Account){
 };
 function withdrawAmount(Account, value){
     if(Account.balance<= parseInt(value)){
-        console.log("Insufficient balance!")
+        return "Insufficient balance!";
     }else{
         Account.balance -= parseInt(value); 
         return Account.balance;}
     };
-function transferAmount(Account, value){
-    if(Account != Account.Account){
-        Account.withdrawAmount(value);
-        Account.depositAmount(value);
-        return Account.balance;
+function transferAmount(AccountFrom, AccountTo, value){
+    if(AccountFrom != AccountTo){
+        if(AccountFrom.balance<= parseInt(value)){
+            return "Insufficient balance!";
+        }else{
+            AccountFrom.balance -= parseInt(value); 
+            AccountTo.balance += parseInt(value); 
+            return AccountFrom.firstName + " " + AccountFrom.lastName + " " + "has transferred " + value + " Birr " + "to " + AccountTo.firstName + " " + AccountTo.lastName;
+        }
     }else{
-        console.log("Invalid Input");
+    return"Invalid Input";
     }  
 };
 
@@ -43,6 +47,7 @@ let accZ = new Account("Meti", "Legesse","6312", "700");
 console.log(depositAmount(accX, 400));
 console.log(withdrawAmount(accY, 200));
 console.log(checkAmount(accZ));
+console.log(transferAmount(accX,accY, 300));
 
 
 // (function main() {
