@@ -1,6 +1,118 @@
-var res;
+(function main() {
+    const operator = prompt("Enter operator (either +, -, *, or /): ");
+    var val = new Array();
+    if(operator == '+'){
+        var valNum = prompt("Number of values you want to operate on: ");
+        for (let i = 0; i<parseInt(valNum); i++){
+            val[i] = prompt("Your values " + (i + 1));
+        }
+        alert("The sum is " + add(val)); 
+    }else if(operator == '*'){
+        var valNum = prompt("Number of values you want to operate on: ");
+        for (let i = 0; i<parseInt(valNum); i++){
+            val[i] = prompt("Your values " + (i + 1));
+        }
+        alert("The multiplied value is " + multiply(val));
+        console.log("The multiplied value is " + multiply(val));
+    }else if(operator == '-'){
+        var firstNum = prompt("Enter your First Number: ");
+        var secondNum = prompt("Enter your Second Number: ");
+        alert("The difference is " + subtract(firstNum, secondNum));
+        console.log("The difference is " + subtract(firstNum, secondNum));
+    }else if(operator == '/'){
+        var firstNum = prompt("Enter your First Number: ");
+        var secondNum = prompt("Enter your Second Number: ");
+        if(secondNum == 0){
+            alert("Divider cannot be zero");
+            console.log("Divider cannot be zero");
+        }
+        else{
+            alert("The quotient is " + divide(firstNum, secondNum));
+            console.log("The quotient is " + divide(firstNum, secondNum));
+        }  
+    }else{
+        alert("Invalid Input");
+        console.log("Invalid Input");
+    }
+})();
+
+    
+
+function add(arr){
+    var sum = 0;
+    res = arr.forEach(function(values, index) {
+        sum+=parseInt(arr[index]);          
+    });
+    return sum;
+}
+
+function multiply(arr){
+    var mult = 1;
+    res = arr.forEach(function(values, index) {
+        mult*=parseInt(arr[index]);          
+    });
+    return mult;
+}
+
+function subtract(num1, num2){
+    return num1- num2;
+}
+
+function divide(num1, num2) {
+    if(num2 == 0){
+        return isZero = true;
+    }
+    else{
+        return num1/num2;
+    }  
+}
+function again(){
+    let choice = prompt("Do you want to operate again? (y/n) ")
+    if(choice == "y" || "Y" || "yes" || "Yes"){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
+var res;
 const operator = prompt("Enter operator (either +, -, *, or /): ");
 if(operator == '+' || operator == '*')
 {
@@ -58,104 +170,6 @@ if(operator == '+' || operator == '*')
     
 }
 */
-
-(function() {
-    const operator = prompt("Enter operator (either +, -, *, or /): ");
-    if(operator == '+' || operator == '*'){
-        var val = new Array();
-        var valNum = prompt("Number of values you want to operate on: ");
-        for (let i = 0; i<parseInt(valNum); i++){
-            val[i] = prompt("Your values " + (i + 1));
-        }
-
-        switch(operator) {
-            case '+':
-                console.log("The sum is " + add(val));
-                break;
-
-            case '*':
-                console.log("The multiplied value is " + multiply(val));
-                break;
-
-            default:
-                console.log("Invalid Input");
-                break;
-                
-        }
-    }else{
-        var firstNum = prompt("Enter your First Number: ");
-        var secondNum = prompt("Enter your Second Number: ");
-
-        switch(operator) {
-            case '-':
-                console.log("The difference is " + subtract(firstNum, secondNum));
-                break;
-
-            case '/':
-                if(secondNum == 0){
-                    console.log("Divider cannot be zero");
-                }
-                else{
-                    console.log("The quotient is " + divide(firstNum, secondNum));
-                }  
-                break;
-
-            default:
-                console.log("Invalid Input");
-                break;
-                
-            }
-        
-    }
-})();
-
-    
-
-function add(arr){
-    var sum = 0;
-    res = arr.forEach(function(values, index) {
-        sum+=parseInt(arr[index]);          
-    });
-    return sum;
-}
-
-function multiply(arr){
-    var mult = 1;
-    res = arr.forEach(function(values, index) {
-        mult*=parseInt(arr[index]);          
-    });
-    return mult;
-}
-
-function subtract(num1, num2){
-    return num1- num2;
-}
-
-function divide(num1, num2) {
-    if(num2 == 0){
-        return isZero = true;
-    }
-    else{
-        return num1/num2;
-    }          
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 
