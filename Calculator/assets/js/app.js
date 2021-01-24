@@ -1,5 +1,5 @@
 (function main() {
-    const operator = prompt("Enter operator (either +, -, *, or /): ");
+    const operator = prompt("Enter operator:\n+ [Addition]\n- [Subtraction]\n* [Multiplication]\n/ [Division]\n: ");
     var val = new Array();
     if(operator == '+'){
         var valNum = prompt("Number of values you want to operate on: ");
@@ -7,6 +7,8 @@
             val[i] = prompt("Your values " + (i + 1));
         }
         alert("The sum is " + add(val)); 
+        console.log("The sum is " + add(val));
+        main();
     }else if(operator == '*'){
         var valNum = prompt("Number of values you want to operate on: ");
         for (let i = 0; i<parseInt(valNum); i++){
@@ -14,25 +16,30 @@
         }
         alert("The multiplied value is " + multiply(val));
         console.log("The multiplied value is " + multiply(val));
+        main();
     }else if(operator == '-'){
         var firstNum = prompt("Enter your First Number: ");
         var secondNum = prompt("Enter your Second Number: ");
         alert("The difference is " + subtract(firstNum, secondNum));
         console.log("The difference is " + subtract(firstNum, secondNum));
+        main();
     }else if(operator == '/'){
         var firstNum = prompt("Enter your First Number: ");
         var secondNum = prompt("Enter your Second Number: ");
         if(secondNum == 0){
             alert("Divider cannot be zero");
             console.log("Divider cannot be zero");
+            main();
         }
         else{
             alert("The quotient is " + divide(firstNum, secondNum));
             console.log("The quotient is " + divide(firstNum, secondNum));
+            main();
         }  
     }else{
         alert("Invalid Input");
         console.log("Invalid Input");
+        main();
     }
 })();
 
@@ -63,7 +70,7 @@ function divide(num1, num2) {
         return isZero = true;
     }
     else{
-        return num1/num2;
+        return (num1/num2).toPrecision(3);
     }  
 }
 function again(){
