@@ -15,7 +15,7 @@ let personProfile = {
         let temporAge = this.ageCalc(Number(this.birthYear));
         if(temporAge >=18){this.isEligibleToVote = true;} else{this.isEligibleToVote = false;}
         }, 
-    calcBmi:function(){return this.weight/Math.pow(this.height, 2)}
+    calcBmi:function(){return (this.weight/Math.pow(this.height, 2)).toPrecision(3)}
 };
 
 // Receive the values from input and assign to object properties
