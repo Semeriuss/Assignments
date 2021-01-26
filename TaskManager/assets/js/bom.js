@@ -67,13 +67,16 @@ var colorDepth = screen.colorDepth;
 var availableHeight = screen.availHeight;
 var availableWidth = screen.availWidth;
 
+//history information
+var length = window.history.length;
+var state = window.history.state;
 
 
 
 
 // Display the BOM Information on the innerHTML of the elements
 
-//editing the innerHTML with the information from the variables containing BOM info
+//editing the innerHTML with the information from the variables containing BOM Info
 spanItems[0].innerHTML = href; 
 spanItems[1].innerHTML = protocol;
 spanItems[2].innerHTML = host;
@@ -95,4 +98,8 @@ spanItems[13].innerHTML = pixelDepth;
 spanItems[14].innerHTML = colorDepth;
 spanItems[15].innerHTML = availableHeight;
 spanItems[16].innerHTML = availableWidth;
+
+//editing the innerHTML in Browser History Info
+spanItems[17].innerHTML = length;
+spanItems[18].innerHTML = state;
 
