@@ -103,3 +103,15 @@ spanItems[16].innerHTML = availableWidth;
 spanItems[17].innerHTML = length;
 spanItems[18].innerHTML = state;
 
+
+
+
+
+const reloadIcon = document.querySelector('.fa');
+
+reloadIcon.addEventListener('click', reloadPage);
+
+function reloadPage(){
+    //using the reload function on locatoin object
+    location.reload();
+}
