@@ -43,15 +43,29 @@ Good Luck !!!
 //span "badge" selection
 var spanItems = document.getElementsByClassName('badge')
 
+//location information
 var href = window.location.href; //selection of href using location object of BOM
 var host = window.location.host; //selection of host using location object of BOM
 var protocol = window.location.protocol; //selection of protocol using location object of BOM
 var port = window.location.port; //selection of port using location object of BOM
 var hostName = window.location.hostname; //selection of host name using location object of BOM
 
+//browser information
+var appName = window.navigator.appName;
+var appVersion = window.navigator.appVersion;
+var platform = window.navigator.platform;
+var language = window.navigator.language;
+var cookieEnabled = window.navigator.cookieEnabled;
+var languages = window.navigator.languages;
+var product = window.navigator.product;
 
-
-
+//screen information
+var height = screen.height;
+var width = screen.width;
+var pixelDepth = screen.pixelDepth;
+var colorDepth = screen.colorDepth;
+var availableHeight = screen.availHeight;
+var availableWidth = screen.availWidth;
 
 
 
@@ -65,3 +79,20 @@ spanItems[1].innerHTML = protocol;
 spanItems[2].innerHTML = host;
 spanItems[3].innerHTML = port;
 spanItems[4].innerHTML = hostName;
+
+//editing the innerHTML in Browser Info
+spanItems[5].innerHTML = appName;
+spanItems[6].innerHTML = appVersion;
+spanItems[7].innerHTML = platform;
+spanItems[8].innerHTML = language;
+spanItems[9].innerHTML = cookieEnabled;
+spanItems[10].innerHTML = product;
+
+//editing the innerHTML in Screen Info
+spanItems[11].innerHTML = height;
+spanItems[12].innerHTML = width;
+spanItems[13].innerHTML = pixelDepth;
+spanItems[14].innerHTML = colorDepth;
+spanItems[15].innerHTML = availableHeight;
+spanItems[16].innerHTML = availableWidth;
+
