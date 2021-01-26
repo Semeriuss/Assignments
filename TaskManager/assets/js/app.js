@@ -64,13 +64,29 @@ function clearAllTasks(){
 //filter tasks function definition
 function filterTasks(e){
     console.log("Task filter...")
+    var searchFilter, listItem, txtValue;
+    searchFilter = filter.value.toUpperCase();
+    listItem = document.querySelectorAll('.collection-item');
+    console.log(listItem);
+    //looping through the list items, and hiding unmatching results
+    listItem.forEach(function(element){
+        txtValue = element.textContent || element.innerText;
+        if(txtValue.toUpperCase().indexOf(searchFilter) > -1){
+            element.style.display = "";
+        }else{
+            element.style.display = "none";
+        }
+    });
+    
 }
 
 //remove task function definition
 function removeTask(e){
     if(e.target.parentElement.classList.contains('delete-item'))
     {
-        e.target.parentElement.parentElement.remove();        
+        if(confirm('Are you sure about that ?')){
+            e.target.parentElement.parentElement.remove(); 
+        }       
     }
 }
 
