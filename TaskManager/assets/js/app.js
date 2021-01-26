@@ -45,6 +45,8 @@ function addNewTask(e){
     li.appendChild(link);
     //append to ul
     taskList.appendChild(li);
+
+    taskInput.value = '';
     
     
     e.preventDefault(); //disable form submission
@@ -67,7 +69,6 @@ function filterTasks(e){
     var searchFilter, listItem, txtValue;
     searchFilter = filter.value.toUpperCase();
     listItem = document.querySelectorAll('.collection-item');
-    console.log(listItem);
     //looping through the list items, and hiding unmatching results
     listItem.forEach(function(element){
         txtValue = element.textContent || element.innerText;
@@ -77,7 +78,6 @@ function filterTasks(e){
             element.style.display = "none";
         }
     });
-    
 }
 
 //remove task function definition
