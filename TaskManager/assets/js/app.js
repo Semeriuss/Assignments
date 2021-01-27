@@ -1,9 +1,16 @@
+document.addEventListener('DOMContentLoaded', function() {
+    $('.dropdown-trigger').dropdown();
+  });
 const taskInput = document.querySelector('#task'); //task input text field
 const form = document.querySelector("#task-form"); //form at the top
 const filter = document.querySelector("#filter"); //task filter text field
 const taskList = document.querySelector(".collection"); //ul
 const clearBtn = document.querySelector(".clear-tasks"); //all task clear button
 const reloadIcon = document.querySelector('.fa'); //reload button at the top right of navigation
+const ascend = document.querySelector('.asc'); //Ascend button at the right end of page
+const descend = document.querySelector('.desc'); //Descend button at the right end of page
+
+var checkAscend = true;
 
 //form submit
 form.addEventListener("submit", addNewTask);
@@ -20,8 +27,11 @@ taskList.addEventListener('click', removeTask);
 //Event listener for reload
 reloadIcon.addEventListener('click', reloadPage);
 
+//Descend event listenere
+descend.addEventListener('click', descendBool);
 
-
+//Ascend event listenere
+ascend.addEventListener('click', ascendBool);
 
 //add new task funtion definition
 function addNewTask(e){
@@ -43,8 +53,12 @@ function addNewTask(e){
     link.className = 'delete-item secondary-content';
     //append link to li
     li.appendChild(link);
-    //append to ul
-    taskList.appendChild(li);
+    if (checkAscend) {
+        //append to ul
+        taskList.appendChild(li);
+    } else {
+        taskList.prepend(li);
+    }    
 
     taskInput.value = '';
     
@@ -56,7 +70,6 @@ function addNewTask(e){
 function clearAllTasks(){
     //this is one way
     //taskList.innerHTML = '';
-
     //second way
     while(taskList.firstChild){
         taskList.removeChild(taskList.firstChild);
@@ -95,3 +108,60 @@ function reloadPage(){
     //using the reload function on locatoin object
     location.reload();
 }
+
+
+//descending sort function
+function descendBool(){
+    if(!checkAscend){
+        return;
+    }else{
+        console.log('sorting...')
+        var items, arr, taskValue;
+        arr = new Array();
+        items = document.querySelectorAll('.collection-item');
+        //looping through the list items, and hiding unmatching results
+        for(let i = items.length-1; i>=0; i--){
+            taskValue = items[i].textContent || items[i].innerText;
+            arr.push(taskValue);
+            console.log(arr[i]);
+        }
+        items.forEach(function(element, index){
+            element.innerText = arr[index];
+        });
+        checkAscend = false;
+    }
+}
+
+//ascending sort function
+function ascendBool(){
+    if(checkAscend){
+        return;
+    }else{
+        console.log('sorting...')
+        var items, arr, taskValue;
+        arr = new Array();
+        items = document.querySelectorAll('.collection-item');
+        //looping through the list items, and hiding unmatching results
+        for(let i = items.length-1; i>=0; i--){
+            taskValue = items[i].textContent || items[i].innerText;
+            arr.push(taskValue);
+            console.log(arr[i]);
+        }
+        items.forEach(function(element, index){
+            element.innerText = arr[index];
+        });
+    }
+    checkAscend = true;
+}
+
+
+
+
+
+
+
+
+
+
+
+  
