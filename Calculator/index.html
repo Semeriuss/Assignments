@@ -4,8 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
 <body>
+    <h1>DOM Based Calculator</h1>
+    <div class="container">
+      <div class="header">Result</div>
+      <div class="screen">
+        <input type="text" class="result" value="">
+      </div>
+      <div class="first-row">
+        <input type="button" name="" value="Pow" class="global">
+        <input type="button" name="" value="*" class="global">
+        <input type="button" name="" value="+" class="global">
+        <input type="button" name="" value="%" class="global">
+      </div>
+      <div class="screen1">
+        <input type="text" class="result1" id="result1">
+        <input type="text" class="result2" id ="result2">
+      </div>
+      <div class="second-row">
+        <input type="button" name="" value="&radic;" class="global">
+        <input type="button" name="" value="-" class="global">
+        <input type="button" name="" value="/" class="global">
+        <input type="button" name="" value="." class="global">
+      </div>
+      <div class="conflict">
+        <div class="left">
+          <input type="button" name="" value="=" class=" green white-text big top-margin">
+        </div>
+      </div>
+    </div>
+
     <script src="assets/js/app.js"></script>
 </body>
 </html>
