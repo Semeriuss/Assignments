@@ -2,6 +2,7 @@ const result = document.querySelector('.result'); //screen input text field
 const result1 = document.querySelector('#result1'); //screen input text field
 const result2 = document.querySelector('#result2'); //screen input text field
 const operation = document.querySelectorAll(".global"); //main buttons - operands and operators
+const evalButton = document.querySelector('.equals');
 var display = document.querySelector('.header');
 const buttonArray = Array.from(operation); //change nodelist into array
 const addButton = buttonArray[1];
@@ -38,6 +39,9 @@ modButton.addEventListener("click", modResults);
 
 //sqrt button
 sqrtButton.addEventListener("click", sqrtResults);
+
+//eval button
+evalButton.addEventListener("click", evalResults);
 
 // .split(/[ ,]+/)
 //add new task funtion definition
@@ -101,6 +105,13 @@ function sqrtResults(num1, root){
     display.textContent = sqrt(num1,root);
 }
 
+function evalResults(){
+    var arg = result.value;
+    display.textContent = eval(arg);
+}
+
+
+//function definitions
 function add(arr){
     var sum = 0;
     res = arr.forEach(function(values) {
