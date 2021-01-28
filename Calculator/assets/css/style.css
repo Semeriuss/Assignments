@@ -63,7 +63,8 @@ h1{
    border-radius: 3px;
    background-color: #F2F2F2;
    float: left;
-   width: 23.5%;
+   /* width: 23.5%; */
+   width: 45%;
    margin: 0 2px;
    /*border: 1px solid #000;*/
   }
