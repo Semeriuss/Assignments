@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     $('.dropdown-trigger').dropdown();
   });
+
+//UI vars
 const taskInput = document.querySelector('#task'); //task input text field
 const form = document.querySelector("#task-form"); //form at the top
 const filter = document.querySelector("#filter"); //task filter text field
@@ -9,8 +11,10 @@ const clearBtn = document.querySelector(".clear-tasks"); //all task clear button
 const reloadIcon = document.querySelector('.fa'); //reload button at the top right of navigation
 const ascend = document.querySelector('.asc'); //Ascend button at the right end of page
 const descend = document.querySelector('.desc'); //Descend button at the right end of page
+var checkAscend = true; //bool function for sorting
 
-var checkAscend = true;
+
+//Event Listener
 
 //form submit
 form.addEventListener("submit", addNewTask);
@@ -40,6 +44,8 @@ function addNewTask(e){
         taskInput.style.borderColor = 'red';
         return;
     }
+
+    //rest of code
     //create a li element when the user adds a task
     const li = document.createElement('li');
     //add a class
