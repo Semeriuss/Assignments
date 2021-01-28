@@ -37,7 +37,7 @@ logButton.addEventListener("click", logResults);
 modButton.addEventListener("click", modResults);
 
 //sqrt button
-// sqrtButton.addEventListener("click", sqrtResults);
+sqrtButton.addEventListener("click", sqrtResults);
 
 // .split(/[ ,]+/)
 //add new task funtion definition
@@ -91,6 +91,16 @@ function modResults(){
     display.textContent = mod(num1,num2);
 }
 
+function sqrtResults(num1, root){
+    var num1 = result1.value;
+    if(result2.value == ''){
+        root = 2
+    }else{
+        root = result2.value;
+    }
+    display.textContent = sqrt(num1,root);
+}
+
 function add(arr){
     var sum = 0;
     res = arr.forEach(function(values) {
@@ -129,11 +139,12 @@ function power(num, exp){
     }
 }
 
-function sqrt(num){
+function sqrt(num, rt = 2){
     if (num<0){
         return undefined = true;
     }else{
-        return Math.sqrt(num);
+        var root = 1/rt;
+        return Math.pow(num,root);
     }
 }
 function log(num, base){
@@ -141,6 +152,6 @@ function log(num, base){
 }
 
 function mod(num1, num2){
-    return num1 % num2;
+    return parseFloat(num1) % parseFloat(num2);
 }
 
