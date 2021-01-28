@@ -34,7 +34,7 @@ powButton.addEventListener("click", powResults);
 logButton.addEventListener("click", logResults);
 
 //modulus button
-// modButton.addEventListener("click", perResults);
+modButton.addEventListener("click", modResults);
 
 //sqrt button
 // sqrtButton.addEventListener("click", sqrtResults);
@@ -77,6 +77,18 @@ function powResults(){
     var num1 = result1.value;
     var num2 = result2.value;
     display.textContent = power(num1,num2);
+}
+
+function logResults(){
+    var num1 = result1.value;
+    var num2 = result2.value;
+    display.textContent = log(num1,num2);
+}
+
+function modResults(){
+    var num1 = result1.value;
+    var num2 = result2.value;
+    display.textContent = mod(num1,num2);
 }
 
 function add(arr){
@@ -126,5 +138,9 @@ function sqrt(num){
 }
 function log(num, base){
     return Math.log(num, base);
+}
+
+function mod(num1, num2){
+    return num1 % num2;
 }
 
