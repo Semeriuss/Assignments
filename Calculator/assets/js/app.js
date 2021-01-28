@@ -4,28 +4,37 @@ const result2 = document.querySelector('#result2'); //screen input text field
 const operation = document.querySelectorAll(".global"); //main buttons - operands and operators
 var display = document.querySelector('.header');
 const buttonArray = Array.from(operation); //change nodelist into array
-const addButton = buttonArray[2];
-const subButton = buttonArray[5];
-const mulButton = buttonArray[1];
+const addButton = buttonArray[1];
+const subButton = buttonArray[3];
+const mulButton = buttonArray[0];
 const divButton = buttonArray[4];
-const perButton = buttonArray[3];
-const sqrtButton = buttonArray[0];
+const modButton = buttonArray[5];
+const sqrtButton = buttonArray[2];
+const powButton = buttonArray[6];
+const logButton = buttonArray[7];
+var undefined = false;
 console.log(buttonArray);
 
 //addition button
-// addButton.addEventListener("click", addResults);
+addButton.addEventListener("click", addResults);
 
 //subtraction button
 subButton.addEventListener("click", subResults);
 
 //multiplication button
-// mulButton.addEventListener("click", mulResults);
+mulButton.addEventListener("click", mulResults);
 
 //division button
-// divButton.addEventListener("click", divResults);
+divButton.addEventListener("click", divResults);
 
-//percent button
-// perButton.addEventListener("click", perResults);
+//Power button
+powButton.addEventListener("click", powResults);
+
+//Power button
+logButton.addEventListener("click", logResults);
+
+//modulus button
+// modButton.addEventListener("click", perResults);
 
 //sqrt button
 // sqrtButton.addEventListener("click", sqrtResults);
@@ -38,17 +47,42 @@ function subResults(){
     display.textContent = subtract(num1,num2);
 }
 
-function subResults(){
+function divResults(){
     var num1 = result1.value;
     var num2 = result2.value;
-    display.textContent = subtract(num1,num2);
+    if(undefined){
+        display.textContent = "Math Error Committed"
+    }else{
+        display.textContent = divide(num1,num2);
+    }
 }
 
+function addResults(){
+    var arg = result.value;
+    // console.log(arg);
+    var arr = arg.split(',');
+    console.log(arr);
+    display.textContent = add(arr);
+}
+
+function mulResults(){
+    var arg = result.value;
+    // console.log(arg);
+    var arr = arg.split(',');
+    console.log(arr);
+    display.textContent = multiply(arr);
+}
+
+function powResults(){
+    var num1 = result1.value;
+    var num2 = result2.value;
+    display.textContent = power(num1,num2);
+}
 
 function add(arr){
     var sum = 0;
-    res = arr.forEach(function(values, index) {
-        sum+=parseInt(arr[index]);          
+    res = arr.forEach(function(values) {
+        sum+=parseInt(values);          
     });
     return sum;
 }
@@ -67,7 +101,8 @@ function subtract(num1, num2){
 
 function divide(num1, num2) {
     if(num2 == 0){
-        return undefined = true;
+        undefined = true;
+        return "Math Error Committed"
     }
     else{
         return (num1/num2).toPrecision(3);
