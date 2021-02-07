@@ -6,6 +6,10 @@ body {
 	background-image: url("../imgs/bg-img.jpg");
 }
 
+::placeholder {
+	color: white !important;
+  }
+
 .sign_up {
 	display: flex;
 	align-items: center;
@@ -27,4 +31,47 @@ body {
 }
 .form-control::-webkit-input-placeholder {
 	color: red;
+}
+
+.login{
+	align-items: center;
+	justify-content: center;
+}
+
+.login > form{
+	width: fit-content;
+	padding-bottom: 10rem;
+	background-color: #363636;
+	border-color: rgba(11, 169, 22, 0.8);
+	margin: auto;
+}
+
+.login > form > button{
+	align-self: center !important;
+}
+.login_input{
+	display: block;
+}
+.buttn{
+	text-align: center;
+}
+.bttn {
+	display: inline-block;
+	width: 15rem;
+    font-weight: 400;
+    line-height: 1.5;
+	color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .95rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
