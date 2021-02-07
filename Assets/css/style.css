@@ -1,0 +1,13 @@
+* {
+	margin: 0;
+}
+
+body {
+	background-image: url("../imgs/bg-img.jpg");
+}
+
+.sign_up {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
