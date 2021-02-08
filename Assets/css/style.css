@@ -8,7 +8,7 @@ body {
 }
 
 #admin-page{
-	overflow-y: hidden;
+	/* overflow-y: hidden; */
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -52,12 +52,12 @@ body {
 
 #sticky-sidebar{
 	background-color: rgba(25, 49, 78, 0.8); 
-	min-height: 1080px;
+	min-height: 100vh;
 	box-shadow: 10px 0px 8px 0px #251111;
 }
 
 #main{
-	min-height: 1080px;
+	/* min-height: 1080px; */
 	background-image: url("../imgs/bg-img.jpg");
 }
 
@@ -135,4 +135,15 @@ body {
     font-size: 1rem;
     border-radius: .95rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+.functionality-links{
+	color: white;
+	opacity: 0.7;
+}
+.functionality-links:hover{
+	opacity: 1;
+	color: white;
+	text-decoration: none;
 }
