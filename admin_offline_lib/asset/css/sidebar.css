@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+body {
+  overflow-x: hidden;
+}
+.sidebar-brand{
+  font-family: 'Fira Sans', sans-serif;
+  font-size: x-large;
+  margin-top:3.54;
+  text-decoration:none ;
+
+}
+.wrapper {
+  min-height: 100vh;
+}
+.wrapper-navbar-used {
+  position: relative;
+  min-height: calc(100vh - 3.5rem);
+}
+.wrapper-navbar-fixed {
+  margin-top: 0;
+}
+
+.sidebar {
+  margin-left: -14.375rem;
+  transition: margin 0.15s ease-out;
+  background-color: white;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    margin-left: 0;
+  }
+}
+.sidebar-toggle {
+  margin-left: 0;
+  margin-top:2rem;
+  
+}
+.sidebar-toggle-visible {
+  margin-left: 0;
+}
+@media (min-width: 768px) {
+  .sidebar-toggle-visible {
+    margin-left: -14.375rem;
+  }
+}
+.sidebar-rounded-top-right {
+  border-top-right-radius: 0.25rem;
+}
+
+.sidebar-menu {
+  width: 14.375rem;
+}
+.sidebar-menu-fixed {
+  position: fixed;
+}
+
+.sidebar-bg-white {
+  background-color:white;
+}
+
+.sidebar-bg-light {
+  background-color: #f8f9fa;
+}
+
+.sidebar-bg-dark {
+  background-color: #343a40;
+}
+
+.sidebar-bg-blue {
+  background-color: #19314E ;
+}
+
+.sidebar-bg-purple {
+  background-color: #6f42c1;
+}
+
+.sidebar-bg-pink {
+  background-color: #e83e8c;
+}
+
+.sidebar-bg-red {
+  background-color: #dc3545;
+}
+
+.sidebar-bg-orange {
+  background-color: #fd7e14;
+}
+
+.sidebar-bg-green {
+  background-color: #28a745;
+}
+
+.sidebar-bg-teal {
+  background-color: #20c997;
+}
+
+.sidebar-bg-cyan {
+  background-color: #fafcfc;
+}
+@media only screen and (min-width: 768px) {
+  .navbar{
+display: none;
+  }
+.sidebar-menu{
+  padding:0;
+  left:0;
+}}
+.foot{
+  bottom: 0;
+  padding-top: 16rem;
+  color: grey;
+}
+
+
+/*# sourceMappingURL=sidebar.css.map */

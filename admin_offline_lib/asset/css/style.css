@@ -1,0 +1,110 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+#brand{
+    font-family: 'Fira Sans', sans-serif;
+
+}
+body{
+    background-color: #363636;
+}
+.sidebar{
+    background-color:#19314E ;
+}
+.nav-item,.nav-link{
+    color: azure;
+}
+.sidebar-dropdown a{
+    text-decoration: none;
+    color: azure;
+
+}
+.sidebar-submenu a{
+    color:lightgrey;
+}
+hr{
+    background-color: white;
+}
+
+
+footer{
+    background-color:#16304E;
+    color: #d5d5d5;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color:grey;
+    text-align: left;
+}
+nav ul li a:hover {
+    color:orange;
+    text-decoration: none;
+}
+nav ul li a:active {
+    text-decoration: none;
+    color:orange;
+}
+}
+section{
+    padding: 50px 0;
+}
+img{
+    height: 50%;
+}
+
+/*	gallery */
+.row-eq-height{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+  }
+  .row-eq-height [class*="col-"]{
+    padding: 0;
+  }
+  .img-container{  
+    background-size: cover;
+    margin-left: 
+
+  }
+  .row-eq-height img{
+    border: 0;
+    width: 100%;
+    height: 18rem;
+   
+  }
+
+.filter-button{
+    font-size: 18px;
+    border: 2px solid #3F6184;
+	padding:5px 10px;
+    text-align: center;
+    color: #3F6184;
+    margin-bottom: 30px;
+	background:transparent;
+}
+.filter-button:hover,
+.filter-button:focus,
+.filter-button.active{
+    color: #ffffff;
+    background-color:#3F6184;
+	outline:none;
+}
+.gallery_product{
+    margin:2px;
+	padding:10;
+	position:relative;
+}
+
+
+.gallery_product:hover .img-info{
+	display:block;
+   -webkit-transition: 2s;
+    transition: 2s;
+}
+
+/*	end gallery */
+
