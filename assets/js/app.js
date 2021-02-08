@@ -36,37 +36,35 @@ class Account {
     };
 }
 
-// let accX = new Account("Semere", "Habtu","5123", "200");
-// let accY = new Account("Aymen", "Mohammed","4231", "500");
-// let accZ = new Account("Meti", "Legesse","6312", "700");
+//Reflect API
+//1. Construction
+let aym = ["Aymen", "Mohammed","4231", 500];
+let bin = ["Biniyam", "Abiy", "7325", 400];
+let met = ["Meti", "Legesse","6312", 700];
+let sem = ["Semere", "Habtu","5123", 200];
 
+const accB = Reflect.construct(Account, bin);
+const accX = Reflect.construct(Account, aym);
+const accY = Reflect.construct(Account, met);
+const accZ = Reflect.construct(Account, sem);
 
-// console.log(accX.depositAmount(400));
-// console.log(accY.withdrawAmount(200));
-// console.log(accZ.checkAmount(accZ));
-// console.log(accZ.transferAmount(accY, 300));
-
-
-
-// var accounts = new Map();
-// accounts.set("5123", accX);
-// accounts.set("4231", accY);
-// accounts.set("6312", accZ);
-
-
-let accX = new Account("Semere", "Habtu","5123", "200");
-let accY = new Account("Aymen", "Mohammed","4231", "500");
-let accZ = new Account("Meti", "Legesse","6312", "700");
 
 var accounts = new Map();
+
+var accountID = new Set();
 
 
 (function main() {
     let operator = prompt("Enter the number of your choice:\n1. Create Account\n2.Deposit\n3.Check Balance\n4.Withdraw\n5.Transfer\n ")
     
-    accounts.set("5123", accX);
-    accounts.set("4231", accY);
-    accounts.set("6312", accZ);
+    accounts.set(accX.accountNum, accX);
+    accountID.add(accX.accountNum);
+    accounts.set(accY.accountNum, accY);
+    accountID.add(accY.accountNum);
+    accounts.set(accZ.accountNum, accZ);
+    accountID.add(accZ.accountNum);
+    accounts.set(accB.accountNum, accB);
+    accountID.add(accB.accountNum);
 
     if(operator == '1'){
         const acc = new Account();
@@ -74,7 +72,16 @@ var accounts = new Map();
         acc.lastName = prompt("Enter your Last Name: ");
         acc.accountNum = (Math.floor(Math.random() * 10000)).toString();
         acc.balance = 0;
+        accountID.add(acc.accountNum);
         accounts.set(acc.accountNum, acc);
+        let accountList = []//firstName, lastName, acc.accountNum, acc.balance];
+        Reflect.set(accountList, 0, firstName);
+        Reflect.set(accountList, 1, lastName);
+        Reflect.set(accountList, 2, acc.accountNum);
+        Reflect.set(accountList, 3, acc.balance);
+        let fName = Reflect.get(accountList, 0);
+        let lName = Reflect.get(accountList, 1);
+        let aNum = Reflect.get(accountList, 2);
         console.log(accounts.get(acc.accountNum));
         console.log("Successfully Created a Bank Account. Your Account number is: " + acc.accountNum);
         alert("Successfully Created a Bank Account. Your Account number is: " + acc.accountNum);
