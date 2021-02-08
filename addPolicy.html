@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="./Assets/css/style.css">
+        <!-- BOOTSTRAP 5 CSS -->
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <!-- Fontawesome -->
+        <link rel="shortcut icon" href="./Assets/imgs/logo.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <title>Retex Insurance Company</title>
+
+
+    </head>
+
+    <body id="admin-page">
+      <!--Section to the left(sidebar)-->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2 col-sm-4  col-4" id="sticky-sidebar">
+              <div class="row py-3"  style="color: white;">
+                <div class="col-md-4">
+                  <i class="fas fa-user-circle fa-4x"></i>
+                </div>
+                <div>
+                  <div class="pl-2 pt-1" style="font-size: larger;">Biniyam Abiy <div style="opacity: 0.6; font-size: medium;">Admin</div></div>
+                  <!-- <p >Biniyam Abiy <br> Admin</p> -->
+                </div>
+              </div>
+
+              <div class="pb-2 pt-3 pl-1" style="font-size: 0.7em; opacity: 0.6; color: white; border-bottom: 1px solid white;">MAIN MENU</div>
+              <div class="py-1 pl-1" style="color: white; font-size: 0.9em; border-bottom: 1px solid white;"><span><i class="fas fa-chart-bar pr-2"></i></span><span>Dashboard</span></div>
+              <div class="py-2 pb-3 pl-1" style="color: white; font-size: 1.1em; border-bottom: 1px solid white;">
+                <span><i class="fas fa-list-ul pr-2"></i></span><span>Insurance Category</span>
+                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="addCategory.html" class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Add Category</a></div>
+                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="" class="functionality-links"><span><i class="fas fa-pen-nib pr-2"></i></span>Manage Category</a></div>
+              </div>
+              <div class="py-2 pb-3 pl-1" style="color: white; font-size: 1.1em; border-bottom: 1px solid white;">
+                <span><i class="fas fa-list-ul pr-2"></i></span><span>Insurance SubCategory</span>
+                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="" class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Add SubCategory</a></div>
+                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="" class="functionality-links"><span><i class="fas fa-pen-nib pr-2"></i></span>Manage SubCategory</a></div>
+              </div>
+              <div class="py-2 pb-3 pl-1" style="color: white; font-size: 1.1em; border-bottom: 1px solid white;">
+                <span><i class="fas fa-list-ul pr-2"></i></span><span>Insurance Policy</span>
+                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="addPolicy.html" class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Add Policy</a></div>
+                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="" class="functionality-links"><span><i class="fas fa-pen-nib pr-2"></i></span>Manage Policy</a></div>
+              </div>
+              <div class="py-2 pl-1" style="color: white; font-size: 1.1em; border-bottom: 1px solid white;">
+                <a href="" class="functionality-links"><span><i class="fas fa-list-ul pr-2"></i></span><span>Users</span></a>
+              </div>
+              <div class="py-2 pb-3 pl-1" style="color: white; font-size: 1.1em; border-bottom: 1px solid white;">
+                <span><i class="fas fa-list-ul pr-2"></i></span><span>Policy Holders(apply by users)</span>
+                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="" class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Pending Policy</a></div>
+                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="" class="functionality-links"><span><i class="fas fa-pen-nib pr-2"></i></span>Approved Policy</a></div>
+                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="" class="functionality-links"><span><i class="fas fa-times-circle pr-2"></i></span>Disapproved Policy</a></div>
+              </div>
+          </div>
+          
+
+  
+
+
+
+          <!--The section to the right(Area for tables and stastics)-->
+          <div class="col-md-10" id="main">
+            Main Area
+            <div class="mx-3">
+                <h3 class="text-light mx-3 mt-2">Policy Form !</h3>
+            </div>
+            <form class=" col-md-5 contactus bg-dark">
+              
+                <p class="text-white">Fill the Information</p>
+                <hr style="background-color: aliceblue;">
+                <div class="form-group mt-4">
+                    <label class="text-white" for="category">Category: *</label>
+                    <select style="width: 24.5rem;" name="category" id="cat">
+                        <option value="Select Category">Select Category</option>
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+                <div class="form-group mt-4">
+                    <label class="text-white" for="subcategory">Sub-Category Name: *</label>
+                    <select style="width: 24.5rem;" name="subcategory" id="subcat">
+                        <option value="Select Category">Select Category</option>
+                        <option value="volvo">Hyundai</option>
+                        <option value="saab">BMW</option>
+                        <option value="mercedes">Toyota</option>
+                        <option value="audi">Nissan</option>
+                    </select>
+                </div>
+                <div class="form-group mt-1">
+                    <label class="text-white" for="policyName">Policy Name: *</label>
+                    <input style="width: 24.5rem;" type="text" required id="policyName" class="form-control bg-light">
+                </div>
+                <div class="form-group mt-1">
+                    <label class="text-white" for="sumAssured">Sum Assured: *</label>
+                    <input style="width: 24.5rem;" type="text" required id="sumAssured" class="form-control bg-light">
+                </div>
+                <div class="form-group mt-1">
+                    <label class="text-white" for="premium">Premium: *</label>
+                    <input style="width: 24.5rem;" type="text" required id="premium" class="form-control bg-light">
+                </div>
+                <div class="form-group mt-1">
+                    <label class="text-white" for="tenure">Tenure: *</label>
+                    <input style="width: 24.5rem;" type="text" required id="tenure" class="form-control bg-light">
+                </div>
+                <div class="row">
+                    <div class="col-md-12 align-self-center ">
+                        <button class="btn btn-primary p-2 mb-2 ">SUBMIT</button>
+                    </div>
+                </div>
+            </form> 
+
+          </div>
+        </div>   
+
+
+
+ 
+
+
+
+
+
+
+
+
+        <!-- BOOTSTRAP 5 JS -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script> -->
+        <!-- BOOTSTRAP 4.6 JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+        <script src="./Assets/js/app.js"></script>
+    </body>
+
+</html>
