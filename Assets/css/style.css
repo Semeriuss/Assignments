@@ -147,3 +147,14 @@ body {
 	color: white;
 	text-decoration: none;
 }
+
+.contactus {
+	/* display: flex; */
+	align-items: flex-start;
+	justify-content: start;
+	margin-top: 5rem;
+	margin-left: 3rem;
+	width: fit-content;
+	border: solid 0.2rem cadetblue;
+  }
+
