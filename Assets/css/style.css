@@ -152,8 +152,9 @@ body {
 	/* display: flex; */
 	align-items: flex-start;
 	justify-content: start;
-	margin-top: 5rem;
-	margin-left: 3rem;
+	margin-top: 1rem;
+	margin-left: 2rem;
+	margin-bottom: 3rem;
 	width: fit-content;
 	border: solid 0.2rem cadetblue;
   }
