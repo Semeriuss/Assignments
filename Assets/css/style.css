@@ -7,6 +7,15 @@ body {
 	overflow-x: hidden;
 }
 
+#admin-page{
+	overflow-y: hidden;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
 .navbar-brand{
 	color: white;
 }
@@ -24,8 +33,10 @@ body {
 }
 
 .nav-link:hover{
-	background-color: white;
-	color: rgba(11, 169, 22, 0.8);
+	background-color: #579ACB;
+	color: black;
+	opacity: 0.8;
+	/* color: rgba(11, 169, 22, 0.8); */
 }
 
 .center-text{
@@ -36,6 +47,18 @@ body {
 	color: white;
 	opacity: 0.5;
 	font-size: 0.4em;
+}
+
+
+#sticky-sidebar{
+	background-color: rgba(25, 49, 78, 0.8); 
+	min-height: 1080px;
+	box-shadow: 10px 0px 8px 0px #251111;
+}
+
+#main{
+	min-height: 1080px;
+	background-image: url("../imgs/bg-img.jpg");
 }
 
 
@@ -52,6 +75,9 @@ body {
 .sign_up > form {
 	background-color: #363636;
 	border-color: rgba(11, 169, 22, 0.8);
+	height: fit-content;
+	width: fit-content;
+	padding-right: 4%;
 }
 
 #inputs {
@@ -78,6 +104,7 @@ body {
 	background-color: #363636;
 	border-color: rgba(11, 169, 22, 0.8);
 	margin: auto;
+	height: fit-content;
 }
 
 .login > form > button{
