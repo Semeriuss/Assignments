@@ -60,5 +60,13 @@ var policies = {
 			data: [ 21, 45, 55 ]
 		}
 	]
-
+}
+var chDonut3 = document.getElementById('chDonut3');
+if (chDonut3) {
+	new Chart(chDonut3, {
+		type: 'pie',
+		data: policies,
+		options: donutOptions
+	});
+}
 
