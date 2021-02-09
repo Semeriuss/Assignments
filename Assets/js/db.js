@@ -81,7 +81,7 @@
 	}
 
 	//  function to Add new Insurance
-	function createInsureance(db, insurance) {
+	function createInsurance(db, insurance) {
 		// create insurance transaction
 		const txn = db.transaction('Insurance', 'readwrite');
 
@@ -129,6 +129,21 @@
 
 		txn.oncomplete = function() {
 			db.close();
+		};
+	}
+
+	function getAllInsurance() {
+		// create insurance transaction
+		const txn = db.transaction('policy', 'readwrite');
+
+		//  get the users objectStore
+		const store = txn.objectStore('policy');
+
+		let result = store.getAll();
+
+		result.onsuccess = function(e) {
+			//  DEbugging MODE
+			console.log(e.target.result);
 		};
 	}
 })();
