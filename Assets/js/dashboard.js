@@ -30,4 +30,35 @@ if (chDonut1) {
 	});
 }
 
+// donut 2
+var sub_catagory = {
+	labels: [ 'SUB-CATAGORY 1', 'SUB-catagory 2', 'SUB-catagory-3' ],
+	datasets: [
+		{
+			backgroundColor: colors.slice(0, 3),
+			borderWidth: 0,
+			data: [ 40, 45, 30 ]
+		}
+	]
+};
+var chDonut2 = document.getElementById('chDonut2');
+if (chDonut2) {
+	new Chart(chDonut2, {
+		type: 'pie',
+		data: sub_catagory,
+		options: donutOptions
+	});
+}
+
+// donut 3
+var policies = {
+	labels: [ 'Policy-1', 'policy-2', 'Other' ],
+	datasets: [
+		{
+			backgroundColor: colors.slice(0, 3),
+			borderWidth: 0,
+			data: [ 21, 45, 55 ]
+		}
+	]
+
 
