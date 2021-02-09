@@ -54,6 +54,38 @@ var accounts = new Map();
 var accountID = new Set();
 
 
+const createTag = (str, fName, lName, accNm) => {
+    console.log(`${fName} ${lName} has successfully created a Bank Account with Account Number ${accNm}`);
+    alert(`${fName} ${lName} has successfully created a Bank Account with Account Number ${accNm}`);
+}
+
+const depositTag = (str, amount, accNm) => {
+    console.log(`Successfully deposited ${amount} Birr to ${accounts.get(accNm).firstName}`);
+    alert(`Successfully deposited ${amount} Birr to ${accounts.get(accNm).firstName}`);
+}
+
+const withdrawTag = (str, amount, accNm) => {
+    console.log(`Successfully withdrew Birr ${amount} from ${accounts.get(accNm).firstName} ${accounts.get(accNm).lastName}'s Saving's Account`);
+    alert(`Successfully withdrew Birr ${amount} from ${accounts.get(accNm).firstName} ${accounts.get(accNm).lastName}'s Saving's Account`);
+}
+
+const transferTag = (str, amount, accNmF, accNmT) => {
+    console.log(`Successfully transferred Birr ${amount} from ${accounts.get(accNmF).firstName} to ${accounts.get(accNmT).firstName}'s Saving's Account`);
+    alert(`Successfully transferred Birr ${amount} from ${accounts.get(accNmF).firstName} to ${accounts.get(accNmT).firstName}'s Saving's Account`);
+}
+
+const numberOfAccounts = (str, size) => {
+    if(size == 0){
+        console.log(`No accounts exist in this Bank.`);
+    }else if(size == 1){
+        console.log(`There is ${size} account in this Bank.`);
+    }else{
+        console.log(`There are ${size} accounts in this Bank.`)
+    }
+}
+
+
+
 (function main() {
     let operator = prompt("Enter the number of your choice:\n1. Create Account\n2.Deposit\n3.Check Balance\n4.Withdraw\n5.Transfer\n ")
     
@@ -82,15 +114,18 @@ var accountID = new Set();
         let fName = Reflect.get(accountList, 0);
         let lName = Reflect.get(accountList, 1);
         let aNum = Reflect.get(accountList, 2);
-        console.log(accounts.get(acc.accountNum));
-        console.log("Successfully Created a Bank Account. Your Account number is: " + acc.accountNum);
-        alert("Successfully Created a Bank Account. Your Account number is: " + acc.accountNum);
+        numberOfAccounts`${accounts.size}`;
+            // console.log(`Successfully Created a Bank Account. Your Account number is: ${acc.accountNum}`);
+            // createTag`${acc.firstName}, ${acc.lastName}, ${acc.accountNum}`;
+            createTag`${fName}, ${lName}, ${aNum}`;
+            // alert(`Successfully Created a Bank Account. Your Account number is: ${acc.accountNum}`);
         main();
     }else if(operator == '2') {
         var val = prompt("Amount of money you want to deposit: ");
         var accNum = prompt("Please enter the account number: ");
-        console.log("Successfully deposited " + val + " Birr to " + accounts.get(accNum).firstName);
-        alert("Successfully deposited " + val + " Birr to " + accounts.get(accNum).firstName);
+        // console.log(`Successfully deposited ${val} Birr to ${accounts.get(accNum).firstName}`);
+        // alert(`Successfully deposited ${val} Birr to ${accounts.get(accNum).firstName}`);
+        depositTag`${val} ${accNum}`;
         accounts.get(accNum).depositAmount(val);
         main();
     }else if(operator == '3'){
@@ -127,7 +162,9 @@ var accountID = new Set();
             
         }else{
             console.log("The transfer was successful!");
-            alert(("The transfer was successful!"));
+            // alert(("The transfer was successful!"));
+            // console.log(accounts.get(accNumF).transferAmount(accounts.get(accNumT), val));
+            transferTag`${val} ${accNumF} ${accNumT}`;
             accounts.get(accNumF).transferAmount(accounts.get(accNumT), val);
             main();
         }
