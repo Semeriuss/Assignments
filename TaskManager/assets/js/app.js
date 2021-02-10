@@ -11,6 +11,7 @@ const clearBtn = document.querySelector(".clear-tasks"); //all task clear button
 const reloadIcon = document.querySelector('.fa'); //reload button at the top right of navigation
 const ascend = document.querySelector('.asc'); //Ascend button at the right end of page
 const descend = document.querySelector('.desc'); //Descend button at the right end of page
+const sort = document.querySelector('.dropdown-content'); //dropdown content
 var checkAscend = true; //bool function for sorting
 
 //Database var
@@ -40,7 +41,7 @@ TasklistDb.onupgradeneeded = (e) =>{
     const db = e.target.result;
 
     //create an object store
-    let store = db.createObjectStore('tasks', {keyPath: 'id', autoIncrement: true});
+    let store = db.createObjectStore('TaskList', {keyPath: 'id', autoIncrement: true});
 
     //create index
     store.createIndex('taskname', 'taskname', {unique: false});
@@ -67,6 +68,9 @@ taskList.addEventListener('click', removeTask);
 //Event listener for reload
 reloadIcon.addEventListener('click', reloadPage);
 
+//Listener for sort display
+sort.addEventListener('change', displayTaskList)
+
 //Descend event listenere
 descend.addEventListener('click', descendBool);
 
@@ -78,6 +82,7 @@ document.addEventListener('DOMContentLoaded', loadTasksfromDB);
 
 //add new task funtion definition
 function addNewTask(e){
+    e.preventDefault(); //disable form submission
     if(taskInput.value === '')
     {
         taskInput.style.borderColor = 'red';
@@ -91,8 +96,8 @@ function addNewTask(e){
     }
 
     // //adding to db, changing access to readwrite
-    const trxn= db.transaction(['tasklist'], 'readwrite');
-    const store = trxn.ObjectStore('tasklist');
+    const trxn= db.transaction(['TaskList'], 'readwrite');
+    const store = trxn.ObjectStore('TaskList');
 
     const request = store.add(newTask);
 
@@ -108,42 +113,6 @@ function addNewTask(e){
         console.log('Task added to database');
         displayTaskList();
     }
-
-
-
-    //rest of code
-    //create a li element when the user adds a task
-    const li = document.createElement('li');
-    //add a class
-    li.className = 'collection-item';
-    //create text node and append it
-    li.appendChild(document.createTextNode(taskInput.value));
-    //create new element for link
-    const link = document.createElement('a');
-    //add class and the x marker for a
-    link.innerHTML = '<i class="fa fa-remove"></i>';
-    link.className = 'delete-item secondary-content';
-    //create edit link
-    const edit = document.createElement('a');
-    //add class and edit marker for a link
-    edit.innerHTML = '<i class="fa fa-edit"></i>';
-    edit.className = 'edit-item secondary-content';
-    //append link to li
-    li.appendChild(link);
-    li.appendChild(edit);
-    if (checkAscend) {
-        //append to ul
-        taskList.appendChild(li);
-        addToDatabase(taskInput.value)
-    } else {
-        taskList.prepend(li);
-        addToDatabase(taskInput.value)
-    }    
-
-    taskInput.value = '';
-    
-    
-    e.preventDefault(); //disable form submission
 }
 
 //clear task function definition
@@ -200,6 +169,65 @@ function reloadPage(){
     location.reload();
 }
 
+//Display Task List
+function displayTaskList(){
+    //clearing previous task list
+    while(taskList.firstChild){
+        taskList.removeChild(taskList.firstChild);
+    }
+
+    //create object store
+    const store = db.transaction('TaskList').store('TaskList');
+
+    const checkSort;
+
+    if(sort.value == "Ascend"){
+        checkSort = "next"
+    }else{
+        checkSort = "prev"
+    }
+
+    const index = store.index('date');
+    index.openCursor(null, checkSort).onsuccess = (e){
+        //assign the current cursor
+        const cursor = e.target.result;
+
+        if(cursor) {
+
+            //create a li element when the user adds a task
+            const li = document.createElement('li');
+            //add a class
+            li.className = 'collection-item';
+            //create text node and append it
+            li.appendChild(document.createTextNode(taskInput.value));
+            //create new element for link
+            const link = document.createElement('a');
+            //add class and the x marker for a
+            link.innerHTML = '<i class="fa fa-remove"></i>';
+            link.className = 'delete-item secondary-content';
+            //create edit link
+            const edit = document.createElement('a');
+            //add class and edit marker for a link
+            edit.innerHTML = '<i class="fa fa-edit"></i>';
+            edit.className = 'edit-item secondary-content';
+            //append link to li
+            li.appendChild(link);
+            li.appendChild(edit);
+            // if (checkAscend) {
+            //     //append to ul
+            //     taskList.appendChild(li);
+            //     addToDatabase(taskInput.value)
+            // } else {
+            //     taskList.prepend(li);
+            //     addToDatabase(taskInput.value)
+            // }    
+            taskList.appendChild(li);
+            addToDatabase(taskInput.value)
+            // taskInput.value = '';
+            cursor.continue();
+        }
+    }
+}
 
 //descending sort function
 function descendBool(){
