@@ -90,8 +90,26 @@ function addNewTask(e){
         date: new Date().getTime()
     }
 
-    // //adding to db
-    // const trxn= db.transaction([])
+    // //adding to db, changing access to readwrite
+    const trxn= db.transaction(['tasklist'], 'readwrite');
+    const store = trxn.ObjectStore('tasklist');
+
+    const request = store.add(newTask);
+
+    //success case for request
+    request.onsuccess = () =>{
+        form.reset();
+    }
+    //error case
+    request.onerror = (e) =>{
+        console.log(e.target.errorCode);
+    }
+    request.oncomplete = () =>{
+        console.log('Task added to database');
+        displayTaskList();
+    }
+
+
 
     //rest of code
     //create a li element when the user adds a task
