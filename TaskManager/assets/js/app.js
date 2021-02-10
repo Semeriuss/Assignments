@@ -14,8 +14,8 @@ const descend = document.querySelector('.desc'); //Descend button at the right e
 const sort = document.querySelector('.dropdown-content'); //dropdown content
 var checkAscend = true; //bool function for sorting
 
-//Database var
-const db;
+// //Database var
+let db;
 
 //Initialize name and version of db
 const TasklistDb = indexedDB.open('TaskList', 1);
@@ -26,7 +26,7 @@ TasklistDb.onerror = (e) =>{
 }
 
 //in case of success
-TaskDb.onsuccess = () =>{
+TasklistDb.onsuccess = () =>{
     console.log('Database Ready');
 
     //save result
@@ -77,8 +77,6 @@ descend.addEventListener('click', descendBool);
 //Ascend event listenere
 ascend.addEventListener('click', ascendBool);
 
-// DOM load event
-document.addEventListener('DOMContentLoaded', loadTasksfromDB);
 
 //add new task funtion definition
 function addNewTask(e){
@@ -96,10 +94,10 @@ function addNewTask(e){
     }
 
     // //adding to db, changing access to readwrite
-    const trxn= db.transaction(['TaskList'], 'readwrite');
-    const store = trxn.ObjectStore('TaskList');
+    const trxn= db.transaction('TaskList', 'readwrite');
+    const store = trxn.objectStore('TaskList');
 
-    const request = store.add(newTask);
+    const request = store.put(newTask);
 
     //success case for request
     request.onsuccess = () =>{
@@ -109,7 +107,7 @@ function addNewTask(e){
     request.onerror = (e) =>{
         console.log(e.target.errorCode);
     }
-    request.oncomplete = () =>{
+    trxn.oncomplete = () =>{
         console.log('Task added to database');
         displayTaskList();
     }
@@ -150,7 +148,16 @@ function removeTask(e){
     if(e.target.parentElement.classList.contains('delete-item'))
     {
         if(confirm('Are you sure about that ?')){
-            e.target.parentElement.parentElement.remove(); 
+            const taskId = Number(e.target.parentElement.parentElement.getAttribute('data-TaskList-id'));
+            
+            //use transaction
+            const trxn = db.transaction(['TaskList'], 'readwrite');
+            const store = trxn.store('TaskList');
+            store.delete(taskId);
+
+            trxn.oncomplete = () =>{
+                e.target.parentElement.parentElement.remove(); 
+            }
         }       
     }
     if(e.target.parentElement.classList.contains('edit-item'))
@@ -177,9 +184,11 @@ function displayTaskList(){
     }
 
     //create object store
-    const store = db.transaction('TaskList').store('TaskList');
+    const trxn = db.transaction('TaskList', 'readonly');
+    const store = trxn.objectStore('TaskList');
 
-    const checkSort;
+
+    let checkSort;
 
     if(sort.value == "Ascend"){
         checkSort = "next"
@@ -188,7 +197,7 @@ function displayTaskList(){
     }
 
     const index = store.index('date');
-    index.openCursor(null, checkSort).onsuccess = (e){
+    index.openCursor(null, checkSort).onsuccess = (e) => {
         //assign the current cursor
         const cursor = e.target.result;
 
@@ -196,23 +205,26 @@ function displayTaskList(){
 
             //create a li element when the user adds a task
             const li = document.createElement('li');
+            //add id attribute value
+            li.setAttribute('taskID', cursor.value.id);
             //add a class
             li.className = 'collection-item';
             //create text node and append it
-            li.appendChild(document.createTextNode(taskInput.value));
+            li.appendChild(document.createTextNode(cursor.value.taskname));
+            li.value = cursor.value.date;
             //create new element for link
             const link = document.createElement('a');
             //add class and the x marker for a
-            link.innerHTML = '<i class="fa fa-remove"></i>';
+            link.innerHTML = `<a href="edit.html?id=${cursor.value.id}"><i class="fa fa-edit"></i></a> &nbsp <i class="fa fa-remove"></i>`;
             link.className = 'delete-item secondary-content';
             //create edit link
-            const edit = document.createElement('a');
+            // const edit = document.createElement('a');
             //add class and edit marker for a link
-            edit.innerHTML = '<i class="fa fa-edit"></i>';
-            edit.className = 'edit-item secondary-content';
+            // edit.innerHTML = '<i class="fa fa-edit"></i>';
+            // edit.className = 'edit-item secondary-content';
             //append link to li
             li.appendChild(link);
-            li.appendChild(edit);
+            // li.appendChild(edit);
             // if (checkAscend) {
             //     //append to ul
             //     taskList.appendChild(li);
@@ -222,7 +234,7 @@ function displayTaskList(){
             //     addToDatabase(taskInput.value)
             // }    
             taskList.appendChild(li);
-            addToDatabase(taskInput.value)
+            // addToDatabase(taskInput.value)
             // taskInput.value = '';
             cursor.continue();
         }
@@ -291,54 +303,6 @@ function ascendBool(){
         });
     }
     checkAscend = true;
-}
-function loadTasksFromDB()
-    {
-        let listofTasks;
-
-        if(localStorage.getItem('tasks') == null)
-        {
-            listofTasks = [];
-        }else{
-            listofTasks = JSON.parse(localStorage.getItem('tasks'));
-        }
-        return listofTasks; //return array
-    }
-
-function loadTasksfromDB()
-{ 
-    let listofTasks = loadfromDB();
-    if (listofTasks.length != 0) {
-        listofTasks.forEach(function(eachTask) {
-            
-            const li = document.createElement('li'); // Create an li element when the user adds a task
-            li.className = 'collection-item'; // Adding a class
-            li.appendChild(document.createTextNode(eachTask)); // Create text node and append it
-            const link = document.createElement('a'); // Create new element for the link
-            link.className = 'delete-item secondary-content'; // Add class and the x marker for a
-            link.innerHTML = '<i class="fa fa-remove"> </i>';
-            li.appendChild(link); // Append link to li
-            taskList.appendChild(li); // Append to UL
-        });
-    }
-}
-
-function loadTasksfromDB()
-{ 
-    let listofTasks = loadfromDB();
-    if (listofTasks.length != 0) {
-        listofTasks.forEach(function(eachTask) {
-            
-            const li = document.createElement('li'); // Create an li element when the user adds a task
-            li.className = 'collection-item'; // Adding a class
-            li.appendChild(document.createTextNode(eachTask)); // Create text node and append it
-            const link = document.createElement('a'); // Create new element for the link
-            link.className = 'delete-item secondary-content'; // Add class and the x marker for a
-            link.innerHTML = '<i class="fa fa-remove"> </i>';
-            li.appendChild(link); // Append link to li
-            taskList.appendChild(li); // Append to UL
-        });
-    }
 }
 
 
