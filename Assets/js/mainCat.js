@@ -2,9 +2,9 @@ var db = new Dexie('RETEX');
 
 db.version(1).stores({
 	users: '++id,fname,lname,&uname,psd,email,dob,policies,admin,balance',
-	policies: '++id,&name, subcat,description,premium,sum_assured',
-	main_category: '++id,&name',
-	sub_category: '++id,&name',
+	policies: '++id,&name, maincat, subcat,description,premium,sum_assured, date',
+	main_category: '++id,&name, date',
+	sub_category: '++id,&name, maincat, date',
 	pending_policies: 'uname,policy_name'
 });
 
@@ -26,34 +26,22 @@ function addDemo(title){
 			console.error(e.stack);
 		});
 }
-// addDemo({name: "Life-Insurance"});
-// addDemo({name: 'Property-Insurance'});
-// addDemo({name: 'Fire-Insurance'});
-// addDemo({name: 'Liability-Insurance'});
-// addDemo({name: 'Guarantee-Insurance'});
+// addDemo({name: "Life-Insurance", date: new Date().toISOString()});
+// addDemo({name: 'Property-Insurance', date: new Date().toLocaleDateString()});
+// addDemo({name: 'Fire-Insurance', date: new Date().toLocaleTimeString()});
+// addDemo({name: 'Liability-Insurance', date: new Date().toString()});
+// addDemo({name: 'Guarantee-Insurance', date: new Date().toUTCString()});
 
 const tableRow = document.querySelector('.rowData');
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear();
-
-today = mm + '/' + dd + '/' + yyyy;
-// document.write(today);
-// db.main_category.each(cateogry => console.table(cateogry.id));
-// const catArr = await db.main_category.toArray();
-
 function displayMainCategory() {
 	return db
 		.transaction('r', db.main_category, function() {
 			db.main_category
                 .each(val => insertElement(val))
 				.then((res) => {
-					// console.log(res);
 					return true;
 				})
 				.catch((res) => {
-					console.log(res);
 					return false;
 				});
 		})
@@ -68,15 +56,15 @@ function insertElement(objText){
     th.setAttribute('scope', 'row')
     th.appendChild(document.createTextNode(objText.id));
     const td = document.createElement('td');
-    td.className = 'rowVals';
+    td.className = 'mainCat';
     td.appendChild(document.createTextNode(objText.name));
     const td2 = document.createElement('td');
-    td2.className = 'rowDate';
-    td2.appendChild(document.createTextNode(today));
+    td2.className = 'date';
+    td2.appendChild(document.createTextNode(objText.date));
     const link = document.createElement('a');
     link.innerHTML = `<a href="edit.html">Edit Insurance Category</a>`
     const td3 = document.createElement('td');
-    td3.className = 'rowLink';
+    td3.className = 'editLink';
     td3.appendChild(link);
     tr.appendChild(th);
     tr.appendChild(td);

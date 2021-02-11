@@ -2,9 +2,9 @@ var db = new Dexie('RETEX');
 
 db.version(1).stores({
 	users: '++id,fname,lname,&uname,psd,email,dob,policies,admin,balance',
-	policies: '++id,&name, subcat,description,premium,sum_assured',
-	main_category: '++id,&name',
-	sub_category: '++id,&name',
+	policies: '++id,&name, maincat, subcat,description,premium,sum_assured, date',
+	main_category: '++id,&name, date',
+	sub_category: '++id,&name, maincat, date',
 	pending_policies: 'uname,policy_name'
 });
 
@@ -26,23 +26,13 @@ function addSubDemo(title){
 			console.error(e.stack);
 		});
 }
-// addSubDemo({name: "Health"});
-// addSubDemo({name: 'Motor'});
-// addSubDemo({name: 'Cycle'});
-// addSubDemo({name: 'Travel'});
-// addSubDemo({name: 'Mobile'});
+// addSubDemo({name: "Health", maincat: "Life-Insurance", date: new Date().toUTCString()});
+// addSubDemo({name: "Motor", maincat: "Property-Insurance", date: new Date().toUTCString()});
+// addSubDemo({name: "Cycle", maincat: "Fire-Insurance", date: new Date().toUTCString()});
+// addSubDemo({name: "Travel", maincat: "Liability-Insurance", date: new Date().toUTCString()});
+// addSubDemo({name: "Mobile", maincat: "Guarantee-Insurance", date: new Date().toUTCString()});
 
 const tableSubRow = document.querySelector('.subRowData');
-var date = new Date();
-var dd = String(date.getDate()).padStart(2, '0');
-var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = date.getFullYear();
-
-date = mm + '/' + dd + '/' + yyyy;
-// document.write(today);
-// db.main_category.each(cateogry => console.table(cateogry.id));
-// const catArr = await db.main_category.toArray();
-
 function displaySubCategory() {
 	return db
 		.transaction('r', db.sub_category, function() {
@@ -94,18 +84,18 @@ function insertSubElement(objText){
     th.setAttribute('scope', 'row');
     th.appendChild(document.createTextNode(objText.id));
     const td = document.createElement('td');
-    td.className = 'mainRowName';
-    td.appendChild(document.createTextNode("Selected Insurance"));
+    td.className = 'maincat';
+    td.appendChild(document.createTextNode(objText.maincat));
     const td1 = document.createElement('td');
-    td1.className = 'subRowVals';
+    td1.className = 'subcat';
     td1.appendChild(document.createTextNode(objText.name));
     const td2 = document.createElement('td');
-    td2.className = 'subRowDate';
-    td2.appendChild(document.createTextNode(date));
+    td2.className = 'date';
+    td2.appendChild(document.createTextNode(objText.date));
     const link = document.createElement('a');
-    link.innerHTML = `<a href="edit.html">Edit Insurance Category</a>`
+    link.innerHTML = `<a href="edit.html">Edit Insurance SubCategory</a>`
     const td3 = document.createElement('td');
-    td3.className = 'subRowLink';
+    td3.className = 'editLink';
     td3.appendChild(link);
     tr.appendChild(th);
     tr.appendChild(td);
