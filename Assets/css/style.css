@@ -7,65 +7,56 @@ body {
 	overflow-x: hidden;
 }
 
-#admin-page{
+#admin-page {
 	/* overflow-y: hidden; */
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-
-
-
-.navbar-brand{
+.navbar-brand {
 	color: white;
 }
 
-.navbar-brand:hover{
+.navbar-brand:hover {
 	color: white;
 }
 
-
-
-.nav-link{
-	color: #DBDBDB;
+.nav-link {
+	color: #dbdbdb;
 	font-size: large;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.nav-link:hover{
-	background-color: #579ACB;
+.nav-link:hover {
+	background-color: #579acb;
 	color: black;
 	opacity: 0.8;
 	/* color: rgba(11, 169, 22, 0.8); */
 }
 
-.center-text{
+.center-text {
 	color: white;
 }
 
-#disabled{
+#disabled {
 	color: white;
 	opacity: 0.5;
 	font-size: 0.4em;
 }
 
-
-#sticky-sidebar{
-	background-color: rgba(25, 49, 78, 0.8); 
+#sticky-sidebar {
+	background-color: rgba(25, 49, 78, 0.8);
 	min-height: 100vh;
 	box-shadow: 10px 0px 8px 0px #251111;
 }
 
-#main{
+#main {
 	/* min-height: 1080px; */
 	background-image: url("../imgs/bg-img.jpg");
 }
 
-
-
 ::placeholder {
 	color: white !important;
-  }
+}
 
 .sign_up {
 	display: flex;
@@ -80,25 +71,25 @@ body {
 	padding-right: 4%;
 }
 
-#inputs {
-	box-shadow: 0px 1px 38px -18px rgba(11, 169, 22, 0.75);
-	-webkit-box-shadow: 0px 1px 38px -18px rgba(11, 169, 22, 0.75);
-	-moz-box-shadow: 0px 1px 38px -18px rgba(11, 169, 22, 0.75);
+.inputs {
+	box-shadow: 0px 1px 38px -18px rgba(11, 169, 22, 0.75) !important;
+	-webkit-box-shadow: 0px 1px 38px -18px rgba(11, 169, 22, 0.75) !important;
+	-moz-box-shadow: 0px 1px 38px -18px rgba(11, 169, 22, 0.75) !important;
 
-	border-color: rgba(11, 169, 22, 0.75);
-	background-color: #757575;
-	width: 350px;
+	border-color: rgba(11, 169, 22, 0.75) !important;
+	background-color: #757575 !important;
+	width: 350px !important;
 }
 .form-control::-webkit-input-placeholder {
 	color: red;
 }
 
-.login{
+.login {
 	align-items: center;
 	justify-content: center;
 }
 
-.login > form{
+.login > form {
 	width: fit-content;
 	padding-bottom: 10rem;
 	background-color: #363636;
@@ -107,42 +98,42 @@ body {
 	height: fit-content;
 }
 
-.login > form > button{
+.login > form > button {
 	align-self: center !important;
 }
-.login_input{
+.login_input {
 	display: block;
 }
-.buttn{
+.buttn {
 	text-align: center;
 }
 .bttn {
 	display: inline-block;
 	width: 15rem;
-    font-weight: 400;
-    line-height: 1.5;
+	font-weight: 400;
+	line-height: 1.5;
 	color: #212529;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    background-color: transparent;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    border-radius: .95rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	border-radius: .95rem;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out,
+		box-shadow .15s ease-in-out;
 }
 
-
-.functionality-links{
+.functionality-links {
 	color: white;
 	opacity: 0.7;
 }
-.functionality-links:hover{
+.functionality-links:hover {
 	opacity: 1;
 	color: white;
 	text-decoration: none;
@@ -157,5 +148,4 @@ body {
 	margin-bottom: 3rem;
 	width: fit-content;
 	border: solid 0.2rem cadetblue;
-  }
-
+}

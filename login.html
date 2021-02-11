@@ -18,7 +18,7 @@
         <!-- Include Dexie DB -->
         <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
 
-        <title>Sign Up</title>
+        <title>Login</title>
 
 
     </head>
@@ -37,19 +37,20 @@
                 <div class="login_input mx-3">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <input type="text" id="inputs" placeholder="Email" class="form-control m-2"
+                            <input type="text" id="emailLogin" placeholder="Email" class="form-control m-2 inputs"
                                 style="width: 18rem; border-radius: .9rem;">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <input type="password" id="inputs" placeholder="Password" class="form-control m-2"
+                            <input type="password" id="psdLogin" placeholder="Password"
+                                class="form-control m-2 passwordLogin inputs"
                                 style="width: 18rem; border-radius: .9rem;">
                         </div>
                     </div>
                 </div>
                 <div class="buttn mt-5">
-                    <button class="bttn btn-success">Login</button>
+                    <button class="bttn btn-success" id="loginSubmit">Login</button>
                 </div>
             </form>
         </div>
@@ -73,7 +74,7 @@
             integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
             crossorigin="anonymous"></script>
 
-        <script src="./Assets/js/app.js"></script>
+        <script src="./Assets/js/login.js"></script>
     </body>
 
 </html>
