@@ -3,8 +3,8 @@ var db = new Dexie('RETEX');
 db.version(1).stores({
 	users: '++id,fname,lname,&uname,psd,email,dob,policies,admin,balance',
 	policies: '++id,&name, subcat,description,premium,sum_assured',
-	insurance: '++id,&name',
-	sub_catagory: '++id,&name',
+	main_category: '++id,&name',
+	sub_category: '++id,&name',
 	pending_policies: 'uname,policy_name'
 });
 

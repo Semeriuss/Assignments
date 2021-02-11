@@ -3,8 +3,8 @@ var db = new Dexie('RETEX');
 db.version(1).stores({
 	users: '++id,fname,lname,&uname,psd,email,dob,policies,admin,balance',
 	policies: '++id,&name, subcat,description,premium,sum_assured',
-	insurance: '++id,&name',
-	sub_catagory: '++id,&name',
+	main_category: '++id,&name',
+	sub_category: '++id,&name',
 	pending_policies: 'uname,policy_name'
 });
 
@@ -12,12 +12,30 @@ var fname = document.getElementById('fnameSignIn');
 var lname = document.getElementById('lnameSignIn');
 var psd = document.getElementById('psdSignIn');
 var email = document.getElementById('emailSignIn');
-var email = document.getElementById('emailSignIn');
+var uname = document.getElementById('unameSignIn');
 var dob = document.getElementById('dobSignIn');
 var dob = document.getElementById('dobSignIn');
 var psd = document.getElementById('psd');
 var cpsd = document.getElementById('cpsd');
 var createAcBtn = document.getElementById('createAccount');
+
+createAcBtn.addEventListener('click', () => {
+	if (psd.value == cpsd.value) {
+		console.log('CHECK');
+		create_Acount({
+			uname: uname.value,
+			fname: fname.value,
+			lname: lname.value,
+			psd: psd.value,
+			dob: dob.value,
+			admin: false,
+			balance: 0
+		});
+		console.log('SIGN UP');
+	} else {
+		console.log('psd cpsd not match');
+	}
+});
 function create_Acount(user) {
 	return db
 		.transaction('rw', db.users, function() {
