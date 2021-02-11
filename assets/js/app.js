@@ -36,6 +36,23 @@ class Account {
     };
 }
 
+
+function errorMessage(){
+    return ", your balance is insufficient for a withdrawal.";
+}
+function Response(errorMessage, name){
+    console.log(name + errorMessage());
+    alert(name + errorMessage());
+}
+
+function transferError(){
+    return ", your balance is insufficient for a transfer.";
+}
+
+function errorResponse(transferError, user){
+    return Response(transferError, user);
+}
+
 //Reflect API
 //1. Construction
 let aym = ["Aymen", "Mohammed","4231", 500];
@@ -83,6 +100,8 @@ const numberOfAccounts = (str, size) => {
         console.log(`There are ${size} accounts in this Bank.`)
     }
 }
+
+
 
 
 
@@ -142,8 +161,9 @@ const numberOfAccounts = (str, size) => {
         var accNum = prompt("Please enter the account number: ");
         var val = prompt("Amount of money you want to withdraw: ");
         if(parseInt(val)>accounts.get(accNum).balance){
-            console.log("Your balance is insufficient for a withdrawal");
-            alert("Your balance is insufficient for a withdrawal");
+            // console.log("Your balance is insufficient for a withdrawal");
+            // alert("Your balance is insufficient for a withdrawal");
+            Response(errorMessage, accounts.get(accNum).firstName);
             main();
             
         }else{
@@ -156,8 +176,9 @@ const numberOfAccounts = (str, size) => {
         var accNumT = prompt("Please enter the account number you want to transfer to\n: ");
         var val = prompt("Amount of money you want to transfer: ");
         if(parseInt(val)>accounts.get(accNumF).balance){
-            console.log("Your balance is insufficient for a transfer");
-            alert("Your balance is insufficient for a transfer");
+            // console.log("Your balance is insufficient for a transfer");
+            // alert("Your balance is insufficient for a transfer");
+            errorResponse(transferError, accounts.get(accNumF).firstName);
             main();
             
         }else{
