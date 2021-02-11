@@ -26,11 +26,11 @@ function addDemo(title){
 			console.error(e.stack);
 		});
 }
-addDemo({name: "Life-Insurance"});
-addDemo({name: 'Property-Insurance'});
-addDemo({name: 'Fire-Insurance'});
-addDemo({name: 'Liability-Insurance'});
-addDemo({name: 'Guarantee-Insurance'});
+// addDemo({name: "Life-Insurance"});
+// addDemo({name: 'Property-Insurance'});
+// addDemo({name: 'Fire-Insurance'});
+// addDemo({name: 'Liability-Insurance'});
+// addDemo({name: 'Guarantee-Insurance'});
 
 const tableRow = document.querySelector('.rowData');
 var today = new Date();
@@ -49,7 +49,7 @@ function displayMainCategory() {
 			db.main_category
                 .each(val => insertElement(val))
 				.then((res) => {
-					console.log(res);
+					// console.log(res);
 					return true;
 				})
 				.catch((res) => {
@@ -66,17 +66,17 @@ function insertElement(objText){
     const tr = document.createElement('tr');
     const th = document.createElement('th');
     th.setAttribute('scope', 'row')
-    th.appendChild(document.createTextNode(objText.id))
+    th.appendChild(document.createTextNode(objText.id));
     const td = document.createElement('td');
-    td.className = 'rowDate'
+    td.className = 'rowVals';
     td.appendChild(document.createTextNode(objText.name));
     const td2 = document.createElement('td');
-    td2.className = 'rowVals'
+    td2.className = 'rowDate';
     td2.appendChild(document.createTextNode(today));
     const link = document.createElement('a');
     link.innerHTML = `<a href="edit.html">Edit Insurance Category</a>`
     const td3 = document.createElement('td');
-    td3.className = 'rowLink'
+    td3.className = 'rowLink';
     td3.appendChild(link);
     tr.appendChild(th);
     tr.appendChild(td);
