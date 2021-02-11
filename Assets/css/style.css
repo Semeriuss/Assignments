@@ -147,5 +147,11 @@ body {
 	margin-left: 2rem;
 	margin-bottom: 3rem;
 	width: fit-content;
+<<<<<<< HEAD
 	border: solid 0.2rem cadetblue;
 }
+=======
+	border: solid 0.2rem rgba(25, 49, 78, 0.8);
+  }
+
+>>>>>>> aa4f13dfcb0e914fca8fdc87a56dc99f0e2529a4
