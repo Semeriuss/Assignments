@@ -70,6 +70,33 @@ var accounts = new Map();
 
 var accountID = new Set();
 
+var coder = {
+    show() {
+        console.log(this.message);
+        alert(this.message);
+    },
+    rule(){
+        console.log(this.display);
+    }
+}
+
+class errMessage {
+    constructor(message){
+        this.message = message;
+    }
+}
+
+class header{
+    constructor(display){
+        this.display = display;
+    }
+}
+Reflect.getPrototypeOf(errMessage);
+Reflect.setPrototypeOf(errMessage.prototype, coder);
+Reflect.setPrototypeOf(header.prototype, coder);
+// Reflect.setPrototypeOf(accounts, accountCounter);
+
+var err = new errMessage('There has been an error');
 
 const createTag = (str, fName, lName, accNm) => {
     console.log(`${fName} ${lName} has successfully created a Bank Account with Account Number ${accNm}`);
@@ -119,26 +146,37 @@ const numberOfAccounts = (str, size) => {
 
     if(operator == '1'){
         const acc = new Account();
-        acc.firstName = prompt("Enter your First Name: ");
-        acc.lastName = prompt("Enter your Last Name: ");
-        acc.accountNum = (Math.floor(Math.random() * 10000)).toString();
-        acc.balance = 0;
-        accountID.add(acc.accountNum);
-        accounts.set(acc.accountNum, acc);
-        let accountList = []//firstName, lastName, acc.accountNum, acc.balance];
-        Reflect.set(accountList, 0, firstName);
-        Reflect.set(accountList, 1, lastName);
-        Reflect.set(accountList, 2, acc.accountNum);
-        Reflect.set(accountList, 3, acc.balance);
-        let fName = Reflect.get(accountList, 0);
-        let lName = Reflect.get(accountList, 1);
-        let aNum = Reflect.get(accountList, 2);
-        numberOfAccounts`${accounts.size}`;
+        let firstName = prompt("Enter your First Name: ");
+        let lastName = prompt("Enter your Last Name: ");
+        if(firstName === "" || firstName == null || lastName === ""){
+            err.show();
+            main();
+        }else{
+            acc.firstName = firstName;
+            Reflect.set(acc)
+            acc.lastName = lastName;
+            acc.accountNum = (Math.floor(Math.random()*9)).toString();
+            accountID.add(acc.accountNum);
+            acc.balance = 0; 
+            accounts.set(acc.accountNum, acc);
+            // console.log(accounts.get(acc.accountNum));
+            let accountList = []//firstName, lastName, acc.accountNum, acc.balance];
+            Reflect.set(accountList, 0, firstName);
+            Reflect.set(accountList, 1, lastName);
+            Reflect.set(accountList, 2, acc.accountNum);
+            Reflect.set(accountList, 3, acc.balance);
+            let fName = Reflect.get(accountList, 0);
+            let lName = Reflect.get(accountList, 1);
+            let aNum = Reflect.get(accountList, 2);
+            accountCounter.increase();
+            // console.log(`${accounts.value()} savings Accounts have been created in this Bank.`)
+            numberOfAccounts`${accounts.size}`;
             // console.log(`Successfully Created a Bank Account. Your Account number is: ${acc.accountNum}`);
             // createTag`${acc.firstName}, ${acc.lastName}, ${acc.accountNum}`;
             createTag`${fName}, ${lName}, ${aNum}`;
             // alert(`Successfully Created a Bank Account. Your Account number is: ${acc.accountNum}`);
-        main();
+            main();
+        }
     }else if(operator == '2') {
         var val = prompt("Amount of money you want to deposit: ");
         var accNum = prompt("Please enter the account number: ");
@@ -190,8 +228,9 @@ const numberOfAccounts = (str, size) => {
             main();
         }
     }else{
-        console.log("Invalid Input");
-        alert("Invalid Input");
+        // console.log("Invalid Input");
+        // alert("Invalid Input");
+        err.show();
     }
 })();
 
