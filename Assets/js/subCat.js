@@ -8,8 +8,8 @@ db.version(1).stores({
 	pending_policies: 'uname,policy_name'
 });
 
-function addSubDemo(title){
-    return db
+function addSubDemo(title) {
+	return db
 		.transaction('rw', db.sub_category, function() {
 			db.sub_category
 				.add(title)
@@ -18,7 +18,7 @@ function addSubDemo(title){
 					return true;
 				})
 				.catch((val) => {
-					console.log("Some Error Happened" + val);
+					console.log('Some Error Happened' + val);
 					return false;
 				});
 		})
@@ -37,7 +37,7 @@ function displaySubCategory() {
 	return db
 		.transaction('r', db.sub_category, function() {
 			db.sub_category
-                .each(val => insertSubElement(val))
+				.each((val) => insertSubElement(val))
 				.then((res) => {
 					// console.log(res);
 					return true;
@@ -76,33 +76,31 @@ function displaySubCategory() {
 // // console.log(db.main_category.each(category => console.log(category.name)));
 // // console.log(db.main_category.get('name').where('name').equals('Fire-Insurance'));
 
-
-
-function insertSubElement(objText){
-    const tr = document.createElement('tr');
-    const th = document.createElement('th');
-    th.setAttribute('scope', 'row');
-    th.appendChild(document.createTextNode(objText.id));
-    const td = document.createElement('td');
-    td.className = 'maincat';
-    td.appendChild(document.createTextNode(objText.maincat));
-    const td1 = document.createElement('td');
-    td1.className = 'subcat';
-    td1.appendChild(document.createTextNode(objText.name));
-    const td2 = document.createElement('td');
-    td2.className = 'date';
-    td2.appendChild(document.createTextNode(objText.date));
-    const link = document.createElement('a');
-    link.innerHTML = `<a href="edit.html">Edit Insurance SubCategory</a>`
-    const td3 = document.createElement('td');
-    td3.className = 'editLink';
-    td3.appendChild(link);
-    tr.appendChild(th);
-    tr.appendChild(td);
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-    tr.appendChild(td3);
-    tableSubRow.appendChild(tr);
+function insertSubElement(objText) {
+	const tr = document.createElement('tr');
+	const th = document.createElement('th');
+	th.setAttribute('scope', 'row');
+	th.appendChild(document.createTextNode(objText.id));
+	const td = document.createElement('td');
+	td.className = 'maincat';
+	td.appendChild(document.createTextNode(objText.maincat));
+	const td1 = document.createElement('td');
+	td1.className = 'subcat';
+	td1.appendChild(document.createTextNode(objText.name));
+	const td2 = document.createElement('td');
+	td2.className = 'date';
+	td2.appendChild(document.createTextNode(moment(objText.date).format('YYYY-MM-DD')));
+	const link = document.createElement('a');
+	link.innerHTML = `<a href="edit.html"><i class="fas fa-edit"></i></a>`;
+	const td3 = document.createElement('td');
+	td3.className = 'editLink';
+	td3.appendChild(link);
+	tr.appendChild(th);
+	tr.appendChild(td);
+	tr.appendChild(td1);
+	tr.appendChild(td2);
+	tr.appendChild(td3);
+	tableSubRow.appendChild(tr);
 }
 
 displaySubCategory();
