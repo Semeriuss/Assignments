@@ -149,3 +149,13 @@ body {
 	width: fit-content;
 	border: solid 0.2rem cadetblue;
 }
+
+
+
+.back{
+	color: white;
+}
+.back:hover{
+	text-decoration: none;
+	color: rgb(161, 155, 155);
+}
