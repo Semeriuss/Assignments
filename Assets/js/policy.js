@@ -10,8 +10,8 @@ db.version(1).stores({
 
 function addPolicyDemo(title) {
 	return db
-		.transaction('rw', db.sub_category, function() {
-			db.sub_category
+		.transaction('rw', db.policies, function() {
+			db.policies
 				.add(title)
 				.then((val) => {
 					// console.log("Worked.." + val);
@@ -75,11 +75,11 @@ function addPolicyDemo(title) {
 const tablePolicyRow = document.querySelector('.policyRowData');
 function displayPolicyCategory() {
 	return db
-		.transaction('r', db.sub_category, function() {
-			db.sub_category
+		.transaction('r', db.policies, function() {
+			db.policies
 				.each((val) => insertPolicyElement(val))
 				.then((res) => {
-					// console.log(res);
+					console.log(res);
 					return true;
 				})
 				.catch((res) => {

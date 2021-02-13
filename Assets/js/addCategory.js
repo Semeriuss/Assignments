@@ -10,7 +10,7 @@ db.version(1).stores({
 
 function addMainCat(title) {
 	return db
-		.transaction('rw', db.msin_category, function() {
+		.transaction('rw', db.main_category, function() {
 			db.main_category
 				.add(title)
 				.then((val) => {

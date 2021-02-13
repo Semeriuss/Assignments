@@ -9,12 +9,13 @@ db.version(1).stores({
 });
 
 function addPolicy(title) {
+	console.log('ADD POLICY');
 	return db
-		.transaction('rw', db.sub_category, function() {
-			db.sub_category
+		.transaction('rw', db.policies, function() {
+			db.policies
 				.add(title)
 				.then((val) => {
-					// console.log("Worked.." + val);
+					console.log('Worked..' + val);
 					return true;
 				})
 				.catch((val) => {
@@ -23,6 +24,53 @@ function addPolicy(title) {
 				});
 		})
 		.catch(function(e) {
+			console.log('ERROR \n\n');
 			console.error(e.stack);
 		});
 }
+
+// addPolicy({
+// 	name: 'Policy V',
+// 	maincat: 'Life-Insurance',
+// 	subcat: 'Health',
+// 	description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
+// 	premium: '500',
+// 	sum_assured: '20,000',
+// 	date: new Date().toUTCString()
+// });
+// addPolicy({
+// 	name: 'Policy W',
+// 	maincat: 'Property-Insurance',
+// 	subcat: 'Motor',
+// 	description: 'Illo quisquam perspiciatis velit necessitatibus ducimus natus',
+// 	premium: '500',
+// 	sum_assured: '20,000',
+// 	date: new Date().toUTCString()
+// });
+// addPolicy({
+// 	name: 'Policy X',
+// 	maincat: 'Fire-Insurance',
+// 	subcat: 'Cycle',
+// 	description: 'Itaque numquam omnis ut autem, modi culpa sapiente exercitationem',
+// 	premium: '500',
+// 	sum_assured: '20,000',
+// 	date: new Date().toUTCString()
+// });
+// addPolicy({
+// 	name: 'Policy Y',
+// 	maincat: 'Liability-Insurance',
+// 	subcat: 'Travel',
+// 	description: 'Omnis modi culpa sapiente veniam aperiam ratione assumenda!',
+// 	premium: '500',
+// 	sum_assured: '20,000',
+// 	date: new Date().toUTCString()
+// });
+// addPolicy({
+// 	name: 'Policy Z',
+// 	maincat: 'Guarantee-Insurance',
+// 	subcat: 'Mobile',
+// 	description: 'Sapiente exercitationem veniam aperiam ratione assumenda!',
+// 	premium: '500',
+// 	sum_assured: '20,000',
+// 	date: new Date().toUTCString()
+// });
