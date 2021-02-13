@@ -1,13 +1,3 @@
-var db = new Dexie('RETEX');
-
-db.version(1).stores({
-	users: '++id,fname,lname,&uname,psd,email,dob,policies,admin,balance',
-	policies: '++id,&name, maincat, subcat,description,premium,sum_assured, date',
-	main_category: '++id,&name, date',
-	sub_category: '++id,&name, maincat, date',
-	pending_policies: 'uname,policy_name'
-});
-
 var fname = document.getElementById('fnameSignIn');
 var lname = document.getElementById('lnameSignIn');
 var psd = document.getElementById('psdSignIn');
@@ -37,6 +27,7 @@ createAcBtn.addEventListener('click', () => {
 	}
 });
 function create_Acount(user) {
+	console.log('USER');
 	return db
 		.transaction('rw', db.users, function() {
 			db.users
@@ -55,7 +46,7 @@ function create_Acount(user) {
 		});
 }
 
-// console.log(create_Acount({ fname: 'bini', lname: 'debebe', uname: 'bini2', psd: '123', email: 'bini', admin: true }));
+// console.log(create_Acount({ fname: 'aman', lname: 'debebe', uname: 'aman', psd: '123', email: 'aman', admin: true }));
 
 function sumbitted(val) {
 	console.log(val);
