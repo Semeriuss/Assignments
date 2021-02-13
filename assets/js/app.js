@@ -70,6 +70,26 @@ var accounts = new Map();
 
 var accountID = new Set();
 
+//Closure
+var accountCounter =(() =>{
+    var count = accounts.size;
+    function changeBy(val){
+        count += val;
+    }
+    return {
+        increase: () => {
+            changeBy(1)
+        },
+        decrease: () => {
+            changeBy(-1)
+        },
+        value: () => {
+            return count;
+        }
+    }
+
+})();
+
 var coder = {
     show() {
         console.log(this.message);
@@ -135,6 +155,7 @@ const numberOfAccounts = (str, size) => {
 (function main() {
     let operator = prompt("Enter the number of your choice:\n1. Create Account\n2.Deposit\n3.Check Balance\n4.Withdraw\n5.Transfer\n ")
     
+    accountCounter.increase();
     accounts.set(accX.accountNum, accX);
     accountID.add(accX.accountNum);
     accounts.set(accY.accountNum, accY);
