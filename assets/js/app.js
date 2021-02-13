@@ -53,6 +53,29 @@ function errorResponse(transferError, user){
     return Response(transferError, user);
 }
 
+function idGen(range){
+    var id = "";
+    // var gen = idGen(range);
+    const gen = {
+        *[Symbol.iterator](){
+            for (let loop = 0; loop<range; loop++){    
+                yield Math.floor(Math.random() * 9);
+            }
+        }
+    }
+    for (let indices of gen){
+        id += indices;
+    }
+    return id;
+}
+
+function idSetter(accountSet, length=4){
+    let gen = idGen(length);
+    var setter = accountSet.has(gen) ? idSetter(accountSet) : gen;
+    return setter;
+}
+
+
 //Reflect API
 //1. Construction
 let aym = ["Aymen", "Mohammed","4231", 500];
@@ -176,7 +199,7 @@ const numberOfAccounts = (str, size) => {
             acc.firstName = firstName;
             Reflect.set(acc)
             acc.lastName = lastName;
-            acc.accountNum = (Math.floor(Math.random()*9)).toString();
+            acc.accountNum = idSetter(accountID); //(Math.floor(Math.random()*9)).toString();
             accountID.add(acc.accountNum);
             acc.balance = 0; 
             accounts.set(acc.accountNum, acc);
