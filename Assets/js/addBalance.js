@@ -1,9 +1,13 @@
 function addBalance(uname, amount) {
-	db.transaction('rw', db.users, () => {
-		let old_balance = db.users.get('uname').equals(uname);
-		console.log(old_balance);
-		// db.users('uname').equals(uname).modify({balance:})
-	});
+	return db
+		.transaction('rw', db.users, async () => {
+			return db.users.where({ uname }).modify((user) => (user.balance += amount));
+		})
+		.catch((e) => {
+			console.log(e);
+		});
 }
 
-// addBalance('aman', 12);
+console.log('prony');
+addBalance('amand', 120);
+console.log('Print');

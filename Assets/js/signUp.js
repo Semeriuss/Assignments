@@ -7,25 +7,31 @@ var dob = document.getElementById('dobSignIn');
 var dob = document.getElementById('dobSignIn');
 var psd = document.getElementById('psd');
 var cpsd = document.getElementById('cpsd');
-var createAcBtn = document.getElementById('createAccount');
 
-createAcBtn.addEventListener('click', () => {
-	if (psd.value == cpsd.value) {
-		console.log('CHECK');
-		create_Acount({
-			uname: uname.value,
-			fname: fname.value,
-			lname: lname.value,
-			psd: psd.value,
-			dob: dob.value,
-			admin: false,
-			balance: 0
-		});
-		console.log('SIGN UP');
-	} else {
-		console.log('psd cpsd not match');
-	}
+var createAcBtn = document.getElementById('signUpForm');
+createAcBtn.addEventListener('submit', () => {
+	e.preventDefault();
+
+	console.log('CHECK');
 });
+
+// createAcBtn.addEventListener('click', () => {
+// 	if (psd.value == cpsd.value) {
+// 		console.log('CHECK');
+// 		create_Acount({
+// 			uname: uname.value,
+// 			fname: fname.value,
+// 			lname: lname.value,
+// 			psd: psd.value,
+// 			dob: dob.value,
+// 			admin: false,
+// 			balance: 0
+// 		});
+// 		console.log('SIGN UP');
+// 	} else {
+// 		console.log('psd cpsd not match');
+// 	}
+// });
 function create_Acount(user) {
 	console.log('USER');
 	return db
@@ -46,8 +52,18 @@ function create_Acount(user) {
 		});
 }
 
-// console.log(create_Acount({ fname: 'aman', lname: 'debebe', uname: 'aman', psd: '123', email: 'aman', admin: true }));
+// console.log(
+// 	create_Acount({
+// 		fname: 'aman',
+// 		lname: 'debebe',
+// 		uname: 'amand',
+// 		psd: '123',
+// 		email: 'aman',
+// 		admin: true,
+// 		balance: 0
+// 	})
+// );
 
-function sumbitted(val) {
-	console.log(val);
-}
+// function sumbitted(val) {
+// 	console.log(val);
+// }
