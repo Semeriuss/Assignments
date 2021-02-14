@@ -20,11 +20,34 @@
     </head>
 
     <body id="admin-page">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top  sidebar-bg-blue">
+  
+      
+     
+        <!-- sidebar toggle -->
+        <button class="navbar-toggler ml-auto btn btn-link border-0  " type="button" id="sidebar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          
+        </button>
+      </nav>
+    </header>
+
+      <div class="d-flex wrapper wrapper-navbar-used wrapper-navbar-fixed">
+
+        <nav role="navigation" class="sidebar sidebar-bg-white" id="navigation">
+      
+          <!-- sidebar -->
+          <div class="sidebar-menu ">
+            
+            
+            <div class="sidebar-menu-fixed">
+              <ul class="nav flex-column mx-2 my-3">  
       <!--Section to the left(sidebar)-->
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-2 col-sm-4  col-4" id="sticky-sidebar">
-              <div class="row py-3"  style="color: white;">
+          <li class="nav-item" >
+              <div class="row py-5"  style="color: white;">
+                <li class="nav-item" ></li>
                 <div class="col-md-4">
                   <i class="fas fa-user-circle fa-4x"></i>
                 </div>
@@ -32,27 +55,50 @@
                   <div class="pl-2 pt-1" style="font-size: larger;">Meti Leggese <div style="opacity: 0.6; font-size: medium;">User</div></div>
                   
                 </div>
+              </li>
               </div>
+              </li>
+              <li class="nav-item" >
+              <div class="pb-2 pt-3 pl-1" style="font-size: 0.7em; opacity: 0.6; color: white; border-bottom: 1px solid white;">MAIN MENU</div></li>
+              <li class="nav-item" >
+<div class="py-1 pl-1" style="color: white; font-size: 0.9em; border-bottom: 1px solid white;">
+              
+              <span><i class="fas fa-bars pr-2"></i></span><span>Insurance Policy</span></li>
+              <li class="nav-item" >
+                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="policy.html" class="functionality-links"><span><i class="fas fa-history pr-2"></i></span>policy</a></div>
+                </li>
+              <li class="nav-item" >
+                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="userApply.html" class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Apply</a></div>
+                </li>
 
-              <div class="pb-2 pt-3 pl-1" style="font-size: 0.7em; opacity: 0.6; color: white; border-bottom: 1px solid white;">MAIN MENU</div>
-              <div class="py-1 pl-1" style="color: white; font-size: 0.9em; border-bottom: 1px solid white;"><span><i class="fas fa-chart-bar pr-2"></i></span><span>Dashboard</span></div>
-              <div class="py-2 pb-3 pl-1" style="color: white; font-size: 1.1em; border-bottom: 1px solid white;"><span><i class="fas fa-bars pr-2"></i></span><span>Insurance</span>
-                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="apply.html" class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Apply</a></div>
+                <li class="nav-item" >
                 <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="history.html" class="functionality-links"><span><i class="fas fa-history pr-2"></i></span>History</a></div>
+                </li>
+                
+              
+       
+                
               </div>
-              <div class="py-2 pb-3 pl-1" style="color: white; font-size: 1.1em; border-bottom: 1px solid white;"><span><i class="fas fa-bars pr-2"></i></i></span><span>Ticket</span>
-                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="genrate.html" class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Genrate</a></div>
-                <div class="pt-1 pl-4" style="font-size: 0.7em;"><a href="" class="functionality-links"><span><i class="fas fa-history pr-2"></i></span>History</a></div>
+              </ul>
               </div>
-             
-          </div>
+              </div>
+              </nav>
+              
+              
+          
+          
+        
 
   
 
 
 
         <!--The section to the right(Area for tables and stastics)-->
-       
+      
+        <section>
+        
+            </section>
+      
 
  
 
@@ -76,6 +122,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <script src="./Assets/js/app.js"></script>
         <script src="./Assets/js/dashboard.js"></script>
+        <script src="./Assets/js/usercat.js"></script>
     </body>
 
 </html>
