@@ -1,5 +1,6 @@
 // UI Vars 
 const postDiv3 = document.getElementById('thePosts');
+const spinner = document.getElementById('spinner');
 
 //Load Every thing ....
 document.addEventListener("DOMContentLoaded", () => {
@@ -54,12 +55,11 @@ function load_fromPlaceHolder() {
 }
 
 async function load_fromPlaceHolder_new() {
-
     //open the request 
     let response = await fetch('https://jsonplaceholder.typicode.com/posts');
 
     let data = await response.json();
-
+    
     return data;
 
 }
@@ -73,9 +73,9 @@ function loadDataNew() {
 
         <div class="item">
         <div class="image">
-            <img src=" https://images.unsplash.com/photo-1499482125586-91609c0b5fd4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+            <img src=" https://images.unsplash.com/photo-1613047880926-105f6e0662ec?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
         </div>
-        <div class="content">
+        <div class="content"> 
             <a class="header" href="#" id="bTitle">
             ${post.title.toUpperCase()}
             </a>
@@ -92,10 +92,17 @@ function loadDataNew() {
 
 `;
             });
-            postDiv3.innerHTML = output;
+            setTimeout(() => {        
+                hide();
+                postDiv3.innerHTML = output;
+            }, 3200); 
         })
         .catch(function(err) {
             console.log(err);
         });
 
+}
+
+function hide(){
+    spinner.style.display = 'none';
 }
