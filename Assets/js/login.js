@@ -23,7 +23,12 @@ async function login(uname, psd) {
 
 	const printAddress = async () => {
 		const a = await address;
-		ab(a);
+		if (a.admin) {
+			window.location = 'adminPage.html';
+			return;
+		} else {
+			window.location = 'userPage.html';
+		}
 	};
 
 	function ab(res) {
