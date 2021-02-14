@@ -8,14 +8,43 @@ var dob = document.getElementById('dobSignIn');
 var psd = document.getElementById('psd');
 var cpsd = document.getElementById('cpsd');
 
-var createAcBtn = document.getElementById('signUpForm');
-createAcBtn.addEventListener('submit', () => {
-	e.preventDefault();
+var form = document.querySelector('#signUpForm');
+var error_txt = document.getElementById('error-text');
 
-	console.log('CHECK');
+form.addEventListener('submit', async (e) => {
+	e.preventDefault();
+	console.log('submitted');
+	if (psd.value !== cpsd.value) {
+		console.log('PSD no match');
+		error_txt.innerText = "Password doesn't match";
+		error_txt.style.color = 'red';
+		return;
+	}
+
+	if (moment(new Date()).isBefore(dob.value)) {
+		console.log('Invalid DATE');
+		error_txt.innerText = 'Invalid Date';
+		error_txt.style.color = 'red';
+		return;
+	}
+	create_Acount({
+		uname: uname.value,
+		fname: fname.value,
+		lname: lname.value,
+		email: email.value,
+		policies: [],
+		psd: psd.value,
+		dob: dob.value,
+		admin: false,
+		balance: 0
+	});
+
+	error_txt.innerText = '';
+	form.reset();
+	console.log(psd.value, cpsd.value);
 });
 
-// createAcBtn.addEventListener('click', () => {
+// form.addEventListener('click', () => {
 // 	if (psd.value == cpsd.value) {
 // 		console.log('CHECK');
 // 		create_Acount({
@@ -47,7 +76,7 @@ function create_Acount(user) {
 					return false;
 				});
 		})
-		.catch(function(e) {
+		.catch((e) => {
 			console.error(e.stack);
 		});
 }

@@ -8,6 +8,6 @@ function addBalance(uname, amount) {
 		});
 }
 
-console.log('prony');
-addBalance('amand', 120);
-console.log('Print');
+// console.log('prony');
+// addBalance('amand', 120);
+// console.log('Print');
