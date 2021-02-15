@@ -15,7 +15,7 @@ function startTime() {
     m = addZero(m);
     s = addZero(s);
     // Assign to the UI [p]
-    timerDemo.innerHTML = `${h} : ${addZero(m)} : ${addZero(s)} ${am_pm }`;
+    timerDemo.innerHTML = `${h} : ${m} : ${s} ${am_pm }`;
     setTimeout(startTime, 500);
 }
 
