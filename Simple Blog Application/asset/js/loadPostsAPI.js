@@ -53,8 +53,6 @@ function load_fromPlaceHolder() {
             console.log(err);
         });
 
-
-
 }
 
 async function load_fromPlaceHolder_new() {
