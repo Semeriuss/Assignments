@@ -1,11 +1,8 @@
-body{
-    background-color:slategray;
-}
 .clock {    
 /* width: 41.5rem;
 height: 41.5rem; */
-width: 30rem;
-height: 30rem;
+width: 25rem;
+height: 25rem;
 border-radius: 50%;
 border: 0.21rem solid cadetblue;
 box-shadow: 0.51rem 0.51rem 0.62rem 0.51rem rgba(22, 45, 75, 0.92);
@@ -43,7 +40,7 @@ border-top-right-radius: 0.438rem;
 
 .hour {
 width: 0.59rem;
-height: 20%;
+height: 14%;
 background-color: rgba(27, 43, 51, 0.92);
 }
 /* hour hand style ends */
@@ -51,7 +48,7 @@ background-color: rgba(27, 43, 51, 0.92);
 /* minute hand style */
 .minute {
 width: 0.35rem;
-height: 25%;
+height: 18%;
 background-color: rgba(32, 35, 37, 0.92);
 }  
 /* minute hand style ends */
@@ -61,7 +58,7 @@ background-color: rgba(32, 35, 37, 0.92);
 /* second hand style */
 .second {
 width: 0.2rem;
-height: 30%;
+height: 22%;
 background-color:rgba(11, 19, 29, 0.82);
 }
   
