@@ -1,13 +1,3 @@
-var db = new Dexie('RETEX');
-
-db.version(1).stores({
-	users: '++id,fname,lname,&uname,psd,email,dob,policies,admin,balance',
-	policies: '++id,&name, maincat, subcat,description,premium,sum_assured, date',
-	main_category: '++id,&name, date',
-	sub_category: '++id,&name, maincat, date',
-	pending_policies: 'uname,policy_name'
-});
-
 var fname = document.getElementById('fnameSignIn');
 var lname = document.getElementById('lnameSignIn');
 var psd = document.getElementById('psdSignIn');
@@ -17,26 +7,62 @@ var dob = document.getElementById('dobSignIn');
 var dob = document.getElementById('dobSignIn');
 var psd = document.getElementById('psd');
 var cpsd = document.getElementById('cpsd');
-var createAcBtn = document.getElementById('createAccount');
 
-createAcBtn.addEventListener('click', () => {
-	if (psd.value == cpsd.value) {
-		console.log('CHECK');
-		create_Acount({
-			uname: uname.value,
-			fname: fname.value,
-			lname: lname.value,
-			psd: psd.value,
-			dob: dob.value,
-			admin: false,
-			balance: 0
-		});
-		console.log('SIGN UP');
-	} else {
-		console.log('psd cpsd not match');
+var form = document.querySelector('#signUpForm');
+var error_txt = document.getElementById('error-text');
+
+form.addEventListener('submit', async (e) => {
+	e.preventDefault();
+	console.log('submitted');
+	if (psd.value !== cpsd.value) {
+		console.log('PSD no match');
+		error_txt.innerText = "Password doesn't match";
+		error_txt.style.color = 'red';
+		return;
 	}
+
+	if (moment(new Date()).isBefore(dob.value)) {
+		console.log('Invalid DATE');
+		error_txt.innerText = 'Invalid Date';
+		error_txt.style.color = 'red';
+		return;
+	}
+	create_Acount({
+		uname: uname.value,
+		fname: fname.value,
+		lname: lname.value,
+		email: email.value,
+		policies: [],
+		psd: psd.value,
+		dob: dob.value,
+		admin: false,
+		balance: 0
+	});
+
+	error_txt.innerText = '';
+	form.reset();
+	console.log(psd.value, cpsd.value);
 });
+
+// form.addEventListener('click', () => {
+// 	if (psd.value == cpsd.value) {
+// 		console.log('CHECK');
+// 		create_Acount({
+// 			uname: uname.value,
+// 			fname: fname.value,
+// 			lname: lname.value,
+// 			psd: psd.value,
+// 			dob: dob.value,
+// 			admin: false,
+// 			balance: 0
+// 		});
+// 		console.log('SIGN UP');
+// 	} else {
+// 		console.log('psd cpsd not match');
+// 	}
+// });
 function create_Acount(user) {
+	console.log('USER');
 	return db
 		.transaction('rw', db.users, function() {
 			db.users
@@ -50,13 +76,23 @@ function create_Acount(user) {
 					return false;
 				});
 		})
-		.catch(function(e) {
+		.catch((e) => {
 			console.error(e.stack);
 		});
 }
 
-// console.log(create_Acount({ fname: 'bini', lname: 'debebe', uname: 'bini2', psd: '123', email: 'bini', admin: true }));
+// console.log(
+// 	create_Acount({
+// 		fname: 'aman',
+// 		lname: 'debebe',
+// 		uname: 'amand',
+// 		psd: '123',
+// 		email: 'aman',
+// 		admin: true,
+// 		balance: 0
+// 	})
+// );
 
-function sumbitted(val) {
-	console.log(val);
-}
+// function sumbitted(val) {
+// 	console.log(val);
+// }
