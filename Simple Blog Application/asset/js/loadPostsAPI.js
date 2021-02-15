@@ -1,6 +1,7 @@
 // UI Vars 
 const postDiv3 = document.getElementById('thePosts');
 const spinner = document.getElementById('spinner');
+const search = document.getElementById('search');
 
 //Load Every thing ....
 document.addEventListener("DOMContentLoaded", () => {
@@ -95,7 +96,7 @@ function loadDataNew() {
             setTimeout(() => {        
                 hide();
                 postDiv3.innerHTML = output;
-            }, 3200); 
+            }, 2200); 
         })
         .catch(function(err) {
             console.log(err);
