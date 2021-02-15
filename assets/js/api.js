@@ -1,6 +1,6 @@
-var BASE_URL = 'https://restcountries.eu/rest/v2/';
+const BASE_URL = 'https://restcountries.eu/rest/v2/';
 
-requests = {
+export const requests = {
 	ALL: () => {
 		return fetch(`${BASE_URL}all`);
 	},
@@ -10,3 +10,4 @@ requests = {
 };
 
 // requests.ALL().then((val) => val.json()).then((val) => console.table(val));
+// requests.SEARCH('Ethiopia').then((res) => res.json()).then((res) => console.log(res)).catch((err) => {console.log(err);});
