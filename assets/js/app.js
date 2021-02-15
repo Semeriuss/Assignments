@@ -1,43 +1,18 @@
 import Account from './accs.js'
-
-function errorMessage(){
-    return ", your balance is insufficient for a withdrawal.";
-}
-function Response(errorMessage, name){
-    console.log(name + errorMessage());
-    alert(name + errorMessage());
-}
-
-function transferError(){
-    return ", your balance is insufficient for a transfer.";
-}
-
-function errorResponse(transferError, user){
-    return Response(transferError, user);
-}
-
-function idGen(range){
-    var id = "";
-    // var gen = idGen(range);
-    const gen = {
-        *[Symbol.iterator](){
-            for (let loop = 0; loop<range; loop++){    
-                yield Math.floor(Math.random() * 9);
-            }
-        }
-    }
-    for (let indices of gen){
-        id += indices;
-    }
-    return id;
-}
-
-function idSetter(accountSet, length=4){
-    let gen = idGen(length);
-    var setter = accountSet.has(gen) ? idSetter(accountSet) : gen;
-    return setter;
-}
-
+import { accounts } from "./accs.js";
+import { accountID } from "./accs.js";
+import { createTag } from "./accs.js";
+import { depositTag } from "./accs.js";
+import { withdrawTag } from "./accs.js";
+import { transferTag } from "./accs.js";
+import { numberOfAccounts } from "./accs.js";
+import { errorMessage } from "./accs.js";
+import { transferError } from "./accs.js";
+import { errorResponse } from "./accs.js";
+import { Response } from "./accs.js";
+import { accGen } from "./accs.js";
+import { accountCounter } from "./accs.js";
+import { idSetter } from "./accs.js";
 
 //Reflect API
 //1. Construction
@@ -50,31 +25,6 @@ const accB = Reflect.construct(Account, bin);
 const accX = Reflect.construct(Account, aym);
 const accY = Reflect.construct(Account, met);
 const accZ = Reflect.construct(Account, sem);
-
-
-var accounts = new Map();
-
-var accountID = new Set();
-
-//Closure
-var accountCounter =(() =>{
-    var count = accounts.size;
-    function changeBy(val){
-        count += val;
-    }
-    return {
-        increase: () => {
-            changeBy(1)
-        },
-        decrease: () => {
-            changeBy(-1)
-        },
-        value: () => {
-            return count;
-        }
-    }
-
-})();
 
 var coder = {
     show() {
@@ -103,41 +53,18 @@ Reflect.setPrototypeOf(header.prototype, coder);
 // Reflect.setPrototypeOf(accounts, accountCounter);
 
 var err = new errMessage('There has been an error');
+var hr = new header ("______________________________________________________");
+var er = new header ("======================================================");
 
-const createTag = (str, fName, lName, accNm) => {
-    console.log(`${fName} ${lName} has successfully created a Bank Account with Account Number ${accNm}`);
-    alert(`${fName} ${lName} has successfully created a Bank Account with Account Number ${accNm}`);
-}
 
-const depositTag = (str, amount, accNm) => {
-    console.log(`Successfully deposited ${amount} Birr to ${accounts.get(accNm).firstName}`);
-    alert(`Successfully deposited ${amount} Birr to ${accounts.get(accNm).firstName}`);
-}
-
-const withdrawTag = (str, amount, accNm) => {
-    console.log(`Successfully withdrew Birr ${amount} from ${accounts.get(accNm).firstName} ${accounts.get(accNm).lastName}'s Saving's Account`);
-    alert(`Successfully withdrew Birr ${amount} from ${accounts.get(accNm).firstName} ${accounts.get(accNm).lastName}'s Saving's Account`);
-}
-
-const transferTag = (str, amount, accNmF, accNmT) => {
-    console.log(`Successfully transferred Birr ${amount} from ${accounts.get(accNmF).firstName} to ${accounts.get(accNmT).firstName}'s Saving's Account`);
-    alert(`Successfully transferred Birr ${amount} from ${accounts.get(accNmF).firstName} to ${accounts.get(accNmT).firstName}'s Saving's Account`);
-}
-
-const numberOfAccounts = (str, size) => {
-    if(size == 0){
-        console.log(`No accounts exist in this Bank.`);
-    }else if(size == 1){
-        console.log(`There is ${size} account in this Bank.`);
-    }else{
-        console.log(`There are ${size} accounts in this Bank.`)
+function* accGen(map){
+    for(const [key, value] of map){
+        console.log(`${key}: 
+        Account Holder: ${value.firstName} ${value.lastName}
+        Account Number: ${value.accountNum}
+        Account Balance: ${value.balance}`);
     }
 }
-
-
-
-
-
 (function main() {
     let operator = prompt("Enter the number of your choice:\n1. Create Account\n2.Deposit\n3.Check Balance\n4.Withdraw\n5.Transfer\n ")
     
@@ -234,7 +161,21 @@ const numberOfAccounts = (str, size) => {
             accounts.get(accNumF).transferAmount(accounts.get(accNumT), val);
             main();
         }
-    }else{
+    }else if(operator == '6'){
+        var passkey = prompt("Please enter the Admin Passkey:\n ");
+        if(passkey == "admin"){
+            // Iterator/Generator on iterable Map Object
+            hr.rule();
+            er.rule();
+            accGen(accounts).next();
+            hr.rule();
+            er.rule();
+            main();           
+        }else{
+            err.show();
+            main();
+;        }
+        }else{
         // console.log("Invalid Input");
         // alert("Invalid Input");
         err.show();
