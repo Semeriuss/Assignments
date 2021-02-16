@@ -1,4 +1,15 @@
+var form = document.querySelector('#form');
+var insurance_input = document.getElementById('insurance_name');
+var error_label = document.getElementById('error_display');
+
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+	// console.log(insurance_input.value);
+	addMainCat({ name: insurance_input.value, date: new Date() });
+});
+
 function addMainCat(main) {
+	// console.log(main);
 	return db
 		.transaction('rw', db.main_category, function() {
 			db.main_category
@@ -13,17 +24,8 @@ function addMainCat(main) {
 				});
 		})
 		.catch((e) => {
-			console.error(e.stack);
+			console.log(e);
 		});
 }
-
-var form = document.querySelector('#form');
-var insurance_input = document.getElementById('insurance_name');
-var error_label = document.getElementById('error_display');
-
-form.addEventListener('submit', () => {
-	console.log(insurance_input.value);
-	addMainCat({ name: insurance_input.value });
-});
 
 // addMainCat({ name: 'Life Insurance' });
