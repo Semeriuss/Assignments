@@ -14,6 +14,11 @@ import { accGen } from "./accs.js";
 import { accountCounter } from "./accs.js";
 import { idSetter } from "./accs.js";
 
+// let accX = new Account("Semere", "Habtu","5123", "200");
+// let accY = new Account("Aymen", "Mohammed","4231", "500");
+// let accZ = new Account("Meti", "Legesse","6312", "700");
+
+
 //Reflect API
 //1. Construction
 let aym = ["Aymen", "Mohammed","4231", 500];
@@ -26,6 +31,18 @@ const accX = Reflect.construct(Account, aym);
 const accY = Reflect.construct(Account, met);
 const accZ = Reflect.construct(Account, sem);
 
+
+//2. Method Call
+// console.log(accB instanceof Account);
+// console.log(accB.firstName);
+
+// Reflect Set Prototype
+// Reflect.set(accounts, 'counter', accounts.size);
+Reflect.defineProperty(accounts, 'counter', {value: accounts.size});
+// Reflect.deleteProperty(accounts, 'counter');
+// console.log(accounts);
+
+//Reflect Prototype usage
 var coder = {
     show() {
         console.log(this.message);
@@ -57,16 +74,8 @@ var hr = new header ("______________________________________________________");
 var er = new header ("======================================================");
 
 
-function* accGen(map){
-    for(const [key, value] of map){
-        console.log(`${key}: 
-        Account Holder: ${value.firstName} ${value.lastName}
-        Account Number: ${value.accountNum}
-        Account Balance: ${value.balance}`);
-    }
-}
 (function main() {
-    let operator = prompt("Enter the number of your choice:\n1. Create Account\n2.Deposit\n3.Check Balance\n4.Withdraw\n5.Transfer\n ")
+    let operator = prompt("Enter the number of your choice:\n1. Create Account\n2.Deposit\n3.Check Balance\n4.Withdraw\n5.Transfer\n6.Account Dashboard (Admin Only) ")
     
     accountCounter.increase();
     accounts.set(accX.accountNum, accX);
@@ -77,7 +86,7 @@ function* accGen(map){
     accountID.add(accZ.accountNum);
     accounts.set(accB.accountNum, accB);
     accountID.add(accB.accountNum);
-
+  
     if(operator == '1'){
         const acc = new Account();
         let firstName = prompt("Enter your First Name: ");
@@ -89,7 +98,7 @@ function* accGen(map){
             acc.firstName = firstName;
             Reflect.set(acc)
             acc.lastName = lastName;
-            acc.accountNum = idSetter(accountID); //(Math.floor(Math.random()*9)).toString();
+            acc.accountNum = idSetter(accountID);//idGen(4)//(Math.floor(Math.random()*9)).toString();
             accountID.add(acc.accountNum);
             acc.balance = 0; 
             accounts.set(acc.accountNum, acc);
@@ -122,7 +131,8 @@ function* accGen(map){
     }else if(operator == '3'){
         var accNum = new String("");
         accNum = prompt("Please enter the account number: ");
-        accc = new Account();
+        let accc = new Account();
+        // accc = accounts.get(accNum);
         accc = accounts.get(accNum);
         // console.log(accc);
         // accc.checkAmount();
@@ -139,13 +149,14 @@ function* accGen(map){
             main();
             
         }else{
-            console.log("The withdrawal was successful!");
+            // console.log("The withdrawal was successful!");
+            withdrawTag`${val} ${accNum}`
             accounts.get(accNum).withdrawAmount(val);
             main();
         }
     }else if(operator == '5'){
-        var accNumF = prompt("Please enter the account number you want to transfer from\n: ");
-        var accNumT = prompt("Please enter the account number you want to transfer to\n: ");
+        var accNumF = prompt("Please enter the account number you want to transfer from:\n ");
+        var accNumT = prompt("Please enter the account number you want to transfer to:\n ");
         var val = prompt("Amount of money you want to transfer: ");
         if(parseInt(val)>accounts.get(accNumF).balance){
             // console.log("Your balance is insufficient for a transfer");
@@ -162,7 +173,7 @@ function* accGen(map){
             main();
         }
     }else if(operator == '6'){
-        var passkey = prompt("Please enter the Admin Passkey:\n ");
+        var passkey = prompt("Please enter the Admin Passkey (Password is 'admin'):\n ");
         if(passkey == "admin"){
             // Iterator/Generator on iterable Map Object
             hr.rule();
@@ -175,151 +186,10 @@ function* accGen(map){
             err.show();
             main();
 ;        }
-        }else{
+
+    }else{
         // console.log("Invalid Input");
         // alert("Invalid Input");
         err.show();
     }
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function depositAmount(Account, value){
-//     Account.balance += parseInt(value); 
-//     return Account.balance;
-// };
-// function checkAmount(Account){
-//     return Account.balance;
-// };
-// function withdrawAmount(Account, value){
-//     if(Account.balance<= parseInt(value)){
-//         return "Insufficient balance!";
-//     }else{
-//         Account.balance -= parseInt(value); 
-//         return Account.balance;}
-//     };
-// function transferAmount(AccountFrom, AccountTo, value){
-//     if(AccountFrom != AccountTo){
-//         if(AccountFrom.balance<= parseInt(value)){
-//             return "Insufficient balance!";
-//         }else{
-//             AccountFrom.balance -= parseInt(value); 
-//             AccountTo.balance += parseInt(value); 
-//             return AccountFrom.firstName + " " + AccountFrom.lastName + " " + "has transferred " + value + " Birr " + "to " + AccountTo.firstName + " " + AccountTo.lastName;
-//         }
-//     }else{
-//     return"Invalid Input";
-//     }  
-// };
-
-
-
-
-// console.log(depositAmount(accX, 400));
-// console.log(withdrawAmount(accY, 200));
-// console.log(checkAmount(accZ));
-// console.log(transferAmount(accX,accY, 300));
-
-
-
-
-
-
-
-
-
-/*var balance = 0;
-
-(function main() {
-    const operator = prompt("Enter operator (either +(Deposit), -(Withdraw), *(CheckBalance), or /(Transfer)): ");
-    
-    if(operator == '*') {
-        console.log("Your Balance is " + checkBalance());
-        main();
-    }else if(operator == '+'){
-        var val = prompt("Amount of money you want to deposit: ");
-        console.log("The deposit is successful");
-        deposit(val);
-        main();
-    }else if(operator == '-'){
-        var val = prompt("Amount of money you want to withdraw: ");
-            if(parseInt(val)>balance){
-                console.log("Your balance is insufficient to make a withdrawal");
-                main();
-                
-            }else{
-                console.log("The withdrawal was successful!");
-                withdraw(val);
-                main();
-        }
-    }else if(operator == '/'){
-        var val = prompt("Amount of money you want to transfer: ");
-        acc = prompt("Name of the account you want to tranfer to: ");
-
-        transfer(parseInt(val), acc);
-        main();
-
-    }
-})();
-
-    
-
-function deposit(value){
-    balance += parseInt(value);
-    return balance;
-}
-
-function checkBalance(){
-    return balance;
-}
-
-function withdraw(value){
-    console.log("Successful!");
-    balance-=parseInt(value);
-    return balance;
-}
-
-function transfer(value, xBalance) {
-    console.log("Successful!");
-    withdraw(parseInt(value));
-    console.log(xBalance + " has received " + value + " amount of money from you!" )
-    return balance;     
-}
-*/
-
-
-
-

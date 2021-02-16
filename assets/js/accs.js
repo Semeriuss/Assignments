@@ -112,7 +112,16 @@ export var accountCounter =(() =>{
 
 })();
 
-
+//Iterators and Generators
+//Generates a list of accounts using iterable property of Map Object
+export function* accGen(map){
+    for(const [key, value] of map){
+        console.log(`${key}: 
+        Account Holder: ${value.firstName} ${value.lastName}
+        Account Number: ${value.accountNum}
+        Account Balance: ${value.balance}`);
+    }
+}
 //Generates accound Id using user defined iterator
 export function idGen(range){
     var id = "";
