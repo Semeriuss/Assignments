@@ -1,3 +1,28 @@
+$("#edit").click(function () { 
+	var name = $("#insurance_name").val(); 
+	var str = "You Have Successfully Edited a Main Insurance Category"; 
+	$("#modal_body").html(str); 
+	updateCat({name: name, date: new Date().toUTCString()});
+	displayMainCategory();
+}); 
+
+function updateCat(input){
+	return db
+		.transaction('rw', db.main_category, () => {
+			db.policies
+				.update(input.id, {input})
+				.then((val) => {
+					return true;
+				})
+				.catch(() => {
+					return false;
+				});
+		})
+		.catch((e) => {
+			console.log(e);
+		});
+}
+
 function addDemo(title) {
 	return db
 		.transaction('rw', db.main_category, function() {
@@ -88,7 +113,8 @@ var modal = `
 					  </div>
 					  <div class="row">
 						<div class="col-md-12 mb-4 mt-2">
-						  <button class="btn btn-info px-5 p-2 mb-2" id="edit_insurance" type="submit">Save Changes</button>
+						  <button class="btn btn-info px-5 p-2 mb-2" id="edit" type="submit">Save Changes</button>
+						  <button type="button" class="btn btn-info px-2 p-2 mb-2" data-dismiss="modal">Cancel</button>
 						</div>
 					  </div>
 					</form>

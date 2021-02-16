@@ -9,12 +9,47 @@ db.version(1).stores({
 	pending_policies: 'uname,policy_name'
 });
 
+$("#edit").click(function () { 
+	var cat = $("#cat").val(); 
+	var subcat = $("#subcat").val(); 
+	var policyName = $("#policyName").val(); 
+	var sumAssured = $("#sumAssured").val(); 
+	var premium = $("#premium").val(); 
+	var str = "You Have Successfully Edited a Policy"; 
+	$("#modal_body").html(str); 
+	updatePolicy({
+		name: policyName,
+		maincat: cat,
+		subcat: subcat,
+		description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
+		premium: premium,
+		sum_assured: sumAssured,
+		date: new Date().toUTCString()
+	});
+}); 
+
+function updatePolicy(input){
+	return db
+		.transaction('rw', db.policies, () => {
+			db.policies
+				.update(input.id, {input})
+				.then((val) => {
+					return true;
+				})
+				.catch(() => {
+					return false;
+				});
+		})
+		.catch((e) => {
+			console.log(e);
+		});
+}
 
 function addPolicyDemo(title) {
 	return db
 		.transaction('rw', db.policies, function() {
 			db.policies
-				.add(title)
+				.put(title)
 				.then((val) => {
 					// console.log("Worked.." + val);
 					return true;
@@ -188,13 +223,10 @@ var modal = `
 				  <label class="text-white" for="premium">Premium: </label>
 				  <input style="width: 24.5rem;" type="text" required id="premium" class="form-control bg-light">
 				</div>
-				<div class="form-group mt-1">
-				  <label class="text-white" for="tenure">Tenure: </label>
-				  <input style="width: 24.5rem;" type="text" required id="tenure" class="form-control bg-light">
-				</div>
 				<div class="row">
 				  <div class="col-md-12 align-self-center ">
-					<button class="btn btn-info px-4 p-2 my-2 ">Save Changes</button>
+					<button id="edit" class="btn btn-info px-4 p-2 my-2 ">Save Changes</button>
+					<button type="button" class="btn btn-info px-2 p-2 mb-2" data-dismiss="modal">Cancel</button>
 				  </div>
 				</div>
 			  </form>

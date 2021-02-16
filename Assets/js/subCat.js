@@ -8,11 +8,36 @@ db.version(1).stores({
 	pending_policies: 'uname,policy_name'
 });
 
+$("#edit").click(function () { 
+	var name = $("#name").val(); 
+	var cat = $("#cat").val(); 
+	var str = "You Have Successfully Edited an Insurance Sub Category"; 
+	$("#modal_body").html(str); 
+	updateSubCat({name: cat, maincat: name, date: new Date().toUTCString()});
+}); 
+
+function updateSubCat(input){
+	return db
+		.transaction('rw', db.sub_category, () => {
+			db.policies
+				.update(input.id, {input})
+				.then((val) => {
+					return true;
+				})
+				.catch(() => {
+					return false;
+				});
+		})
+		.catch((e) => {
+			console.log(e);
+		});
+}
+
 function addSubDemo(title) {
 	return db
 		.transaction('rw', db.sub_category, function() {
 			db.sub_category
-				.add(title)
+				.put(title)
 				.then((val) => {
 					// console.log("Worked.." + val);
 					return true;
@@ -26,11 +51,11 @@ function addSubDemo(title) {
 			console.error(e.stack);
 		});
 }
-addSubDemo({name: "Health", maincat: "Life-Insurance", date: new Date().toUTCString()});
-addSubDemo({name: "Motor", maincat: "Property-Insurance", date: new Date().toUTCString()});
-addSubDemo({name: "Cycle", maincat: "Fire-Insurance", date: new Date().toUTCString()});
-addSubDemo({name: "Travel", maincat: "Liability-Insurance", date: new Date().toUTCString()});
-addSubDemo({name: "Mobile", maincat: "Guarantee-Insurance", date: new Date().toUTCString()});
+// addSubDemo({name: "Health", maincat: "Life-Insurance", date: new Date().toUTCString()});
+// addSubDemo({name: "Motor", maincat: "Property-Insurance", date: new Date().toUTCString()});
+// addSubDemo({name: "Cycle", maincat: "Fire-Insurance", date: new Date().toUTCString()});
+// addSubDemo({name: "Travel", maincat: "Liability-Insurance", date: new Date().toUTCString()});
+// addSubDemo({name: "Mobile", maincat: "Guarantee-Insurance", date: new Date().toUTCString()});
 
 const tableSubRow = document.querySelector('.subRowData');
 function displaySubCategory() {
@@ -133,7 +158,8 @@ var modal = `
 					</div>
 					<div class="row">
 						<div class="col-md-12 mb-4 mt-2">
-							<button class="btn btn-info px-5 p-2 mb-2">Save Changes</button>
+							<button id="edit" class="btn btn-info px-2 p-2 mb-2">Save Changes</button>
+							<button type="button" class="btn btn-info px-2 p-2 mb-2" data-dismiss="modal">Cancel</button>
 						</div>
 					</div>
 			  	</form>
