@@ -25,6 +25,8 @@ const rest_syntax = document.querySelector('#rest_syntax');
 const arrow_full = document.querySelector('#arrow_full');
 const arrow_red1 = document.querySelector('#arrow_red1');
 const arrow_red2 = document.querySelector('#arrow_red2');
+const arrow_es5 = document.querySelector('#es5');
+const arrow_es6 = document.querySelector('#es6');
 
 //Function borrowing
 const call_demo = document.querySelector('#call_demo');
