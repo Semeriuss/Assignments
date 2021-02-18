@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function forINLoop() {
 
     // A Student Object 
-    const student = { name: "Abebe", age: 21, year: "2dn year" }
+    const student = { name: "Abebe", age: 21, year: "2nd year" }
 
     // 1. Create a for in loop that iterate over the student object
 
@@ -19,12 +19,13 @@ function forINLoop() {
 
 
     //Use this Format 
+    for (let key in student){
+        forInLoop.innerHTML +=
+            `
+            <li class="list-group-item" >${key} : ${student[key]}</li>
 
-    // forInLoop.innerHTML +=
-    //     `
-    //     <li class="list-group-item" >${Key} : ${Value}</li>
-
-    // `;
+        `;
+    }
 
 }
 
@@ -41,11 +42,12 @@ function forOFLoop() {
 
 
     //Use this Format 
+    for (let key of students){
+        forOfLoop.innerHTML +=
+            `
+            <li class="list-group-item" >Name : ${key.name}</li>
 
-    // forOfLoop.innerHTML +=
-    //     `
-    //     <li class="list-group-item" >Name : Abebe</li>
-
-    // `;
+        `;
+    }
 
 }
