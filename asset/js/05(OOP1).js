@@ -8,7 +8,7 @@ function Person(firstName, lastName) {
     //2. Create a greeting function returns [use this keyword to get the first and last name]
     //  ==> Hi , firstName lastName
     this.greeting = () => {
-        return `Hi ${firstName} ${lastName}`;
+        return `Hi, ${firstName} ${lastName}`;
     }
 
 }
