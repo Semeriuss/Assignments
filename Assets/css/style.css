@@ -49,7 +49,7 @@ body, #admin-page {
 	margin-left: -14.375rem;
 	transition: margin 0.15s ease-out;
 	background-color: rgba(25, 49, 78, 0.8);
-	box-shadow: 10px 0px 8px 0px #251111;
+	box-shadow: 3px 0px 1px 0px #2b2828;
 
   }
   @media (min-width: 768px) {
