@@ -29,7 +29,8 @@ body, #admin-page {
 }
 .sidebar-brand{
 	font-size: x-large;
-	margin-top:3.54;
+	margin-top:0;
+	margin-left: 0;
 	text-decoration:none ;
 	color: white;
   
@@ -46,7 +47,7 @@ body, #admin-page {
   }
   
   .sidebar {
-	margin-left: -14.375rem;
+	margin-left: -17rem;
 	transition: margin 0.15s ease-out;
 	background-color: rgba(25, 49, 78, 0.8);
 	box-shadow: 3px 0px 1px 0px #2b2828;
@@ -68,7 +69,7 @@ body, #admin-page {
   }
   @media (min-width: 768px) {
 	.sidebar-toggle-visible {
-	  margin-left: -14.375rem;
+	  margin-left: -17rem;
 	}
   }
   .sidebar-rounded-top-right {
@@ -76,7 +77,7 @@ body, #admin-page {
   }
   
   .sidebar-menu {
-	width: 14.375rem;
+	width: 17rem;
   }
   .sidebar-menu-fixed {
 	position: fixed;
@@ -100,6 +101,7 @@ body, #admin-page {
 	color: #dbdbdb;
 	font-size: large;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	align-content: left;
 }
 
 .nav-link:hover {
@@ -234,4 +236,28 @@ body, #admin-page {
 .back:hover{
 	text-decoration: none;
 	color: rgb(161, 155, 155);
+}
+#index {
+    background: linear-gradient(82deg, #131648, #9a9aa2);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 13s ease infinite;
+    -moz-animation: AnimationName 13s ease infinite;
+    animation: AnimationName 13s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 7%}
+    50%{background-position:100% 94%}
+    100%{background-position:0% 7%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 7%}
+    50%{background-position:100% 94%}
+    100%{background-position:0% 7%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 7%}
+    50%{background-position:100% 94%}
+    100%{background-position:0% 7%}
 }
