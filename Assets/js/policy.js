@@ -1,22 +1,13 @@
-//Database isn't finding db from app.js...hence I brought it here @Semeriuss
-var db = new Dexie('RETEX');
+// //Database isn't finding db from app.js...hence I brought it here @Semeriuss
 
-db.version(1).stores({
-	users: '++id,fname,lname,&uname,psd,email,dob,policies,admin,balance',
-	policies: '++id,&name, maincat, subcat,description,premium,sum_assured, date',
-	main_category: '++id,&name, date',
-	sub_category: '++id,&name, maincat, date',
-	pending_policies: 'uname,policy_name'
-});
-
-$("#edit").click(function () { 
-	var cat = $("#cat").val(); 
-	var subcat = $("#subcat").val(); 
-	var policyName = $("#policyName").val(); 
-	var sumAssured = $("#sumAssured").val(); 
-	var premium = $("#premium").val(); 
-	var str = "You Have Successfully Edited a Policy"; 
-	$("#modal_body").html(str); 
+$('#edit').click(function() {
+	var cat = $('#cat').val();
+	var subcat = $('#subcat').val();
+	var policyName = $('#policyName').val();
+	var sumAssured = $('#sumAssured').val();
+	var premium = $('#premium').val();
+	var str = 'You Have Successfully Edited a Policy';
+	$('#modal_body').html(str);
 	updatePolicy({
 		name: policyName,
 		maincat: cat,
@@ -26,13 +17,13 @@ $("#edit").click(function () {
 		sum_assured: sumAssured,
 		date: new Date().toUTCString()
 	});
-}); 
+});
 
-function updatePolicy(input){
+function updatePolicy(input) {
 	return db
 		.transaction('rw', db.policies, () => {
 			db.policies
-				.update(input.id, {input})
+				.update(input.id, { input })
 				.then((val) => {
 					return true;
 				})
@@ -63,51 +54,51 @@ function addPolicyDemo(title) {
 			console.error(e.stack);
 		});
 }
-addPolicyDemo({
-	name: 'Policy V',
-	maincat: 'Life-Insurance',
-	subcat: 'Health',
-	description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
-	premium: '500',
-	sum_assured: '20,000',
-	date: new Date().toUTCString()
-});
-addPolicyDemo({
-	name: 'Policy W',
-	maincat: 'Property-Insurance',
-	subcat: 'Motor',
-	description: 'Illo quisquam perspiciatis velit necessitatibus ducimus natus',
-	premium: '500',
-	sum_assured: '20,000',
-	date: new Date().toUTCString()
-});
-addPolicyDemo({
-	name: 'Policy X',
-	maincat: 'Fire-Insurance',
-	subcat: 'Cycle',
-	description: 'Itaque numquam omnis ut autem, modi culpa sapiente exercitationem',
-	premium: '500',
-	sum_assured: '20,000',
-	date: new Date().toUTCString()
-});
-addPolicyDemo({
-	name: 'Policy Y',
-	maincat: 'Liability-Insurance',
-	subcat: 'Travel',
-	description: 'Omnis modi culpa sapiente veniam aperiam ratione assumenda!',
-	premium: '500',
-	sum_assured: '20,000',
-	date: new Date().toUTCString()
-});
-addPolicyDemo({
-	name: 'Policy Z',
-	maincat: 'Guarantee-Insurance',
-	subcat: 'Mobile',
-	description: 'Sapiente exercitationem veniam aperiam ratione assumenda!',
-	premium: '500',
-	sum_assured: '20,000',
-	date: new Date().toUTCString()
-});
+// addPolicyDemo({
+// 	name: 'Policy V',
+// 	maincat: 'Life-Insurance',
+// 	subcat: 'Health',
+// 	description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
+// 	premium: '500',
+// 	sum_assured: '20,000',
+// 	date: new Date().toUTCString()
+// });
+// addPolicyDemo({
+// 	name: 'Policy W',
+// 	maincat: 'Property-Insurance',
+// 	subcat: 'Motor',
+// 	description: 'Illo quisquam perspiciatis velit necessitatibus ducimus natus',
+// 	premium: '500',
+// 	sum_assured: '20,000',
+// 	date: new Date().toUTCString()
+// });
+// addPolicyDemo({
+// 	name: 'Policy X',
+// 	maincat: 'Fire-Insurance',
+// 	subcat: 'Cycle',
+// 	description: 'Itaque numquam omnis ut autem, modi culpa sapiente exercitationem',
+// 	premium: '500',
+// 	sum_assured: '20,000',
+// 	date: new Date().toUTCString()
+// });
+// addPolicyDemo({
+// 	name: 'Policy Y',
+// 	maincat: 'Liability-Insurance',
+// 	subcat: 'Travel',
+// 	description: 'Omnis modi culpa sapiente veniam aperiam ratione assumenda!',
+// 	premium: '500',
+// 	sum_assured: '20,000',
+// 	date: new Date().toUTCString()
+// });
+// addPolicyDemo({
+// 	name: 'Policy Z',
+// 	maincat: 'Guarantee-Insurance',
+// 	subcat: 'Mobile',
+// 	description: 'Sapiente exercitationem veniam aperiam ratione assumenda!',
+// 	premium: '500',
+// 	sum_assured: '20,000',
+// 	date: new Date().toUTCString()
+// });
 
 const tablePolicyRow = document.querySelector('.policyRowData');
 function displayPolicyCategory() {
@@ -163,6 +154,7 @@ function insertPolicyElement(objText) {
 	td6.appendChild(link);
 	tr.appendChild(th);
 	tr.appendChild(td0);
+
 	tr.appendChild(td);
 	tr.appendChild(td1);
 	tr.appendChild(td2);
@@ -236,5 +228,5 @@ var modal = `
 		</div>
 	</div>
 </div>
-`
+`;
 displayPolicyCategory();

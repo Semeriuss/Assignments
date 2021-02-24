@@ -1,16 +1,16 @@
-$("#edit").click(function () { 
-	var name = $("#insurance_name").val(); 
-	var str = "You Have Successfully Edited a Main Insurance Category"; 
-	$("#modal_body").html(str); 
-	updateCat({name: name, date: new Date().toUTCString()});
+$('#edit').click(function() {
+	var name = $('#insurance_name').val();
+	var str = 'You Have Successfully Edited a Main Insurance Category';
+	$('#modal_body').html(str);
+	updateCat({ name: name, date: new Date().toUTCString() });
 	displayMainCategory();
-}); 
+});
 
-function updateCat(input){
+function updateCat(input) {
 	return db
 		.transaction('rw', db.main_category, () => {
 			db.policies
-				.update(input.id, {input})
+				.update(input.id, { input })
 				.then((val) => {
 					return true;
 				})
@@ -124,5 +124,6 @@ var modal = `
 		</div>
 	</div>
 </div>
-`
+`;
+
 displayMainCategory();
