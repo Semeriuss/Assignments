@@ -9,8 +9,13 @@ $('#edit').click(function() {
 function updateSubCat(input) {
 	return db
 		.transaction('rw', db.sub_category, () => {
+<<<<<<< HEAD
+			db.sub_category
+				.update(input.id, {input})
+=======
 			db.policies
 				.update(input.id, { input })
+>>>>>>> 60eded69d7806f471273fa4cbe75ada7b7249dff
 				.then((val) => {
 					return true;
 				})
