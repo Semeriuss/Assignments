@@ -17,22 +17,25 @@ loginButton.addEventListener('click', async (e) => {
 // loginButton.addEventListener('click', login(email.nodeValue, psd.value));
 
 async function login(uname, psd) {
-	sessionStorage.setItem("uname", uname);
 	const address = db.users.get({ uname, psd }).then((user) => {
 		return user;
 	});
-
 	const printAddress = async () => {
 		const a = await address;
-		if (a.admin) {
-			window.location = 'adminPage.html';
-			sessionStorage.setItem("uname", uname);
-			return;
-		} else {
-			window.location = 'userPage.html';
-			sessionStorage.setItem("uname", uname);
+		console.log(a);
+		if (typeof a == 'undefined') {
+		  console.log('AAa');
+		  return;
 		}
-	};
+		if (a.admin) {
+		  window.location = 'adminPage.html';
+		  sessionStorage.setItem('uname', uname);
+		  return;
+		} else {
+		  window.location = 'userPage.html';
+		  sessionStorage.setItem('uname', uname);
+		}
+	  };
 
 	function ab(res) {
 		console.log(res);
@@ -40,6 +43,7 @@ async function login(uname, psd) {
 
 	printAddress();
 }
+
 
 // login('bini2', '1231');
 // let a = await db.users.get(2);
