@@ -9,7 +9,9 @@
 var email = document.getElementById('emailLogin');
 var psd = document.getElementById('psdLogin');
 var loginButton = document.getElementById('loginSubmit');
-loginButton.addEventListener('click', async (e) => {
+var form = document.querySelector('#Loginform');
+
+form.addEventListener('submit', async (e) => {
 	e.preventDefault();
 	await login(email.value, psd.value);
 });
@@ -23,6 +25,10 @@ async function login(uname, psd) {
 
 	const printAddress = async () => {
 		const a = await address;
+		console.log(a);
+		if (a == 'undefined') {
+			return;
+		}
 		if (a.admin) {
 			window.location = 'adminPage.html';
 			return;

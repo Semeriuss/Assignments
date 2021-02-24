@@ -1,3 +1,5 @@
+var USER;
+
 (function($) {
 	// toggle sidebar
 	$('#sidebar').on('click', function() {
