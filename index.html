@@ -8,6 +8,8 @@
         <title>Document</title>
         <!-- linked the style -->
         <link rel="stylesheet" href="./assets/css/style.css">
+        <!-- Semantic CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
         <!-- BOOTSTRAP 5 CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -19,17 +21,53 @@
     </head>
 
     <body>
-        <h1>Countries</h1>
-        <div class="row mx-3 my-3" id="view">
+    <!-- Navigation  -->
+    <div class="ui top attached tabular menu">
+        <a class="active item" href="index.html">
+          Home
+        </a>
+        <a class="item" href="#">
+            Asia
+        </a>
+        <a class="item" href="#">
+            Africa
+        </a>
+        <a class="item" href="#">
+            North America
+        </a>
+        <a class="item" href="#">
+            South America
+        </a>
+        <a class="item" href="#">
+            Europe
+        </a>
+        <a class="item" href="#">
+            Australia
+        </a>
+        <div class="right menu">
+            <div class="item">
+                <div class="ui transparent icon input">
+                    <input type="text" placeholder="Search countries..." data-np-checked="1">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui bottom attached segment">
+        <p></p>
+    </div>
+    <div class="ui container">
+        <!-- <h1>Countries</h1> -->
+        <div class="row mx-1 my-1" id="view">
 
 
         </div>
 
 
 
+    
 
-
-
+    </div>
         <!-- BOOTSTRAP 5 JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
@@ -38,8 +76,8 @@
         <!-- AUTOCOMLETE JS -->
         <script
             src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@8.3.2/dist/js/autoComplete.min.js"></script>
-
-
+        <!-- Semantic UI -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
         <script type="module" src="./assets/js/api.js"></script>
         <!-- integrated app.js -->
         <script type="module" src="./assets/js/app.js"></script>
