@@ -25,9 +25,11 @@ async function login(uname, psd) {
 		const a = await address;
 		if (a.admin) {
 			window.location = 'adminPage.html';
+			sessionStorage.setItem("uname", uname);
 			return;
 		} else {
 			window.location = 'userPage.html';
+			sessionStorage.setItem("uname", uname);
 		}
 	};
 

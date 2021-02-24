@@ -1,4 +1,8 @@
+// const deletes = document.getElementById("delete");
+// var deleteId;
+
 var db = new Dexie('RETEX');
+
 
 db.version(1).stores({
 	users: '++id,fname,lname,&uname,psd,email,dob,policies,admin,balance',
@@ -91,10 +95,15 @@ function insertSubElement(objText) {
 	td2.className = 'date';
 	td2.appendChild(document.createTextNode(moment(objText.date).format('YYYY-MM-DD')));
 	const link = document.createElement('a');
-	link.innerHTML = `<a href="edit.html"><i class="fas fa-edit"></i></a>`;
+	link.href = "edit.html";
+	link.innerHTML = `<i class="fas fa-edit mr-3"></i>`;
+	const link2 = document.createElement('a');
+	link2.href = "edit.html";
+	link2.innerHTML = `<i class="fas fa-trash" id="delete"></i>`;
 	const td3 = document.createElement('td');
 	td3.className = 'editLink';
 	td3.appendChild(link);
+	td3.appendChild(link2);
 	tr.appendChild(th);
 	tr.appendChild(td);
 	tr.appendChild(td1);
@@ -102,5 +111,10 @@ function insertSubElement(objText) {
 	tr.appendChild(td3);
 	tableSubRow.appendChild(tr);
 }
+
+// deletes.addEventListener('click', () => {
+// 	console.log("deleted");
+// });
+
 
 displaySubCategory();
