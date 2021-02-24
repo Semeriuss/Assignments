@@ -31,9 +31,11 @@ async function login(uname, psd) {
 		}
 		if (a.admin) {
 			window.location = 'adminPage.html';
+			sessionStorage.setItem("uname", uname);
 			return;
 		} else {
 			window.location = 'userPage.html';
+			sessionStorage.setItem("uname", uname);
 		}
 	};
 
