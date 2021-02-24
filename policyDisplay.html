@@ -18,7 +18,7 @@
 
 
     <!-- Include Dexie DB -->
-    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script src="./Assets/js/dexie.js"></script>
 
     <title>Retex Insurance Company</title>
 
@@ -31,8 +31,15 @@
       <div class="row">
         <div class="col-md-2 col-sm-4  col-4" id="sticky-sidebar">
           <div class="row py-3" style="color: white;">
-            <div class="col-md-4">
-              <i class="fas fa-user-circle fa-4x"></i>
+            <div class="dropdown " style="color:white">
+              <a type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                  class="fas fa-user-circle fa-3x"></i></a>
+              <div class="dropdown-menu dropdown-primary">
+                <a class="dropdown-item" href="editUserProfile.html"><i class="fas fa-user-edit"></i>&nbsp;Edit
+                  Profile</a>
+                <a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i>&nbsp;Log Out</a>
+
+              </div>
             </div>
             <div>
               <div class="pl-2 pt-1" style="font-size: larger;">Biniyam Abiy <div
@@ -145,10 +152,10 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
         <!-- Added moment js  -->
-        <script src="https://unpkg.com/moment" />
+        <script src="https://unpkg.com/moment"></script>
         <script src="./Assets/js/app.js"></script>
         <script src="./Assets/js/policy.js"></script>
-        <script src="./Assets/js/dashboard.js"></script>
+
   </body>
 
 </html>

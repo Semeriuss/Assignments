@@ -20,6 +20,7 @@
     </head>
 
     <body id="admin-page">
+        
       <nav class="navbar navbar-expand-md navbar-light fixed-top  sidebar-bg-blue">
   
       
@@ -90,6 +91,7 @@
               </div>
               </nav>
               
+              
           
           
         
@@ -100,43 +102,51 @@
 
         <!--The section to the right(Area for tables and stastics)-->
       
-        <section>
-          <div  id="main">
-      
-            <div class="mx-3">
-              <h3 class="text-light ml-4 mx-3 mt-2"></h3>
-            </div>
-            <form class=" contactus bg-dark pt-3 pl-3">
-              <p class="text-white">Apply here</p>
-              <hr style="background-color: aliceblue;">
-              <div class="form-group mt-5" style="padding-right:2rem">
-                <label class="text-white" for="category">Main Category</label><br>
-                <select style="width: 24rem;" name="category" id="cat">
-                  <option value="Select Category">Select Category</option>
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="mercedes">Mercedes</option>
-                  <option value="audi">Audi</option>
-                </select>
-              </div>
-              <div class="form-group mt-4">
-                <label class="text-white" for="subcategory">Sub Category Name</label><br>
-                <select style="width: 24rem;" name="subcategory" id="subcat">
-                  <option value="Select Category">Select Category</option>
-                  <option value="volvo">Hyundai</option>
-                  <option value="saab">BMW</option>
-                  <option value="mercedes">Toyota</option>
-                  <option value="audi">Nissan</option>
-                </select>
-              </div>
-              <div class="row">
-                <div class="col-md-12 mb-4 mt-2">
-                  <button class="btn btn-primary px-5 p-2 mb-2">Apply</button>
+        <section class="mx-auto">
+          
+            <div class=" offset">
+                <span class="anchor" id="formChangePassword"></span>
+                <hr class="mb-5">
+
+                <!-- form card change password -->
+                <div class="card card-outline-secondary">
+                    <div class="card-header">
+                        <h3 class="mb-0">Change Password</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="form" role="form" autocomplete="off">
+                            <div class="form-group">
+                                <label for="inputName">Edit Name</label>
+                                <input type="text" class="form-control" placeholder="">
+                              </div>
+                          
+                            <div class="form-group">
+                                <label for="inputPasswordOld">Current Password</label>
+                                <input type="password" class="form-control" id="inputPasswordOld" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPasswordNew">New Password</label>
+                                <input type="password" class="form-control" id="inputPasswordNew" required="">
+                                <span class="form-text small text-muted">
+                                        The password must be 8-20 characters, and must <em>not</em> contain spaces.
+                                    </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPasswordNewVerify">Verify</label>
+                                <input type="password" class="form-control" id="inputPasswordNewVerify" required="">
+                                <span class="form-text small text-muted">
+                                        To confirm, type the new password again.
+                                    </span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success btn-lg float-right">Save</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-              </div>
-            </form>
-  
-          </div>
+                <!-- /form card change password -->
+
+            </div>
             </section>
       
 
