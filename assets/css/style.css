@@ -1,0 +1,5 @@
+a:link, a:hover, a:visited, a:active{
+    text-decoration: none;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
