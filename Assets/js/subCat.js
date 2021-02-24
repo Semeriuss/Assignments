@@ -19,7 +19,7 @@ $("#edit").click(function () {
 function updateSubCat(input){
 	return db
 		.transaction('rw', db.sub_category, () => {
-			db.policies
+			db.sub_category
 				.update(input.id, {input})
 				.then((val) => {
 					return true;
