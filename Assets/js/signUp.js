@@ -81,17 +81,17 @@ function create_Acount(user) {
 		});
 }
 
-// console.log(
-// 	create_Acount({
-// 		fname: 'aman',
-// 		lname: 'debebe',
-// 		uname: 'amand',
-// 		psd: '123',
-// 		email: 'aman',
-// 		admin: true,
-// 		balance: 0
-// 	})
-// );
+console.log(
+	create_Acount({
+		fname: 'aman',
+		lname: 'debebe',
+		uname: 'amand',
+		psd: '123',
+		email: 'aman',
+		admin: true,
+		balance: 0
+	})
+);
 
 // function sumbitted(val) {
 // 	console.log(val);

@@ -45,16 +45,22 @@
             <div class="sidebar-menu-fixed">
               <ul class="nav flex-column mx-2 my-3">  
       <!--Section to the left(sidebar)-->
-      <div class="container-fluid">
+      <div class="container-fluid ">
         <div class="row">
           <li class="nav-item" >
               <div class="row py-5"  style="color: white;">
                 <li class="nav-item" ></li>
-                <div class="col-md-4">
-                  <i class="fas fa-user-circle fa-4x"></i>
+                <div class="dropdown "style="color:white">
+                  <a type="button" id="dropdownMenu" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle fa-3x"></i></a>
+                  <div class="dropdown-menu dropdown-primary">
+                    <a class="dropdown-item" href="editUserProfile.html"><i class="fas fa-user-edit"></i>&nbsp;Edit Profile</a>
+                    <a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i>&nbsp;Log Out</a>
+                    
+                  </div>
                 </div>
                 <div>
-                  <div class="pl-2 pt-1" style="font-size: larger;">Meti Leggese <div style="opacity: 0.6; font-size: medium;">User</div></div>
+                  <div class="pl-2 pt-1" style="font-size: larger;" id="name">Meti Leggese <div style="opacity: 0.6; font-size: medium;">User</div></div>
                   
                 </div>
               </li>

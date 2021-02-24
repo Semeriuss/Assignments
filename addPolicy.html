@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="./Assets/imgs/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <!-- Include Dexie DB -->
-    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script src="./Assets/js/dexie.js"></script>
 
     <title>Retex Insurance Company</title>
 
@@ -29,11 +29,18 @@
       <div class="row">
         <div class="col-md-2 col-sm-4  col-4" id="sticky-sidebar">
           <div class="row py-3" style="color: white;">
-            <div class="col-md-4">
-              <i class="fas fa-user-circle fa-4x"></i>
+            <div class="dropdown " style="color:white">
+              <a type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                  class="fas fa-user-circle fa-3x"></i></a>
+              <div class="dropdown-menu dropdown-primary">
+                <a class="dropdown-item" href="editUserProfile.html"><i class="fas fa-user-edit"></i>&nbsp;Edit
+                  Profile</a>
+                <a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i>&nbsp;Log Out</a>
+
+              </div>
             </div>
             <div>
-              <div class="pl-2 pt-1" style="font-size: larger;">Biniyam Abiy <div
+              <div id="USER" class="pl-2 pt-1" style="font-size: larger;"><div>
                   style="opacity: 0.6; font-size: medium;">Admin</div>
               </div>
               <!-- <p >Biniyam Abiy <br> Admin</p> -->
@@ -92,28 +99,20 @@
           <div class="mx-3">
             <h3 class="text-light ml-4 mx-3 mt-2">Policy Form !</h3>
           </div>
-          <form class=" col-md-5 contactus bg-dark py-3 pl-3">
+          <form class=" col-md-5 contactus bg-dark py-3 pl-3" id="form">
 
             <p class="text-white">Fill the Information</p>
             <hr style="background-color: aliceblue;">
             <div class="form-group mt-4">
               <label class="text-white" for="category">Category: *</label><br>
               <select style="width: 24.5rem;" name="category" id="cat">
-                <option value="Select Category">Select Category</option>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+
               </select>
             </div>
             <div class="form-group mt-4">
               <label class="text-white" for="subcategory">Sub Category Name: *</label>
               <select style="width: 24.5rem;" name="subcategory" id="subcat">
-                <option value="Select Category">Select Category</option>
-                <option value="volvo">Hyundai</option>
-                <option value="saab">BMW</option>
-                <option value="mercedes">Toyota</option>
-                <option value="audi">Nissan</option>
+
               </select>
             </div>
             <div class="form-group mt-1">

@@ -20,16 +20,22 @@ async function login(uname, psd) {
 	const address = db.users.get({ uname, psd }).then((user) => {
 		return user;
 	});
-
 	const printAddress = async () => {
 		const a = await address;
-		if (a.admin) {
-			window.location = 'adminPage.html';
-			return;
-		} else {
-			window.location = 'userPage.html';
+		console.log(a);
+		if (typeof a == 'undefined') {
+		  console.log('AAa');
+		  return;
 		}
-	};
+		if (a.admin) {
+		  window.location = 'adminPage.html';
+		  sessionStorage.setItem('uname', uname);
+		  return;
+		} else {
+		  window.location = 'userPage.html';
+		  sessionStorage.setItem('uname', uname);
+		}
+	  };
 
 	function ab(res) {
 		console.log(res);
@@ -37,6 +43,7 @@ async function login(uname, psd) {
 
 	printAddress();
 }
+
 
 // login('bini2', '1231');
 // let a = await db.users.get(2);

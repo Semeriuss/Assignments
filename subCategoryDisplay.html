@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
     <!-- Include Dexie DB -->
-    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script src="./Assets/js/dexie.js"></script>
 
     <title>Retex Insurance Company</title>
 
@@ -30,11 +30,18 @@
       <div class="row">
         <div class="col-md-2 col-sm-4  col-4" id="sticky-sidebar">
           <div class="row py-3" style="color: white;">
-            <div class="col-md-4">
-              <i class="fas fa-user-circle fa-4x"></i>
+            <div class="dropdown " style="color:white">
+              <a type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                  class="fas fa-user-circle fa-3x"></i></a>
+              <div class="dropdown-menu dropdown-primary">
+                <a class="dropdown-item" href="editUserProfile.html"><i class="fas fa-user-edit"></i>&nbsp;Edit
+                  Profile</a>
+                <a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i>&nbsp;Log Out</a>
+
+              </div>
             </div>
             <div>
-              <div class="pl-2 pt-1" style="font-size: larger;">Biniyam Abiy <div
+              <div id="USER" class="pl-2 pt-1" style="font-size: larger;">Biniyam Abiy <div>
                   style="opacity: 0.6; font-size: medium;">Admin</div>
               </div>
               <!-- <p >Biniyam Abiy <br> Admin</p> -->
@@ -136,13 +143,18 @@
           integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
           crossorigin="anonymous"></script>
 
-        <script src="./Assets/js/subCat.js"></script>
+
         <!-- Added moment js  -->
-        <script src="https://unpkg.com/moment"/>
+<<<<<<< HEAD
+        <script src="https://unpkg.com/moment"></script>
+=======
+        <script src="https://unpkg.com/moment" />
+>>>>>>> 0501ed40a4c5d6727b6eb76d245dd565a513b95f
         <!-- chart js cdn-->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <script src="./Assets/js/app.js"></script>
-        <script src="./Assets/js/dashboard.js"></script>
+
+        <script src="./Assets/js/subCat.js"></script>
   </body>
 
 </html>
