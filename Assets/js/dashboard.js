@@ -1,8 +1,5 @@
 /* chart.js chart examples */
-const adminName = document.getElementById("adminName");
-adminName.innerText = `${sessionStorage.getItem('uname')}`;
-const usName = document.getElementById('name');
-usName.innerText = `${sessionStorage.getItem('uname')}`;
+
 // chart colors
 var colors = [ '#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d' ];
 

@@ -17,6 +17,7 @@ loginButton.addEventListener('click', async (e) => {
 // loginButton.addEventListener('click', login(email.nodeValue, psd.value));
 
 async function login(uname, psd) {
+	sessionStorage.setItem("uname", uname);
 	const address = db.users.get({ uname, psd }).then((user) => {
 		return user;
 	});
