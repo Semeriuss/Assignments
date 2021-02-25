@@ -1,31 +1,21 @@
-<<<<<<< HEAD
-// const deletes = document.getElementById("delete");
-// var deleteId;
-
-var db = new Dexie('RETEX');
-
-
-db.version(1).stores({
-	users: '++id,fname,lname,&uname,psd,email,dob,policies,admin,balance',
-	policies: '++id,&name, maincat, subcat,description,premium,sum_assured, date',
-	main_category: '++id,&name, date',
-	sub_category: '++id,&name, maincat, date',
-	pending_policies: 'uname,policy_name'
-=======
 $('#edit').click(function() {
 	var name = $('#name').val();
 	var cat = $('#cat').val();
 	var str = 'You Have Successfully Edited an Insurance Sub Category';
 	$('#modal_body').html(str);
 	updateSubCat({ name: cat, maincat: name, date: new Date().toUTCString() });
->>>>>>> 0501ed40a4c5d6727b6eb76d245dd565a513b95f
 });
 
 function updateSubCat(input) {
 	return db
 		.transaction('rw', db.sub_category, () => {
+<<<<<<< HEAD
+			db.sub_category
+				.update(input.id, {input})
+=======
 			db.policies
 				.update(input.id, { input })
+>>>>>>> 60eded69d7806f471273fa4cbe75ada7b7249dff
 				.then((val) => {
 					return true;
 				})
@@ -121,16 +111,8 @@ function insertSubElement(objText) {
 	td2.className = 'date';
 	td2.appendChild(document.createTextNode(moment(objText.date).format('YYYY-MM-DD')));
 	const link = document.createElement('a');
-<<<<<<< HEAD
-	link.href = "edit.html";
-	link.innerHTML = `<i class="fas fa-edit mr-3"></i>`;
-	const link2 = document.createElement('a');
-	link2.href = "edit.html";
-	link2.innerHTML = `<i class="fas fa-trash" id="delete"></i>`;
-=======
 	link.innerHTML = `<a href="#" data-toggle="modal" data-target="#editModal"><i class ="fas fa-edit"></i></a>`;
 	link.innerHTML += modal;
->>>>>>> 0501ed40a4c5d6727b6eb76d245dd565a513b95f
 	const td3 = document.createElement('td');
 	td3.className = 'editLink';
 	td3.appendChild(link);
@@ -143,12 +125,6 @@ function insertSubElement(objText) {
 	tableSubRow.appendChild(tr);
 }
 
-<<<<<<< HEAD
-// deletes.addEventListener('click', () => {
-// 	console.log("deleted");
-// });
-
-=======
 var modal = `
 <div id="editModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
@@ -190,6 +166,5 @@ var modal = `
 	</div>
 </div>
 `;
->>>>>>> 0501ed40a4c5d6727b6eb76d245dd565a513b95f
 
 displaySubCategory();
