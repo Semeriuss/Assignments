@@ -38,7 +38,7 @@ form.addEventListener('submit', async (e) => {
 		admin: false,
 		balance: 0
 	});
-
+	window.location = 'login.html';
 	error_txt.innerText = '';
 	form.reset();
 	console.log(psd.value, cpsd.value);
