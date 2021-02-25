@@ -98,27 +98,19 @@
 
         <!--The section to the right(Area for tables and stastics)-->
         <div class="col-md-10" id="main">
-
-          <div class="mx-3">
-            <h3 class="text-light ml-4 mx-3 mt-2">Add Insurance Category !</h3>
-          </div>
-          <form class="col-md-5 contactus bg-dark pt-3 pl-3" id="form">
-            <p class="text-white">Fill the Information</p>
-            <hr style="background-color: aliceblue;">
-            <div class="form-group mt-4">
-              <label class="text-white" for="name">Category: *</label>
-              <input style="width: 24.5rem;" type="text" required id="insurance_name" class="form-control bg-light">
-              <label for="name" id="error_display"></label>
-            </div>
-            <div class="row">
-              <div class="col-md-12 mb-4 mt-2">
-                <button class="btn btn-primary px-5 p-2 mb-2" id="add_insurance" type="submit">Add</button>
-              </div>
-            </div>
-          </form>
-
-        </div>
-      </div>
+          <table class="table bg-light mt-5 mr-3 table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Category</th>
+                <th scope="col">Date</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody class="rowData">
+              <!-- main category list goes here -->
+            </tbody>
+          </table>
 
 
 
@@ -149,7 +141,7 @@
         crossorigin="anonymous"></script>
 
       <script src="./Assets/js/app.js"></script>
-      <script src="./Assets/js/addCategory.js"></script>
+      <script src="./Assets/js/pendDisplay.js"></script>
   </body>
 
 </html>
