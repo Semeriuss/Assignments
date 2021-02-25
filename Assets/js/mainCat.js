@@ -79,9 +79,12 @@ function insertElement(objText) {
 	const link = document.createElement('a');
 	link.innerHTML = `<a href="#" data-toggle="modal" data-target="#editModal"><i class ="fas fa-edit"></i></a>`;
 	link.innerHTML += modal;
+	const link2 = document.createElement('a');
+	link2.innerHTML = `<a href="#" id="deleteMe"><i class ="fas fa-trash ml-3"></i></a>`;
 	const td3 = document.createElement('td');
 	td3.className = 'editLink';
 	td3.appendChild(link);
+	td3.appendChild(link2);
 	tr.appendChild(th);
 	tr.appendChild(td);
 	tr.appendChild(td2);
