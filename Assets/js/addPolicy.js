@@ -4,19 +4,35 @@ var subCategory = document.querySelector('#subcat');
 var policyName = document.querySelector('#policyName');
 var sumAssured = document.querySelector('#sumAssured');
 var premium = document.querySelector('#premium');
-var tenure = document.querySelector('#tenure');
-
+var desc = document.querySelector('#policyDesc');
+form.addEventListener('submit', function(e) {
+	e.preventDefault();
+	addSub({ name: sub_name.value, maincat: category.value, date: new Date() });
+});
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
+	addPolicy({name: policyName.value, maincat: category.value, subcat: subCategory.value, description: desc.value,	premium: premium.value, sum_assured: sumAssured.value, date: new Date().toUTCString()});
+	// var input = {};
+	// input.name = policyName.textContent;
+	// input.maincat = category.value;
+	// input.subcat = subCategory.value;
+	// input.description = desc.textContent;
+	// input.premium = premium.textContent;
+	// input.sum_assured = sumAssured.textContent;
+	// input.date = new Date().toUTCString();
+	// addPolicy(input);
 	console.log(category.value);
 	console.log(subCategory.value);
 	console.log(policyName.value);
+	console.log(desc.value);
 	console.log(sumAssured.value);
 	console.log(premium.value);
-	console.log(tenure.value);
+	// console.log(tenure.value);
 
 	form.reset();
 });
+
+
 
 function addPolicy(title) {
 	console.log('ADD POLICY');
