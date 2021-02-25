@@ -9,7 +9,9 @@
 var email = document.getElementById('emailLogin');
 var psd = document.getElementById('psdLogin');
 var loginButton = document.getElementById('loginSubmit');
-loginButton.addEventListener('click', async (e) => {
+var form = document.querySelector('#Loginform');
+
+form.addEventListener('submit', async (e) => {
 	e.preventDefault();
 	await login(email.value, psd.value);
 });
