@@ -27,9 +27,36 @@ body, #admin-page {
     50%{background-position:100% 22%}
     100%{background-position:0% 79%}
 }
+
+#index,#loginbody {
+    background: linear-gradient(82deg, #131648, #9a9aa2);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 13s ease infinite;
+    -moz-animation: AnimationName 13s ease infinite;
+    animation: AnimationName 13s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 7%}
+    50%{background-position:100% 94%}
+    100%{background-position:0% 7%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 7%}
+    50%{background-position:100% 94%}
+    100%{background-position:0% 7%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 7%}
+    50%{background-position:100% 94%}
+    100%{background-position:0% 7%}
+}
+
 .sidebar-brand{
 	font-size: x-large;
-	margin-top:3.54;
+	margin-top:0;
+	margin-left: 0;
 	text-decoration:none ;
 	color: white;
   
@@ -46,7 +73,7 @@ body, #admin-page {
   }
   
   .sidebar {
-	margin-left: -14.375rem;
+	margin-left: -17rem;
 	transition: margin 0.15s ease-out;
 	background-color: rgba(25, 49, 78, 0.8);
 	box-shadow: 3px 0px 1px 0px #2b2828;
@@ -68,7 +95,7 @@ body, #admin-page {
   }
   @media (min-width: 768px) {
 	.sidebar-toggle-visible {
-	  margin-left: -14.375rem;
+	  margin-left: -17rem;
 	}
   }
   .sidebar-rounded-top-right {
@@ -76,7 +103,7 @@ body, #admin-page {
   }
   
   .sidebar-menu {
-	width: 14.375rem;
+	width: 17rem;
   }
   .sidebar-menu-fixed {
 	position: fixed;
@@ -100,6 +127,7 @@ body, #admin-page {
 	color: #dbdbdb;
 	font-size: large;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	align-content: left;
 }
 
 .nav-link:hover {
@@ -148,11 +176,11 @@ body, #admin-page {
 }
 
 .inputs {
-	box-shadow: 0px 1px 38px -18px rgba(11, 169, 22, 0.75) !important;
-	-webkit-box-shadow: 0px 1px 38px -18px rgba(11, 169, 22, 0.75) !important;
-	-moz-box-shadow: 0px 1px 38px -18px rgba(11, 169, 22, 0.75) !important;
+	box-shadow: 0px 1px 38px -18px rgb(217, 172, 7) !important;
+	-webkit-box-shadow: 0px 1px 38px -18px rgb(217, 172, 7)!important;
+	-moz-box-shadow: 0px 1px 38px -18px rgb(217, 172, 7)m !important;
 
-	border-color: rgba(11, 169, 22, 0.75) !important;
+	border-color: rgba(0, 0, 0, 0.75) !important;
 	background-color: #757575 !important;
 	width: 350px !important;
 }
@@ -168,8 +196,8 @@ body, #admin-page {
 .login > form {
 	width: fit-content;
 	padding-bottom: 10rem;
-	background-color: #363636;
-	border-color: rgba(11, 169, 22, 0.8);
+	background-color: rgb(14, 2, 44);
+	border-color: rgba(0, 0, 0, 0.8);
 	margin: auto;
 	height: fit-content;
 }
@@ -188,7 +216,7 @@ body, #admin-page {
 	width: 15rem;
 	font-weight: 400;
 	line-height: 1.5;
-	color: #212529;
+	color: #212529;;
 	text-align: center;
 	text-decoration: none;
 	vertical-align: middle;
