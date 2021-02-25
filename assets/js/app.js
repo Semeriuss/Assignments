@@ -2,6 +2,7 @@ import { requests } from "./api.js";
 
 const appLi = document.getElementById('view');
 const appLiAsia = document.getElementById('viewAsia');
+const appLiAustralia = document.getElementById('viewAustralia');
 const spin = document.getElementById('spinner');
 const search = document.getElementById("example-search-input");
 search.addEventListener("keyup", searchCountries);
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //load_fromPlaceHolder();
     loadDataNew();
     loadDataNewAsia();
+    loadDataNewAustralia();
 });
 
 //load a single customer function 
@@ -109,7 +111,32 @@ function loadDataNewAsia() {
 
 }
 
+function loadDataNewAustralia() {
+    load_fromPlaceHolder_new().then(function(countries) {
+            let display = '';
+            countries.forEach(function(country) {
+                if (country.region == "Oceania") {
+                    display += `
+                <div class="col-md-4 mr-1 mb-4 border-dark">
+                        <div class="card">
+                            <div class="card-body bg-info">
+                                <img style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${country.flag}" alt="">
+                                <h4 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${country.name}</h4>
+                                <h5 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${country.capital}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+                }
+            });
+            appLiAustralia.innerHTML = display;
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
 
+}
 
 
 function searchCountries() {
