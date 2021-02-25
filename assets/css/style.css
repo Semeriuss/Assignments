@@ -1,5 +1,14 @@
-a:link, a:hover, a:visited, a:active{
+a:link, a:visited, a:active{
     text-decoration: none;
     color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+a:hover{
+    background-color: rgb(39, 53, 65);
+    color: white;
+}
+
+.names{
+    /* font-size: 100rem; */
 }
