@@ -52,6 +52,9 @@ function displayPendingPolicies() {
 
 function insertElement(pendingPolicy) {
 	const tr = document.createElement('tr');
+	const td0 = document.createElement('td');
+	td0.className = 'policyId';
+	td0.appendChild(document.createTextNode(pendingPolicy.id));
 	const td = document.createElement('td');
 	td.className = 'customerName';
 	td.appendChild(document.createTextNode(pendingPolicy.uname));
@@ -66,6 +69,7 @@ function insertElement(pendingPolicy) {
 	td3.className = 'editLink';
 	td3.appendChild(link);
     td3.appendChild(link2);
+	tr.appendChild(td0);
 	tr.appendChild(td);
 	tr.appendChild(td2);
 	tr.appendChild(td3);
