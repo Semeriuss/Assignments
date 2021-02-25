@@ -113,9 +113,9 @@ function loadDataNewAsia() {
 
 
 function searchCountries() {
-//     spin.innerHTML = `<div class="spinner-border text-primary" role="status">
-//     <span class="sr-only"></span>
-//   </div>`;
+    spin.innerHTML = `<div class="spinner-border text-primary m-4" role="status">
+    <span class="sr-only"></span>
+  </div>`;
     //open the request 
 
     load_fromPlaceHolder_new()
@@ -145,10 +145,10 @@ function searchCountries() {
                 
             }
             
-            // setTimeout( () => {
-            //     spin.innerHTML = ``;
+            setTimeout( () => {
+                spin.innerHTML = ``;
                 appLi.innerHTML = output;
-            // }, 500);
+            }, 500);
 
             
          
