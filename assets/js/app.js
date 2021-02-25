@@ -63,7 +63,6 @@ function loadDataNew() {
             countries.forEach(function(country) {
                 display += `
                 <div class="col-md-4 mr-1 mb-4">
-                    <div class="card-header"><h6 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="card-text">${country.region}</h6></div>
                         <div class="card">
                             <div class="card-body">
                                 <img class="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${country.flag}" alt="">
@@ -90,16 +89,16 @@ function loadDataNewAsia() {
             countries.forEach(function(country) {
                 if (country.region == "Asia") {
                     display += `
-                <div class="col-md-4 mr-1 mb-4 border-dark">
-                        <div class="card">
-                            <div class="card-body bg-info">
-                                <img style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${country.flag}" alt="">
-                                <h4 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${country.name}</h4>
-                                <h5 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${country.capital}</h5>
-                            </div>
+                    <div class="col-md-4 mr-1 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${country.flag}" alt="">
+                            <h4 class="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${country.name}</h4>
+                            <h5 class="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${country.capital}</h5>
                         </div>
                     </div>
                 </div>
+            </div>
                 `;
                 }
             });
@@ -117,16 +116,16 @@ function loadDataNewAustralia() {
             countries.forEach(function(country) {
                 if (country.region == "Oceania") {
                     display += `
-                <div class="col-md-4 mr-1 mb-4 border-dark">
-                        <div class="card">
-                            <div class="card-body bg-info">
-                                <img style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${country.flag}" alt="">
-                                <h4 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${country.name}</h4>
-                                <h5 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${country.capital}</h5>
-                            </div>
+                    <div class="col-md-4 mr-1 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${country.flag}" alt="">
+                            <h4 class="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${country.name}</h4>
+                            <h5 class="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${country.capital}</h5>
                         </div>
                     </div>
                 </div>
+            </div>
                 `;
                 }
             });
@@ -157,16 +156,16 @@ function searchCountries() {
                 const searchContent = search.value.toUpperCase();                
                 if (toBeSearched[i].name.toUpperCase().indexOf(searchContent) > -1) {   
                 output += `
-                <div class="col-md-4 mr-1 mb-4 border-dark">
+                <div class="col-md-4 mr-1 mb-4">
                         <div class="card">
-                            <div class="card-body bg-info">
-                                <img style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${toBeSearched[i].flag}" alt="">
-                                <h4 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${toBeSearched[i].name}</h4>
-                                <h5 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${toBeSearched[i].capital}</h5>
+                            <div class="card-body">
+                                <img class="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${toBeSearched[i].flag}" alt="">
+                                <h4 class="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${toBeSearched[i].name}</h4>
+                                <h5 class="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${toBeSearched[i].capital}</h5>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>   
                 `;
                 }
                 
