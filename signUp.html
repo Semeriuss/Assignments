@@ -25,8 +25,10 @@
 
     </head>
 
-    <body style="background-color: rgb(43, 43, 65);">
-        <a class="back" href="./index.html"><i class="fas fa-chevron-circle-left fa-2x ml-4 mt-4"></i></a>
+    <body id="signUpBody" >
+        <div class="container-fluid">
+        <a class="back navbar-brand" href="./index.html"><img class="img-fluid" src="./Assets/imgs/logo.png" alt="">RETEX INSURANCE COMPANY</a>
+        </div>>
 
 
         <div class="container sign_up mt-5 pt-5">
@@ -43,20 +45,20 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <input type="text" id="fnameSignIn" placeholder="First Name" required minlength="2"
-                                class="form-control inputs m-2 ">
+                                class="form-control inputs m-2 " style="color:white;">
 
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <input type="text" id="lnameSignIn" placeholder="Last Name" required minlength="2"
-                                class="form-control inputs m-2 ">
+                                class="form-control inputs m-2 " style="color:white;">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <input type="text" id="unameSignIn" placeholder="User Name" required minlength="2"
-                                class="form-control inputs m-2">
+                                class="form-control inputs m-2" style="color:white">
                         </div>
                     </div>
                 </div>
@@ -66,13 +68,13 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <input type="email" id="emailSignIn" placeholder="Email" required
-                                class="form-control inputs m-2">
+                                class="form-control inputs m-2" style="color:white;">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <input type="date" id="dobSignIn" required placeholder="Date of Birth"
-                                class="form-control inputs m-2">
+                                class="form-control inputs m-2" style="color:white;">
                         </div>
                     </div>
                 </div>
@@ -82,18 +84,18 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <input type="password" id="psd" required placeholder="Password" minlength="6"
-                                class="form-control inputs m-2">
+                                class="form-control inputs m-2" style="color:white;">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <input type="password" id="cpsd" required placeholder="Confirm Password" minlength="6"
-                                class="form-control inputs m-2">
+                                class="form-control inputs m-2" style="color:white;">
                         </div>
                     </div>
                 </div>
 
-                <button class="btn btn-success p-2 m-3" id="createAccount" type="submit">Create Account</button>
+                <button class="btn btn-warning p-2 m-3" id="createAccount" type="submit">Create Account</button>
             </form>
         </div>
 
