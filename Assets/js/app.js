@@ -40,5 +40,9 @@ db.version(1).stores({
 	pending_policies: 'uname,policy_name'
 });
 
-const USER = document.getElementById("USER");
-USER.innerText = `${sessionStorage.getItem("uname")}`;
+if (document.getElementById("USER") != null) {
+	const USER = document.getElementById("USER");
+	USER.innerText = `${sessionStorage.getItem("uname")}`;
+}
+
+
