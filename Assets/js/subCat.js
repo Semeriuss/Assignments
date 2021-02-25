@@ -1,26 +1,16 @@
-var db = new Dexie('RETEX');
-
-db.version(1).stores({
-	users: '++id,fname,lname,&uname,psd,email,dob,policies,admin,balance',
-	policies: '++id,&name, maincat, subcat,description,premium,sum_assured, date',
-	main_category: '++id,&name, date',
-	sub_category: '++id,&name, maincat, date',
-	pending_policies: 'uname,policy_name'
+$('#edit').click(function() {
+	var name = $('#name').val();
+	var cat = $('#cat').val();
+	var str = 'You Have Successfully Edited an Insurance Sub Category';
+	$('#modal_body').html(str);
+	updateSubCat({ name: cat, maincat: name, date: new Date().toUTCString() });
 });
 
-$("#edit").click(function () { 
-	var name = $("#name").val(); 
-	var cat = $("#cat").val(); 
-	var str = "You Have Successfully Edited an Insurance Sub Category"; 
-	$("#modal_body").html(str); 
-	updateSubCat({name: cat, maincat: name, date: new Date().toUTCString()});
-}); 
-
-function updateSubCat(input){
+function updateSubCat(input) {
 	return db
 		.transaction('rw', db.sub_category, () => {
 			db.policies
-				.update(input.id, {input})
+				.update(input.id, { input })
 				.then((val) => {
 					return true;
 				})
@@ -121,6 +111,7 @@ function insertSubElement(objText) {
 	const td3 = document.createElement('td');
 	td3.className = 'editLink';
 	td3.appendChild(link);
+	td3.appendChild(link2);
 	tr.appendChild(th);
 	tr.appendChild(td);
 	tr.appendChild(td1);
@@ -169,6 +160,6 @@ var modal = `
 		</div>
 	</div>
 </div>
-`
+`;
 
 displaySubCategory();

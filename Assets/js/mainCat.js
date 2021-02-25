@@ -1,16 +1,16 @@
-$("#edit").click(function () { 
-	var name = $("#insurance_name").val(); 
-	var str = "You Have Successfully Edited a Main Insurance Category"; 
-	$("#modal_body").html(str); 
-	updateCat({name: name, date: new Date().toUTCString()});
+$('#edit').click(function() {
+	var name = $('#insurance_name').val();
+	var str = 'You Have Successfully Edited a Main Insurance Category';
+	$('#modal_body').html(str);
+	updateCat({ name: name, date: new Date().toUTCString() });
 	displayMainCategory();
-}); 
+});
 
-function updateCat(input){
+function updateCat(input) {
 	return db
 		.transaction('rw', db.main_category, () => {
 			db.policies
-				.update(input.id, {input})
+				.update(input.id, { input })
 				.then((val) => {
 					return true;
 				})
@@ -79,9 +79,12 @@ function insertElement(objText) {
 	const link = document.createElement('a');
 	link.innerHTML = `<a href="#" data-toggle="modal" data-target="#editModal"><i class ="fas fa-edit"></i></a>`;
 	link.innerHTML += modal;
+	const link2 = document.createElement('a');
+	link2.innerHTML = `<a href="#" class="deleteMe" id="${objText.name}"><i class ="fas fa-trash ml-3"></i></a>`;
 	const td3 = document.createElement('td');
 	td3.className = 'editLink';
 	td3.appendChild(link);
+	td3.appendChild(link2);
 	tr.appendChild(th);
 	tr.appendChild(td);
 	tr.appendChild(td2);
@@ -124,5 +127,6 @@ var modal = `
 		</div>
 	</div>
 </div>
-`
+`;
+
 displayMainCategory();
