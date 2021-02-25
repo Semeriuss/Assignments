@@ -9,5 +9,5 @@ export const requests = {
 	}
 };
 
-// requests.ALL().then((val) => val.json()).then((val) => console.table(val));
+requests.ALL().then((val) => val.json()).then((val) => console.table(val));
 // requests.SEARCH('Ethiopia').then((res) => res.json()).then((res) => console.log(res)).catch((err) => {console.log(err);});

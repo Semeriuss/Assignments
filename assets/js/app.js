@@ -1,11 +1,13 @@
 import { requests } from "./api.js";
 
 const appLi = document.getElementById('view');
+const appLiAsia = document.getElementById('viewAsia');
 
 //Load Every thing ....
 document.addEventListener("DOMContentLoaded", () => {
     //load_fromPlaceHolder();
     loadDataNew();
+    loadDataNewAsia();
 });
 
 //load a single customer function 
@@ -76,3 +78,31 @@ function loadDataNew() {
 
 }
 
+
+function loadDataNewAsia() {
+    load_fromPlaceHolder_new().then(function(countries) {
+            let display = '';
+            countries.forEach(function(country) {
+                if (country.region == "Asia") {
+                    display += `
+                <div class="col-md-4 mr-1 mb-4 border-dark">
+                    <div class="card-header"><h6 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="card-text">${country.region}</h6></div>
+                        <div class="card">
+                            <div class="card-body bg-info">
+                                <img style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${country.flag}" alt="">
+                                <h4 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${country.name}</h4>
+                                <h5 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${country.capital}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+                }
+            });
+            appLiAsia.innerHTML = display;
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
+
+}
