@@ -156,25 +156,11 @@ function searchCountries() {
 				if (toBeSearched[i].name.toUpperCase().indexOf(searchContent) > -1) {
 					output += `
                 <div class="col-md-4 mr-1 mb-4">
-<<<<<<< HEAD
                         <div class="card" id="card">
                             <div class="card-body" id="card-body">
                                 <img id="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${toBeSearched[i].flag}" alt="">
                                 <h4 id="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${toBeSearched[i].name}</h4>
                                 <h5 id="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${toBeSearched[i].capital}</h5>
-=======
-                        <div class="card">
-                            <div class="card-body">
-                                <img class="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${toBeSearched[
-									i
-								].flag}" alt="">
-                                <h4 class="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${toBeSearched[
-									i
-								].name}</h4>
-                                <h5 class="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${toBeSearched[
-									i
-								].capital}</h5>
->>>>>>> 40beee24241f800abb7c979b0848caebfd6a97ea
                             </div>
                         </div>
                     </div>
