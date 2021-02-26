@@ -1,24 +1,24 @@
-import { requests } from "./api.js";
+import { requests } from './api.js';
 
 const appLi = document.getElementById('view');
 const appLiAsia = document.getElementById('viewAsia');
 const appLiAustralia = document.getElementById('viewAustralia');
 const spin = document.getElementById('spinner');
-const search = document.getElementById("example-search-input");
-search.addEventListener("keyup", searchCountries);
+const search = document.getElementById('example-search-input');
+search.addEventListener('keyup', searchCountries);
 
 //Load Every thing ....
-document.addEventListener("DOMContentLoaded", () => {
-    //load_fromPlaceHolder();
-    loadDataNew();
-    loadDataNewAsia();
-    loadDataNewAustralia();
+document.addEventListener('DOMContentLoaded', () => {
+	//load_fromPlaceHolder();
+	loadDataNew();
+	loadDataNewAsia();
+	loadDataNewAustralia();
 });
 
-//load a single customer function 
+//load a single customer function
 // function load_fromPlaceHolder() {
 
-//     //open the request 
+//     //open the request
 //     requests.ALL()
 //         .then(function(res) {
 //             return res.json(); //return the JSON Promise
@@ -48,47 +48,48 @@ document.addEventListener("DOMContentLoaded", () => {
 // }
 
 async function load_fromPlaceHolder_new() {
-    //open the request 
-    let response = await fetch('https://restcountries.eu/rest/v2/all');
+	//open the request
+	let response = await fetch('https://restcountries.eu/rest/v2/all');
 
-    let data = await response.json();
-    
-    return data;
+	let data = await response.json();
 
+	return data;
 }
 
 function loadDataNew() {
-    load_fromPlaceHolder_new().then(function(countries) {
-            let display = '';
-            countries.forEach(function(country) {
-                display += `
+	load_fromPlaceHolder_new()
+		.then(function(countries) {
+			let display = '';
+			countries.forEach(function(country, index) {
+				display += `
                 <div class="col-md-4 mr-1 mb-4">
                         <div class="card" id="card">
+                        <a href="detail.html?id=${index}">
                             <div class="card-body" id="card-body">
                                 <img id="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${country.flag}" alt="">
                                 <h4 id="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${country.name}</h4>
                                 <h5 id="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${country.capital}</h5>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div>
                 `;
-            });
-            appLi.innerHTML = display;
-        })
-        .catch(function(err) {
-            console.log(err);
-        });
-
+			});
+			appLi.innerHTML = display;
+		})
+		.catch(function(err) {
+			console.log(err);
+		});
 }
 
-
 function loadDataNewAsia() {
-    load_fromPlaceHolder_new().then(function(countries) {
-            let display = '';
-            countries.forEach(function(country) {
-                if (country.region == "Asia") {
-                    display += `
+	load_fromPlaceHolder_new()
+		.then(function(countries) {
+			let display = '';
+			countries.forEach(function(country) {
+				if (country.region == 'Asia') {
+					display += `
                     <div class="col-md-4 mr-1 mb-4">
                         <div class="card" id="card">
                             <div class="card-body" id="card-body">
@@ -100,22 +101,22 @@ function loadDataNewAsia() {
                     </div>
                 </div>
                 `;
-                }
-            });
-            appLiAsia.innerHTML = display;
-        })
-        .catch(function(err) {
-            console.log(err);
-        });
-
+				}
+			});
+			appLiAsia.innerHTML = display;
+		})
+		.catch(function(err) {
+			console.log(err);
+		});
 }
 
 function loadDataNewAustralia() {
-    load_fromPlaceHolder_new().then(function(countries) {
-            let display = '';
-            countries.forEach(function(country) {
-                if (country.region == "Oceania") {
-                    display += `
+	load_fromPlaceHolder_new()
+		.then(function(countries) {
+			let display = '';
+			countries.forEach(function(country) {
+				if (country.region == 'Oceania') {
+					display += `
                     <div class="col-md-4 mr-1 mb-4">
                         <div class="card" id="card">
                             <div class="card-body" id="card-body">
@@ -127,60 +128,67 @@ function loadDataNewAustralia() {
                     </div>
                 </div>
                 `;
-                }
-            });
-            appLiAustralia.innerHTML = display;
-        })
-        .catch(function(err) {
-            console.log(err);
-        });
-
+				}
+			});
+			appLiAustralia.innerHTML = display;
+		})
+		.catch(function(err) {
+			console.log(err);
+		});
 }
 
-
 function searchCountries() {
-    spin.innerHTML = `<div class="spinner-border text-primary m-4" role="status">
+	spin.innerHTML = `<div class="spinner-border text-primary m-4" role="status">
     <span class="sr-only"></span>
   </div>`;
-    //open the request 
+	//open the request
 
-    load_fromPlaceHolder_new()
-        .then(function(countries) {
-            //iterate over each post [100 countries]
-            let toBeSearched = new Array();
-            countries.forEach(function(post) {
-                toBeSearched.push({name:post.name, flag: post.flag, capital: post.capital});
-            });
-            let output = '';
-            for (let i = 0; i < toBeSearched.length; i++) {
-                const searchContent = search.value.toUpperCase();                
-                if (toBeSearched[i].name.toUpperCase().indexOf(searchContent) > -1) {   
-                output += `
+	load_fromPlaceHolder_new()
+		.then(function(countries) {
+			//iterate over each post [100 countries]
+			let toBeSearched = new Array();
+			countries.forEach(function(post) {
+				toBeSearched.push({ name: post.name, flag: post.flag, capital: post.capital });
+			});
+			let output = '';
+			for (let i = 0; i < toBeSearched.length; i++) {
+				const searchContent = search.value.toUpperCase();
+				if (toBeSearched[i].name.toUpperCase().indexOf(searchContent) > -1) {
+					output += `
                 <div class="col-md-4 mr-1 mb-4">
+<<<<<<< HEAD
                         <div class="card" id="card">
                             <div class="card-body" id="card-body">
                                 <img id="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${toBeSearched[i].flag}" alt="">
                                 <h4 id="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${toBeSearched[i].name}</h4>
                                 <h5 id="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${toBeSearched[i].capital}</h5>
+=======
+                        <div class="card">
+                            <div class="card-body">
+                                <img class="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${toBeSearched[
+									i
+								].flag}" alt="">
+                                <h4 class="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${toBeSearched[
+									i
+								].name}</h4>
+                                <h5 class="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${toBeSearched[
+									i
+								].capital}</h5>
+>>>>>>> 40beee24241f800abb7c979b0848caebfd6a97ea
                             </div>
                         </div>
                     </div>
                 </div>   
                 `;
-                }
-                
-            }
-            
-            setTimeout( () => {
-                spin.innerHTML = ``;
-                appLi.innerHTML = output;
-            }, 500);
+				}
+			}
 
-            
-         
-        })
-        .catch(function(err) {
-            console.log(err);
-        });
-        
+			setTimeout(() => {
+				spin.innerHTML = ``;
+				appLi.innerHTML = output;
+			}, 500);
+		})
+		.catch(function(err) {
+			console.log(err);
+		});
 }
