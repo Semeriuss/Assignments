@@ -79,7 +79,7 @@ body, #admin-page {
 	box-shadow: 3px 0px 1px 0px #2b2828;
 
   }
-  @media (min-width: 768px) {
+  @media (min-width: 789px) {
 	.sidebar {
 	  margin-left: 0;
 	}
@@ -93,9 +93,9 @@ body, #admin-page {
   .sidebar-toggle-visible {
 	margin-left: 0;
   }
-  @media (min-width: 768px) {
+  @media (min-width:789px) {
 	.sidebar-toggle-visible {
-	  margin-left: -17rem;
+	  margin-left: -18rem;
 	}
   }
   .sidebar-rounded-top-right {
@@ -103,7 +103,7 @@ body, #admin-page {
   }
   
   .sidebar-menu {
-	width: 17rem;
+	width: 18rem;
   }
   .sidebar-menu-fixed {
 	position: fixed;
@@ -159,7 +159,7 @@ body, #admin-page {
 }*/
 
 ::placeholder {
-	color: white !important;
+	color: lightblue !important;
 }
 
 .sign_up {
