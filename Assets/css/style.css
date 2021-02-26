@@ -75,7 +75,7 @@ body, #admin-page {
   .sidebar {
 	margin-left: -19rem;
 	transition: margin 0.15s ease-out;
-	background-color: rgba(25, 49, 78, 0.8);
+	background-color:  rgb(14, 2, 44);
 	box-shadow: 3px 0px 1px 0px #2b2828;
 
   }
@@ -146,7 +146,7 @@ body, #admin-page {
 }
 
 #sticky-sidebar {
-	background-color: rgba(25, 49, 78, 0.8);
+	background-color:  rgb(14, 2, 44);
 	min-height: 100vh;
 	box-shadow: 3px 0px 1px 0px #2b2828;
 }
