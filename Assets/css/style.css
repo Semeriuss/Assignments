@@ -250,7 +250,8 @@ body, #admin-page {
 	margin-left: 2rem;
 	margin-bottom: 3rem;
 	width: fit-content;
-	border: solid 0.2rem cadetblue;
+	border: solid 0.2rem rgba(5, 192, 255, 0.687);
+	background-color: rgb(31, 29, 46)
 }
 
 
@@ -265,4 +266,5 @@ body, #admin-page {
 .form-group{
 	color: white;
 }
+
 
