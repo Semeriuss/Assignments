@@ -79,7 +79,7 @@ body, #admin-page {
 	box-shadow: 3px 0px 1px 0px #2b2828;
 
   }
-  @media (min-width: 1120px) {
+  @media (min-width: 1024px) {
 	.sidebar {
 	  margin-left: 0;
 	}
@@ -93,7 +93,7 @@ body, #admin-page {
   .sidebar-toggle-visible {
 	margin: left -2rem;;
   }
-  @media (min-width:1120px) {
+  @media (max-width:1024px) {
 	.sidebar-toggle-visible {
 	  margin-left: -19rem;
 	}
@@ -125,8 +125,6 @@ body, #admin-page {
 
 .nav-link {
 	color: #dbdbdb;
-	
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	align-content: left;
 }
 
