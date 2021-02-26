@@ -9,6 +9,34 @@ a:hover{
     color: white;
 }
 
-.names{
+#ex1-content{
+    background-color: rgb(39, 53, 65);
+}
+
+
+#view{
+    
+}
+
+#card{
+    border: none;
+    background-color: rgb(39, 53, 65);
+    color: white;
+}
+
+#card-body{
+    border-radius: none;
+}
+
+#imgs{
+    align-self: left;
+}
+
+#names{
     /* font-size: 100rem; */
+    
+}
+
+#capital-names{
+
 }
