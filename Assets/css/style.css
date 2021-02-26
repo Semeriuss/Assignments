@@ -73,13 +73,13 @@ body, #admin-page {
   }
   
   .sidebar {
-	margin-left: -17rem;
+	margin-left: -19rem;
 	transition: margin 0.15s ease-out;
 	background-color: rgba(25, 49, 78, 0.8);
 	box-shadow: 3px 0px 1px 0px #2b2828;
 
   }
-  @media (min-width: 789px) {
+  @media (min-width: 1120px) {
 	.sidebar {
 	  margin-left: 0;
 	}
@@ -91,11 +91,11 @@ body, #admin-page {
 	
   }
   .sidebar-toggle-visible {
-	margin-left: 0;
+	margin: left -2rem;;
   }
-  @media (min-width:789px) {
+  @media (min-width:1120px) {
 	.sidebar-toggle-visible {
-	  margin-left: -18rem;
+	  margin-left: -19rem;
 	}
   }
   .sidebar-rounded-top-right {
@@ -103,10 +103,10 @@ body, #admin-page {
   }
   
   .sidebar-menu {
-	width: 18rem;
+	width: 19rem;
   }
   .sidebar-menu-fixed {
-	position: fixed;
+	position: left;
   }
 
 
@@ -125,7 +125,7 @@ body, #admin-page {
 
 .nav-link {
 	color: #dbdbdb;
-	font-size: large;
+	
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	align-content: left;
 }
@@ -267,3 +267,4 @@ body, #admin-page {
 .form-group{
 	color: white;
 }
+
