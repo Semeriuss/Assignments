@@ -10,18 +10,30 @@ const id = Number(urlParams.get('id'));
 function display(country) {
 	let html = `
                 <div class="row">
-                <div class="col-md-12 justify-content-center">
+                        ${flag(country)}
+                    ${detailInfo(country)}
+              
+            ${currency(country.currencies)}
+            
+            ${TimeZone(country.timezones)}
 
-                    <img src=${country.flag} class="img-fluid rounded" alt="">
-                </div>
+
+            ${Languages(country.languages)}
+
+
             </div>
+    
+    `;
 
-            <div class="row">
+	return html;
+}
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2>Name</h2>
-                    </div>
+function detailInfo(country) {
+	return `          <div class="row">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2>Name</h2>
+                        </div>
                     <div class="col-md-6">
                         <h2>${country.name}</h2>
                     </div>
@@ -104,20 +116,14 @@ function display(country) {
                         </table>
                     </div>
                 </div>
+`;
+}
 
-            ${currency(country.currencies)}
-            
-            ${TimeZone(country.timezones)}
-
-
-            ${Languages(country.languages)}
-
-
-            </div>
-    
-    `;
-
-	return html;
+function flag(country) {
+	return `  <div class="col-md-12 justify-content-center">
+                    <img src=${country.flag} class="img-fluid rounded" alt="">
+                </div>
+            </div>`;
 }
 
 function currency(lst) {
