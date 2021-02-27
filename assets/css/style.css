@@ -1,29 +1,50 @@
+::-webkit-scrollbar {
+	width: 12px;
 
-#example-search-input{
-    border: 0; 
-    background-color: rgb(39, 53, 65); 
-    color: white;
+	background-color: rgb(39, 53, 65);
+}
+::-webkit-scrollbar-thumb {
+	background-color: #224b74;
+	height: 20px;
+	border-radius: 4px;
 }
 
-
-a:link, a:visited, a:active{
-    text-decoration: none;
-    color: black;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgb(146, 138, 138);
 }
 
-a:hover{
-    background-color: rgb(39, 53, 65);
-    color: white;
-    transform: scale(1.06);
-    transition: transform 550ms;
-    border: 0;
+#example-search-input {
+	border: 0;
+	background-color: rgb(39, 53, 65);
+	color: white;
 }
 
-#ex1-tab-1, #ex1-tab-2, #ex1-tab-3, #ex1-tab-4, #ex1-tab-5, #ex1-tab-6, #ex1-tab-7{
-    background-color: rgb(39, 53, 65);
-    color: white;
-    border: 0;
+a:link,
+a:visited,
+a:active {
+	text-decoration: none;
+	color: black;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+a:hover {
+	background-color: rgb(39, 53, 65);
+	color: white;
+	transform: scale(1.06);
+	transition: transform 550ms;
+	border: 0;
+}
+
+#ex1-tab-1,
+#ex1-tab-2,
+#ex1-tab-3,
+#ex1-tab-4,
+#ex1-tab-5,
+#ex1-tab-6,
+#ex1-tab-7 {
+	background-color: rgb(39, 53, 65);
+	color: white;
+	border: 0;
 }
 
 /* #ex1-tab-1, #ex1-tab-2, #ex1-tab-3, #ex1-tab-4, #ex1-tab-5, #ex1-tab-6, #ex1-tab-7:active{
@@ -31,46 +52,44 @@ a:hover{
     border-radius: 0;
 } */
 
-.nav-item{
-    background-color: rgb(39, 53, 65);
+.nav-item {
+	background-color: rgb(39, 53, 65);
 }
 
-#spinner{
-    border: 0;
-    background-color: rgb(39, 53, 65);
+#spinner {
+	border: 0;
+	background-color: rgb(39, 53, 65);
 }
-.input-group{
-    background-color: rgb(39, 53, 65);
-    border-bottom: 1px solid rgb(70, 66, 66);
-    border-top: 1px solid rgb(70, 66, 66);
-}
-
-#ex1-content{
-    background-color: rgb(39, 53, 65);
+.input-group {
+	background-color: rgb(39, 53, 65);
+	border-bottom: 1px solid rgb(70, 66, 66);
+	border-top: 1px solid rgb(70, 66, 66);
 }
 
+#ex1-content {
+	background-color: rgb(39, 53, 65);
+}
 
 /* #view{
     
 } */
 
-#card{
-    border: none;
-    background-color: rgb(39, 53, 65);
-    border-radius: 0;
+#card {
+	border: none;
+	background-color: rgb(39, 53, 65);
+	border-radius: 0;
 }
 
-#card-body{
-    color: white;
+#card-body {
+	color: white;
 }
 
-#imgs{
-    align-self: left;
+#imgs {
+	align-self: left;
 }
 
-#names{
-    font-size: 1.8rem;
-    
+#names {
+	font-size: 1.8rem;
 }
 
 /* #capital-names{
