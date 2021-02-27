@@ -5,35 +5,17 @@ var policyName = document.querySelector('#policyName');
 var sumAssured = document.querySelector('#sumAssured');
 var premium = document.querySelector('#premium');
 var desc = document.querySelector('#policyDesc');
-form.addEventListener('submit', function(e) {
-	e.preventDefault();
-	addSub({ name: sub_name.value, maincat: category.value, date: new Date() });
-});
+var policyDate = new Date().toUTCString();
+
+
+
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
-	addPolicy({name: policyName.value, maincat: category.value, subcat: subCategory.value, description: desc.value,	premium: premium.value, sum_assured: sumAssured.value, date: new Date().toUTCString()});
-	// var input = {};
-	// input.name = policyName.textContent;
-	// input.maincat = category.value;
-	// input.subcat = subCategory.value;
-	// input.description = desc.textContent;
-	// input.premium = premium.textContent;
-	// input.sum_assured = sumAssured.textContent;
-	// input.date = new Date().toUTCString();
-	// addPolicy(input);
-	console.log(category.value);
-	console.log(subCategory.value);
-	console.log(policyName.value);
-	console.log(desc.value);
-	console.log(sumAssured.value);
-	console.log(premium.value);
-	// console.log(tenure.value);
-
+	addPolicy({name: policyName.value, maincat: category.value, subcat: subCategory.value, description: desc.value,	premium: premium.value, sum_assured: sumAssured.value, date: policyDate});
 	form.reset();
 });
 
-
-
+var catSet = new Set();
 function addPolicy(title) {
 	console.log('ADD POLICY');
 	return db
@@ -55,34 +37,15 @@ function addPolicy(title) {
 		});
 }
 
-function fetchMain() {
-	return db
-		.transaction('r', db.main_category, function() {
-			db.main_category
-				.each((val) => {
-					// console.log(val.name);
-					category.options[category.options.length] = new Option(val.name, val.name);
-				})
-				.then((res) => {
-					return true;
-				})
-				.catch((res) => {
-					console.log(res);
-					return false;
-				});
-		})
-		.catch(function(e) {
-			console.error(e.stack);
-		});
-}
-
 function fetchSub() {
 	return db
 		.transaction('r', db.sub_category, function() {
 			db.sub_category
 				.each((val) => {
-					// console.log(val.name);
+					// console.log(catSet);
+					category.options[category.options.length] = catSet.has(val.maincat) ? console.log(): new Option(val.maincat, val.maincat);
 					subCategory.options[subCategory.options.length] = new Option(val.name, val.name);
+					catSet.add(val.maincat);
 				})
 				.then((res) => {
 					return true;
@@ -97,7 +60,6 @@ function fetchSub() {
 		});
 }
 
-fetchMain();
 fetchSub();
 
 // addPolicy({
@@ -119,6 +81,7 @@ fetchSub();
 // 	sum_assured: '20,000',
 // 	date: new Date().toUTCString()
 // });
+
 // addPolicy({
 // 	name: 'Policy W',
 // 	maincat: 'Property-Insurance',
