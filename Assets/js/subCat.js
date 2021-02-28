@@ -1,46 +1,48 @@
-$('#edit').click(function() {
-	var name = $('#name').val();
-	var cat = $('#cat').val();
-	var str = 'You Have Successfully Edited an Insurance Sub Category';
-	$('#modal_body').html(str);
-	updateSubCat({ name: cat, maincat: name, date: new Date().toUTCString() });
-});
+// $('#edit').click(function() {
+// 	var name = $('#name').val();
+// 	var cat = $('#cat').val();
+// 	var str = 'You Have Successfully Edited an Insurance Sub Category';
+// 	$('#modal_body').html(str);
+// 	updateSubCat({ name: cat, maincat: name, date: new Date().toUTCString() });
+// });
 
-function updateSubCat(input) {
-	return db
-		.transaction('rw', db.sub_category, () => {
-			db.policies
-				.update(input.id, { input })
-				.then((val) => {
-					return true;
-				})
-				.catch(() => {
-					return false;
-				});
-		})
-		.catch((e) => {
-			console.log(e);
-		});
-}
+// function updateSubCat(input) {
+// 	return db
+// 		.transaction('rw', db.sub_category, () => {
+// 			db.policies
+// 				.update(input.id, { input })
+// 				.then((val) => {
+// 					return true;
+// 				})
+// 				.catch(() => {
+// 					return false;
+// 				});
+// 		})
+// 		.catch((e) => {
+// 			console.log(e);
+// 		});
+// }
 
-function addSubDemo(title) {
-	return db
-		.transaction('rw', db.sub_category, function() {
-			db.sub_category
-				.put(title)
-				.then((val) => {
-					// console.log("Worked.." + val);
-					return true;
-				})
-				.catch((val) => {
-					console.log('Some Error Happened' + val);
-					return false;
-				});
-		})
-		.catch(function(e) {
-			console.error(e.stack);
-		});
-}
+// function addSubDemo(title) {
+// 	return db
+// 		.transaction('rw', db.sub_category, function() {
+// 			db.sub_category
+// 				.put(title)
+// 				.then((val) => {
+// 					// console.log("Worked.." + val);
+// 					return true;
+// 				})
+// 				.catch((val) => {
+// 					console.log('Some Error Happened' + val);
+// 					return false;
+// 				});
+// 		})
+// 		.catch(function(e) {
+// 			console.error(e.stack);
+// 		});
+// }
+
+
 // addSubDemo({name: "Health", maincat: "Life-Insurance", date: new Date().toUTCString()});
 // addSubDemo({name: "Motor", maincat: "Property-Insurance", date: new Date().toUTCString()});
 // addSubDemo({name: "Cycle", maincat: "Fire-Insurance", date: new Date().toUTCString()});
@@ -48,6 +50,11 @@ function addSubDemo(title) {
 // addSubDemo({name: "Mobile", maincat: "Guarantee-Insurance", date: new Date().toUTCString()});
 
 const tableSubRow = document.querySelector('.subRowData');
+const tableSubRow1 = document.querySelector('.subRowData1');
+const tableSubRow2 = document.querySelector('.subRowData2');
+var cats = new Set();
+var subs = new Map();
+
 function displaySubCategory() {
 	return db
 		.transaction('r', db.sub_category, function() {
@@ -66,41 +73,18 @@ function displaySubCategory() {
 			console.error(e.stack);
 		});
 }
-// let main = 0;
-// async function getMainCategory(key){
-//     // let objName = db.main_category.get({id: key});
-//     // return objName;
-//     let dbArr = db.main_category.toArray();
-//     await db.main_category.each(element => {
-//         // console.log(element.id);
-//         if(element.id == key){
-//             console.log("Worked!!!")
-//             main = element.name;
-//             return main;
-//         }
-
-//         // console.log("Processing...");
-//     });
-//     return main;
-
-// }
-// console.log(getMainCategory(1));
-// console.log(main);
-// // console.log(getMainCategory(1));
-
-// // console.log(db.main_category.each(category => console.log(category.name)));
-// // console.log(db.main_category.get('name').where('name').equals('Fire-Insurance'));
 
 function insertSubElement(objText) {
+	subs.set(objText.name, objText.maincat);
 	const tr = document.createElement('tr');
 	const th = document.createElement('th');
 	th.setAttribute('scope', 'row');
 	th.appendChild(document.createTextNode(objText.id));
 	const td = document.createElement('td');
-	td.className = 'maincat';
+	td.className = 'mainCat';
 	td.appendChild(document.createTextNode(objText.maincat));
 	const td1 = document.createElement('td');
-	td1.className = 'subcat';
+	td1.className = 'subCat';
 	td1.appendChild(document.createTextNode(objText.name));
 	const td2 = document.createElement('td');
 	td2.className = 'date';
@@ -111,7 +95,6 @@ function insertSubElement(objText) {
 	const td3 = document.createElement('td');
 	td3.className = 'editLink';
 	td3.appendChild(link);
-	td3.appendChild(link2);
 	tr.appendChild(th);
 	tr.appendChild(td);
 	tr.appendChild(td1);
@@ -138,12 +121,6 @@ var modal = `
 					<p class="text-white">Edit the following Information</p>
 					<hr style="background-color: aliceblue;">
 					<div class="form-group mt-4">
-						<label class="text-white" for="category">Category: *</label><br>
-						<select style="width: 24.5rem;" name="category" id="cat">
-			
-						</select>
-					</div>
-					<div class="form-group mt-4">
 						<label class="text-white" for="name">Sub Category Name: *</label>
 						<input style="width: 24.5rem;" type="text" required id="name" class="form-control bg-light">
 					</div>
@@ -163,3 +140,4 @@ var modal = `
 `;
 
 displaySubCategory();
+

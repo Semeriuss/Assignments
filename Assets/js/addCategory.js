@@ -6,6 +6,7 @@ form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	// console.log(insurance_input.value);
 	addMainCat({ name: insurance_input.value, date: new Date() });
+	form.reset();
 });
 
 function addMainCat(main) {

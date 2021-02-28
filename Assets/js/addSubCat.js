@@ -5,6 +5,7 @@ var sub_name = document.querySelector('#name');
 form.addEventListener('submit', function(e) {
 	e.preventDefault();
 	addSub({ name: sub_name.value, maincat: category.value, date: new Date() });
+	form.reset();
 });
 
 function addSub(subCat) {
