@@ -11,7 +11,15 @@ form.addEventListener('submit', function(e) {
 });
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
-	addPolicy({name: policyName.value, maincat: category.value, subcat: subCategory.value, description: desc.value,	premium: premium.value, sum_assured: sumAssured.value, date: new Date().toUTCString()});
+	addPolicy({
+		name: policyName.value,
+		maincat: category.value,
+		subcat: subCategory.value,
+		description: desc.value,
+		premium: premium.value,
+		sum_assured: sumAssured.value,
+		date: new Date().toUTCString()
+	});
 	// var input = {};
 	// input.name = policyName.textContent;
 	// input.maincat = category.value;
@@ -31,8 +39,6 @@ form.addEventListener('submit', (e) => {
 
 	form.reset();
 });
-
-
 
 function addPolicy(title) {
 	console.log('ADD POLICY');
@@ -137,9 +143,11 @@ fetchSub();
 // 	sum_assured: '20,000',
 // 	date: new Date().toUTCString()
 // });
+
+// console.log('ADD START');
 // addPolicy({
-// 	name: 'Policy Y',
-// 	maincat: 'Liability-Insurance',
+// 	name: 'TEST 2',
+// 	maincat: 'TEST Insurance',
 // 	subcat: 'Travel',
 // 	description: 'Omnis modi culpa sapiente veniam aperiam ratione assumenda!',
 // 	premium: '500',

@@ -51,7 +51,7 @@ async function login(uname, psd) {
 // let a = await db.users.get(2);
 // console.log(a);
 
-// let res = () => {
+// let res = git() => {
 // 	return .then((a) => {
 // 		return a;"
 // 	});
