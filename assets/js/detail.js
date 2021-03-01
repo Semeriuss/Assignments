@@ -9,17 +9,18 @@ const id = Number(urlParams.get('id'));
 
 function display(country) {
 	let html = `
-                <div class="row">
+                <div class="row my-auto">
+                
                         ${flag(country)}
                     ${detailInfo(country)}
               
             ${currency(country.currencies)}
+            ${Languages(country.languages)}
             
             ${TimeZone(country.timezones)}
 
 
-            ${Languages(country.languages)}
-
+            
 
             </div>
     
@@ -29,8 +30,12 @@ function display(country) {
 }
 
 function detailInfo(country) {
-	return `          <div class="row">
+	return ` 
                     <div class="row">
+                    <div class="card col-md-6">
+                    <div class="row">
+                    <div class="row">
+    
                         <div class="col-md-6">
                             <h2>Name</h2>
                         </div>
@@ -38,12 +43,14 @@ function detailInfo(country) {
                         <h2>${country.name}</h2>
                     </div>
                 </div>
+                </div>
                 <!-- End of Name -->
 
 
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Native Name</h2>
+                    
+                        <h2 >Native Name</h2>
                     </div>
                     <div class="col-md-6">
                         <h2>${country.nativeName}</h2>
@@ -91,10 +98,11 @@ function detailInfo(country) {
                     </div>
                 </div>
                 <!-- End of Area -->
+                </div>
 
-
+                <div class="card col-md-6">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="">
                         <table class="table">
                             <tr>
                                 <td>
@@ -116,18 +124,20 @@ function detailInfo(country) {
                         </table>
                     </div>
                 </div>
+                </div>
 `;
 }
 
 function flag(country) {
-	return `  <div class="col-md-12 justify-content-center">
-                    <img src=${country.flag} class="img-fluid rounded" alt="">
+	return `  <div class="d-flex justify-content-center  my-auto ">
+                    <img src=${country.flag} class="img" id="dflag" alt="">
                 </div>
             </div>`;
 }
 
 function currency(lst) {
-	let output = `<div class="col-md-6">
+	let output = `<div class="card col-md-6">
+                    <div class="col-md-6">
                         <table class="table">
                         <h4 class="text-muted">Currency</h4>`;
 
@@ -164,29 +174,12 @@ function currency(lst) {
             `;
 	});
 
-	return output + '</table> </div>';
+	return output + '</table> </div> </div>';
+
 }
-
-function TimeZone(lst) {
-	let result = '';
-
-	lst.forEach((element) => {
-		result += `<li class="list-group-item">${element}</li>`;
-	});
-
-	let output = `                <!-- TimeZone -->
-                <div class="row">
-                    <h4 class="text-muted">TimeZone</h4>
-                    <ul class="list-group">
-                       ${result}
-                    </ul>
-                </div>`;
-
-	return output;
-}
-
 function Languages(lst) {
-	let output = `<div class="col-md-6">
+	let output = `<div class="card col-md-6">
+    <div class="col-md-6">
     <h4 class="text-muted">Language</h4>`;
 	lst.forEach((element) => {
 		output += `  
@@ -214,6 +207,26 @@ function Languages(lst) {
 
 	return output + '</div>';
 }
+
+function TimeZone(lst) {
+	let result = '';
+
+	lst.forEach((element) => {
+		result += `<li class="list-group-item">${element}</li>`;
+	});
+
+	let output = `                <!-- TimeZone -->
+                <div class="row">
+                    <h4 class="text-muted">TimeZone</h4>
+                    <ul class="list-group">
+                       ${result}
+                    </ul>
+                </div>`;
+
+	return output;
+}
+
+
 
 // console.log(id);
 document.addEventListener('DOMContentLoaded', () => {
