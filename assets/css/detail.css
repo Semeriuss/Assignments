@@ -1,0 +1,19 @@
+#body{
+    background-color: black;
+    
+}
+#dflag{
+    width: 50%;
+    height: 20%;
+    border: beige;
+    align-items: center;
+    box-shadow: 3px 3px 3px 3px white;
+}
+.card {
+    background-color: black;
+    
+}
+.cardbody {
+    background-color:rgb(5, 5, 91);
+    color:black;
+}

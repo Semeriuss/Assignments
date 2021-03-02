@@ -31,9 +31,10 @@ function display(country) {
 
 function detailInfo(country) {
 	return ` 
-                    <div class="row">
-                    <div class="card col-md-6">
-                    <div class="row">
+                    <div class="row rowback">
+                    <div class="card col-md-6 my-5 bg-dark ">
+                    <div class="cardbody">
+                    <div class="row ">
                     <div class="row">
     
                         <div class="col-md-6">
@@ -97,10 +98,13 @@ function detailInfo(country) {
                         <h2>${country.area}</h2>
                     </div>
                 </div>
+                </div>
                 <!-- End of Area -->
                 </div>
+                
 
                 <div class="card col-md-6">
+                <div class="cardbody">
                 <div class="row">
                     <div class="">
                         <table class="table">
@@ -125,6 +129,7 @@ function detailInfo(country) {
                     </div>
                 </div>
                 </div>
+                </div>
 `;
 }
 
@@ -136,10 +141,10 @@ function flag(country) {
 }
 
 function currency(lst) {
-	let output = `<div class="card col-md-6">
-                    <div class="col-md-6">
+	let output = `<div class="card col-md-6 ">
+                    <div class="col-md-6 ">
                         <table class="table">
-                        <h4 class="text-muted">Currency</h4>`;
+                        <h4 class="text">Currency</h4>`;
 
 	console.log(lst);
 	lst.forEach((element) => {
@@ -205,7 +210,7 @@ function Languages(lst) {
             `;
 	});
 
-	return output + '</div>';
+	return output + '</div> </div>';
 }
 
 function TimeZone(lst) {
@@ -221,7 +226,7 @@ function TimeZone(lst) {
                     <ul class="list-group">
                        ${result}
                     </ul>
-                </div>`;
+                </div> </div> </div>`;
 
 	return output;
 }
