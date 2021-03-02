@@ -21,34 +21,27 @@
 
   <body style="background-color: rgb(39, 53, 65);">
     <!-- Tabs navs -->
-    <ul class="nav nav-tabs m-0" style="border: 0; background-color: rgb(39, 53, 65);" id="ex1" role="tablist">
+    <ul class="nav nav-tabs" id="myTab" role="tablist" style="border: 0; background-color: rgb(39, 53, 65);">
       <li class="nav-item" role="presentation">
-        <a class="nav-link " id="ex1-tab-1" data-mdb-toggle="tab" href="#ex1-tabs-1" role="tab"
-          aria-controls="ex1-tabs-1" aria-selected="true">Global</a>
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Global</button>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link active" id="ex1-tab-2" data-mdb-toggle="tab" href="#ex1-tabs-2" role="tab"
-          aria-controls="#ex1-tabs-2" aria-selected="false">Asia</a>
+        <button class="nav-link" id="asia-tab" data-bs-toggle="tab" data-bs-target="#asia" type="button" role="tab" aria-controls="profile" aria-selected="false">Asia</button>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link" id="ex1-tab-4" data-mdb-toggle="tab" href="#ex1-tabs-3" role="tab"
-          aria-controls="ex1-tabs-3" aria-selected="false">Africa</a>
+        <button class="nav-link" id="africa-tab" data-bs-toggle="tab" data-bs-target="#africa" type="button" role="tab" aria-controls="contact" aria-selected="false">Africa</button>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link" id="ex1-tab-4" data-mdb-toggle="tab" href="#ex1-tabs-4" role="tab"
-          aria-controls="ex1-tabs-4" aria-selected="false">North America</a>
+        <button class="nav-link" id="nAmerica-tab" data-bs-toggle="tab" data-bs-target="#nAmerica" type="button" role="tab" aria-controls="contact" aria-selected="false">Africa</button>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link" id="ex1-tab-5" data-mdb-toggle="tab" href="#ex1-tabs-5" role="tab"
-          aria-controls="ex1-tabs-5" aria-selected="false">South America</a>
+        <button class="nav-link" id="sAmerica-tab" data-bs-toggle="tab" data-bs-target="#sAmerica" type="button" role="tab" aria-controls="contact" aria-selected="false">Africa</button>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link" id="ex1-tab-6" data-mdb-toggle="tab" href="#ex1-tabs-6" role="tab"
-          aria-controls="ex1-tabs-6" aria-selected="false">Europe</a>
+        <button class="nav-link" id="europe-tab" data-bs-toggle="tab" data-bs-target="#europe" type="button" role="tab" aria-controls="contact" aria-selected="false">Africa</button>
       </li>
       <li class="nav-item" role="presentation">
-        <a class="nav-link" id="ex1-tab-7" data-mdb-toggle="tab" href="#ex1-tabs-7" role="tab"
-          aria-controls="ex1-tabs-7" aria-selected="false">Australia</a>
+        <button class="nav-link" id="australia-tab" data-bs-toggle="tab" data-bs-target="#australia" type="button" role="tab" aria-controls="contact" aria-selected="false">Africa</button>
       </li>
     </ul>
     <!-- Tabs navs -->
@@ -60,18 +53,15 @@
 
     </div>
 
-
     <!-- Tabs content -->
-    <div class="tab-content" id="ex1-content">
-      <div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <!-- GLOBAL -->
         <div class="row mx-1 my-1 mt-5" id="view">
 
         </div>
       </div>
-
-      <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-
+      <div class="tab-pane fade" id="asia" role="tabpanel" aria-labelledby="asia-tab">
         <div class="row mx-1 my-1 bg-primary" id="viewAsia">
           <div id="data-container">
 
@@ -83,29 +73,13 @@
           </div>
         </div>
       </div>
-
-
-      <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3" id="viewAfrica">
-
-      </div>
-
-      <div class="tab-pane fade" id="ex1-tabs-4" role="tabpanel" aria-labelledby="ex1-tab-4">
-        Tab 4 content
-      </div>
-
-      <div class="tab-pane fade" id="ex1-tabs-5" role="tabpanel" aria-labelledby="ex1-tab-5">
-        Tab 5 content
-      </div>
-
-      <div class="tab-pane fade" id="ex1-tabs-6" role="tabpanel" aria-labelledby="ex1-tab-6">
-        Tab 6 content
-      </div>
-
-      <div class="tab-pane fade" id="ex1-tabs-7" role="tabpanel" aria-labelledby="ex1-tab-7">
-        <div class="row mx-1 my-1 bg-primary" id="viewAustralia"></div>
-      </div>
+      <div class="tab-pane fade" id="africa" role="tabpanel" aria-labelledby="africa-tab">...</div>
+      <div class="tab-pane fade" id="nAmerica" role="tabpanel" aria-labelledby="nAmerica-tab">...</div>
+      <div class="tab-pane fade" id="sAmerica" role="tabpanel" aria-labelledby="sAmerica-tab">...</div>
+      <div class="tab-pane fade" id="europe" role="tabpanel" aria-labelledby="europe-tab">...</div>
+      <div class="tab-pane fade" id="australia" role="tabpanel" aria-labelledby="australia-tab">...</div>
     </div>
-    <!-- Tabs content -->
+     <!-- Tabs content -->
 
 
 
