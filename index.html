@@ -26,27 +26,36 @@
         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Global</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="asia-tab" data-bs-toggle="tab" data-bs-target="#asia" type="button" role="tab" aria-controls="profile" aria-selected="false">Asia</button>
+        <button class="nav-link" id="asia-tab" data-bs-toggle="tab" data-bs-target="#asia" type="button" role="tab" aria-controls="asia" aria-selected="false">Asia</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="africa-tab" data-bs-toggle="tab" data-bs-target="#africa" type="button" role="tab" aria-controls="contact" aria-selected="false">Africa</button>
+        <button class="nav-link" id="africa-tab" data-bs-toggle="tab" data-bs-target="#africa" type="button" role="tab" aria-controls="africa" aria-selected="false">Africa</button>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Americas</a>
+        <ul class="dropdown-menu">
+          <li><button class="nav-link" id="nAmerica-tab" data-bs-toggle="tab" data-bs-target="#nAmerica" type="button" role="tab" aria-controls="nAmerica" aria-selected="false">North America</button></li>
+          <li><button class="nav-link" id="cAmerica-tab" data-bs-toggle="tab" data-bs-target="#cAmerica" type="button" role="tab" aria-controls="cAmerica" aria-selected="false">Central America</button></li>
+          <li><button class="nav-link" id="sAmerica-tab" data-bs-toggle="tab" data-bs-target="#sAmerica" type="button" role="tab" aria-controls="sAmerica" aria-selected="false">South America</button></li>
+          <li><button class="nav-link" id="caribbean-tab" data-bs-toggle="tab" data-bs-target="#caribbean" type="button" role="tab" aria-controls="caribbean" aria-selected="false">Caribbean</button></li>
+        </ul>
+      </li>
+      <!-- <li class="nav-item" role="presentation">
+        <button class="nav-link" id="nAmerica-tab" data-bs-toggle="tab" data-bs-target="#nAmerica" type="button" role="tab" aria-controls="contact" aria-selected="false">North America</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="nAmerica-tab" data-bs-toggle="tab" data-bs-target="#nAmerica" type="button" role="tab" aria-controls="contact" aria-selected="false">Africa</button>
+        <button class="nav-link" id="sAmerica-tab" data-bs-toggle="tab" data-bs-target="#sAmerica" type="button" role="tab" aria-controls="contact" aria-selected="false">South America</button>
+      </li> -->
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="europe-tab" data-bs-toggle="tab" data-bs-target="#europe" type="button" role="tab" aria-controls="europe" aria-selected="false">Europe</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="sAmerica-tab" data-bs-toggle="tab" data-bs-target="#sAmerica" type="button" role="tab" aria-controls="contact" aria-selected="false">Africa</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="europe-tab" data-bs-toggle="tab" data-bs-target="#europe" type="button" role="tab" aria-controls="contact" aria-selected="false">Africa</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="australia-tab" data-bs-toggle="tab" data-bs-target="#australia" type="button" role="tab" aria-controls="contact" aria-selected="false">Africa</button>
+        <button class="nav-link" id="australia-tab" data-bs-toggle="tab" data-bs-target="#australia" type="button" role="tab" aria-controls="australia" aria-selected="false">Australia</button>
       </li>
     </ul>
     <!-- Tabs navs -->
     <div class="input-group col-md-4 px-2 my-3">
-      <input class="form-control" type="search" placeholder="Search countries..." id="example-search-input">
+      <input class="form-control" type="search" placeholder="Search countries..." id="search-input">
     </div>
     <!-- Spinner -->
     <div id="spinner">
@@ -57,12 +66,12 @@
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <!-- GLOBAL -->
-        <div class="row mx-1 my-1 mt-5" id="view">
+        <div class="row mx-1 my-1 mt-5 view" id="view">
 
         </div>
       </div>
       <div class="tab-pane fade" id="asia" role="tabpanel" aria-labelledby="asia-tab">
-        <div class="row mx-1 my-1 bg-primary" id="viewAsia">
+        <div class="row mx-1 my-1" id="viewAsia">
           <div id="data-container">
 
           </div>
@@ -73,11 +82,90 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="africa" role="tabpanel" aria-labelledby="africa-tab">...</div>
-      <div class="tab-pane fade" id="nAmerica" role="tabpanel" aria-labelledby="nAmerica-tab">...</div>
-      <div class="tab-pane fade" id="sAmerica" role="tabpanel" aria-labelledby="sAmerica-tab">...</div>
-      <div class="tab-pane fade" id="europe" role="tabpanel" aria-labelledby="europe-tab">...</div>
-      <div class="tab-pane fade" id="australia" role="tabpanel" aria-labelledby="australia-tab">...</div>
+      <div class="tab-pane fade" id="africa" role="tabpanel" aria-labelledby="africa-tab">
+        <div class="row mx-1 my-1" id="viewAfrica">
+          <div id="data-container">
+
+          </div>
+
+
+          <div id="pagination-container">
+              
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nAmerica" role="tabpanel" aria-labelledby="nAmerica-tab">
+        <div class="row mx-1 my-1" id="viewNorthAmerica">
+          <div id="data-container">
+
+          </div>
+
+
+          <div id="pagination-container">
+              
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="cAmerica" role="tabpanel" aria-labelledby="cAmerica-tab">
+        <div class="row mx-1 my-1" id="viewCentralAmerica">
+          <div id="data-container">
+
+          </div>
+
+
+          <div id="pagination-container">
+              
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="sAmerica" role="tabpanel" aria-labelledby="sAmerica-tab">
+        <div class="row mx-1 my-1" id="viewSouthAmerica">
+          <div id="data-container">
+
+          </div>
+
+
+          <div id="pagination-container">
+              
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="caribbean" role="tabpanel" aria-labelledby="caribbean-tab">
+        <div class="row mx-1 my-1" id="viewCaribbean">
+          <div id="data-container">
+
+          </div>
+
+
+          <div id="pagination-container">
+              
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="europe" role="tabpanel" aria-labelledby="europe-tab">
+        <div class="row mx-1 my-1" id="viewEurope">
+          <div id="data-container">
+
+          </div>
+
+
+          <div id="pagination-container">
+              
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="australia" role="tabpanel" aria-labelledby="australia-tab">
+        <div class="row mx-1 my-1" id="viewAustralia">
+          <div id="data-container">
+
+          </div>
+
+
+          <div id="pagination-container">
+              
+          </div>
+        </div>
+      </div>
     </div>
      <!-- Tabs content -->
 

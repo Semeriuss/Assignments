@@ -28,25 +28,28 @@ a:active {
 }
 
 a:hover {
-	background-color: rgb(39, 53, 65);
-	color: white;
+	background-color: rgb(67, 123, 172);
+	color: rgb(95, 149, 194);
 	transform: scale(1.06);
 	transition: transform 550ms;
 	border: 0;
 }
 
-#ex1-tab-1,
-#ex1-tab-2,
-#ex1-tab-3,
-#ex1-tab-4,
-#ex1-tab-5,
-#ex1-tab-6,
-#ex1-tab-7 {
+#home-tab,
+#asia-tab,
+#africa-tab,
+#europe-tab,
+#australia-tab {
 	background-color: rgb(39, 53, 65);
 	color: white;
 	border: 0;
 }
-
+#nAmerica-tab,
+#cAmerica-tab,
+#sAmerica-tab,
+#caribbean-tab{
+	border: 0;
+}
 /* #ex1-tab-1, #ex1-tab-2, #ex1-tab-3, #ex1-tab-4, #ex1-tab-5, #ex1-tab-6, #ex1-tab-7:active{
     background-color: black;
     border-radius: 0;
