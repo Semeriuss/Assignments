@@ -31,21 +31,21 @@ function callback(e) {
 	}	
 } 
 
-if (document.addEventListener){
-	document.addEventListener('click', function (event) {
-		event.preventDefault();
-		if(event.target.classList == "fa fa-plus-circle"){
-			callback(event);
-		}else{
-		}
-	});
-}else{
-	// document.attachEvent('onclick', function (event) {
-	// 	event.preventDefault();
-	// 	callback(event);
-	// });
-	console.log("OK");
-}
+// if (document.addEventListener){
+// 	document.addEventListener('click', function (event) {
+// 		event.preventDefault();
+// 		if(event.target.classList == "fa fa-plus-circle"){
+// 			callback(event);
+// 		}else{
+// 		}
+// 	});
+// }else{
+// 	// document.attachEvent('onclick', function (event) {
+// 	// 	event.preventDefault();
+// 	// 	callback(event);
+// 	// });
+// 	console.log("OK");
+// }
 
 function applyPolicy(textObj) {
 	return db
