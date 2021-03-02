@@ -4,8 +4,13 @@ const appLi = document.getElementById('view');
 const appLiAsia = document.getElementById('viewAsia');
 const appLiAustralia = document.getElementById('viewAustralia');
 const appLiAfrica = document.getElementById('viewAfrica');
+const appLiEurope = document.getElementById('viewEurope');
+const appLiNorthAmerica = document.getElementById('viewNorthAmerica');
+const appLiCentralAmerica = document.getElementById('viewCentralAmerica');
+const appLiSouthAmerica = document.getElementById('viewSouthAmerica');
+const appLiCaribbean = document.getElementById('viewCaribbean');
 const spin = document.getElementById('spinner');
-const search = document.getElementById('example-search-input');
+const search = document.getElementById('search-input');
 search.addEventListener('keyup', searchCountries);
 
 //Load Every thing ....
@@ -13,41 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	//load_fromPlaceHolder();
 	loadDataNew();
 	loadDataNewAsia();
-	loadDataNewAustralia();
 	loadDataNewAfrica();
+	loadDataNewNorthAmerica();
+	loadDataNewCentralAmerica();
+	loadDataNewSouthAmerica();
+	loadDataNewCaribbean();
+	loadDataNewEurope();
+	loadDataNewAustralia();
 });
-
-//load a single customer function
-// function load_fromPlaceHolder() {
-
-//     //open the request
-//     requests.ALL()
-//         .then(function(res) {
-//             return res.json(); //return the JSON Promise
-//         })
-//         .then(function(items) {
-//             //iterate over each countries
-//             countries.forEach(function(country) {
-//                 display += `
-//                 <div class="col-md-4">
-//                     <div class="card">
-//                         <div class="card-body">
-//                             <img height="40" width="40" class="card-img-top img-fluid" src="${country.flag}" alt="">
-//                             <h4 class="card-title">${country.name}</h4>
-//                             <h6 class="card-title">${country.capital}</h6>
-//                             <p class="card-text">Lorem ipsum dolor sit</p>
-//                         </div>
-//                     </div>
-//                 </div>
-//                 `;
-//             });
-//             appLi.innerHTML = display;
-//         })
-//         .catch(function(err) {
-//             console.log(err);
-//         });
-
-// }
 
 async function load_fromPlaceHolder_new() {
 	//open the request
@@ -109,6 +87,23 @@ function loadDataNewAustralia() {
 		});
 }
 
+function loadDataNewEurope() {
+	requests
+		.REGION('Europe')
+		.then((val) => val.json())
+		.then(function(countries) {
+			console.log(countries);
+			let display = '';
+			countries.forEach(function(country, index) {
+				display += countryNode(country, index);
+			});
+			appLiEurope.innerHTML = display;
+		})
+		.catch(function(err) {
+			console.log(err);
+		});
+}
+
 function loadDataNewAfrica() {
 	requests
 		.REGION('Africa')
@@ -125,6 +120,75 @@ function loadDataNewAfrica() {
 			console.log(err);
 		});
 }
+
+function loadDataNewNorthAmerica() {
+	requests
+		.SUBREGION('Northern America')
+		.then((val) => val.json())
+		.then(function(countries) {
+			console.log(countries);
+			let display = '';
+			countries.forEach(function(country, index) {
+				display += countryNode(country, index);
+			});
+			appLiNorthAmerica.innerHTML = display;
+		})
+		.catch(function(err) {
+			console.log(err);
+		});
+}
+
+function loadDataNewCentralAmerica() {
+	requests
+		.SUBREGION('Central America')
+		.then((val) => val.json())
+		.then(function(countries) {
+			console.log(countries);
+			let display = '';
+			countries.forEach(function(country, index) {
+				display += countryNode(country, index);
+			});
+			appLiCentralAmerica.innerHTML = display;
+		})
+		.catch(function(err) {
+			console.log(err);
+		});
+}
+
+function loadDataNewSouthAmerica() {
+	requests
+		.SUBREGION('South America')
+		.then((val) => val.json())
+		.then(function(countries) {
+			console.log(countries);
+			let display = '';
+			countries.forEach(function(country, index) {
+				display += countryNode(country, index);
+			});
+			appLiSouthAmerica.innerHTML = display;
+		})
+		.catch(function(err) {
+			console.log(err);
+		});
+}
+
+function loadDataNewCaribbean() {
+	requests
+		.SUBREGION('Caribbean')
+		.then((val) => val.json())
+		.then(function(countries) {
+			console.log(countries);
+			let display = '';
+			countries.forEach(function(country, index) {
+				display += countryNode(country, index);
+			});
+			appLiCaribbean.innerHTML = display;
+		})
+		.catch(function(err) {
+			console.log(err);
+		});
+}
+
 
 function searchCountries() {
 	spin.innerHTML = `<div class="spinner-border text-primary m-4" role="status">

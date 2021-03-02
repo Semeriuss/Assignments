@@ -9,6 +9,9 @@ export const requests = {
 	},
 	REGION: (name) => {
 		return fetch(`${BASE_URL}region/${name}`);
+	},
+	SUBREGION: (name) => {
+		return fetch(`${BASE_URL}subregion/${name}`);
 	}
 };
 
