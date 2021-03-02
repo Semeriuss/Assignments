@@ -3,6 +3,7 @@ import { requests } from './api.js';
 const appLi = document.getElementById('view');
 const appLiAsia = document.getElementById('viewAsia');
 const appLiAustralia = document.getElementById('viewAustralia');
+const appLiAfrica = document.getElementById('viewAfrica');
 const spin = document.getElementById('spinner');
 const search = document.getElementById('example-search-input');
 search.addEventListener('keyup', searchCountries);
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	loadDataNew();
 	loadDataNewAsia();
 	loadDataNewAustralia();
+	loadDataNewAfrica();
 });
 
 //load a single customer function
@@ -57,24 +59,14 @@ async function load_fromPlaceHolder_new() {
 }
 
 function loadDataNew() {
-	load_fromPlaceHolder_new()
+	requests
+		.ALL()
+		.then((val) => val.json())
 		.then(function(countries) {
+			console.log(countries);
 			let display = '';
 			countries.forEach(function(country, index) {
-				display += `
-                <div class="col-md-4 mr-1 mb-4">
-                        <div class="card" id="card">
-                        <a href="detail.html?id=${index}">
-                            <div class="card-body" id="card-body">
-                                <img id="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${country.flag}" alt="">
-                                <h4 id="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${country.name}</h4>
-                                <h5 id="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${country.capital}</h5>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                `;
+				display += countryNode(country, index);
 			});
 			appLi.innerHTML = display;
 		})
@@ -84,24 +76,14 @@ function loadDataNew() {
 }
 
 function loadDataNewAsia() {
-	load_fromPlaceHolder_new()
+	requests
+		.REGION('Asia')
+		.then((val) => val.json())
 		.then(function(countries) {
+			console.log(countries);
 			let display = '';
-			countries.forEach(function(country) {
-				if (country.region == 'Asia') {
-					display += `
-                    <div class="col-md-4 mr-1 mb-4">
-                        <div class="card" id="card">
-                            <div class="card-body" id="card-body">
-                                <img id="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${country.flag}" alt="">
-                                <h4 id="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${country.name}</h4>
-                                <h5 id="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${country.capital}</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                `;
-				}
+			countries.forEach(function(country, index) {
+				display += countryNode(country, index);
 			});
 			appLiAsia.innerHTML = display;
 		})
@@ -111,26 +93,33 @@ function loadDataNewAsia() {
 }
 
 function loadDataNewAustralia() {
-	load_fromPlaceHolder_new()
+	requests
+		.REGION('Oceania')
+		.then((val) => val.json())
 		.then(function(countries) {
+			console.log(countries);
 			let display = '';
-			countries.forEach(function(country) {
-				if (country.region == 'Oceania') {
-					display += `
-                    <div class="col-md-4 mr-1 mb-4">
-                        <div class="card" id="card">
-                            <div class="card-body" id="card-body">
-                                <img id="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${country.flag}" alt="">
-                                <h4 id="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${country.name}</h4>
-                                <h5 id="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${country.capital}</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                `;
-				}
+			countries.forEach(function(country, index) {
+				display += countryNode(country, index);
 			});
 			appLiAustralia.innerHTML = display;
+		})
+		.catch(function(err) {
+			console.log(err);
+		});
+}
+
+function loadDataNewAfrica() {
+	requests
+		.REGION('Africa')
+		.then((val) => val.json())
+		.then(function(countries) {
+			console.log(countries);
+			let display = '';
+			countries.forEach(function(country, index) {
+				display += countryNode(country, index);
+			});
+			appLiAfrica.innerHTML = display;
 		})
 		.catch(function(err) {
 			console.log(err);
@@ -158,9 +147,15 @@ function searchCountries() {
                 <div class="col-md-4 mr-1 mb-4">
                         <div class="card" id="card">
                             <div class="card-body" id="card-body">
-                                <img id="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${toBeSearched[i].flag}" alt="">
-                                <h4 id="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${toBeSearched[i].name}</h4>
-                                <h5 id="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${toBeSearched[i].capital}</h5>
+                                <img id="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${toBeSearched[
+									i
+								].flag}" alt="">
+                                <h4 id="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${toBeSearched[
+									i
+								].name}</h4>
+                                <h5 id="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${toBeSearched[
+									i
+								].capital}</h5>
                             </div>
                         </div>
                     </div>
@@ -177,4 +172,20 @@ function searchCountries() {
 		.catch(function(err) {
 			console.log(err);
 		});
+}
+
+function countryNode(country, index) {
+	return `<div class="col-md-4 mr-1 mb-4">
+                        <div class="card" id="card">
+                        <a href="detail.html?id=${index}">
+                            <div class="card-body" id="card-body">
+                                <img id="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${country.flag}" alt="">
+                                <h4 id="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${country.name}</h4>
+                                <h5 id="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${country.capital}</h5>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                `;
 }

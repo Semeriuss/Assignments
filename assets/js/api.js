@@ -5,7 +5,10 @@ export const requests = {
 		return fetch(`${BASE_URL}all`);
 	},
 	SEARCH: (name) => {
-		return fetch(`${BASE_URL}/name/${name}`);
+		return fetch(`${BASE_URL}name/${name}`);
+	},
+	REGION: (name) => {
+		return fetch(`${BASE_URL}region/${name}`);
 	}
 };
 
