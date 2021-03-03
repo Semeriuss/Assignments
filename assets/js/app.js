@@ -189,7 +189,6 @@ function loadDataNewCaribbean() {
 		});
 }
 
-
 function searchCountries() {
 	spin.innerHTML = `<div class="spinner-border text-primary m-4" role="status">
     <span class="sr-only"></span>
@@ -200,31 +199,14 @@ function searchCountries() {
 		.then(function(countries) {
 			//iterate over each post [100 countries]
 			let toBeSearched = new Array();
-			countries.forEach(function(post) {
-				toBeSearched.push({ name: post.name, flag: post.flag, capital: post.capital });
+			countries.forEach(function(post, index) {
+				toBeSearched.push({ name: post.name, flag: post.flag, capital: post.capital, id: index });
 			});
 			let output = '';
 			for (let i = 0; i < toBeSearched.length; i++) {
 				const searchContent = search.value.toUpperCase();
 				if (toBeSearched[i].name.toUpperCase().indexOf(searchContent) > -1) {
-					output += `
-                <div class="col-md-4 mr-1 mb-4">
-                        <div class="card" id="card">
-                            <div class="card-body" id="card-body">
-                                <img id="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${toBeSearched[
-									i
-								].flag}" alt="">
-                                <h4 id="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${toBeSearched[
-									i
-								].name}</h4>
-                                <h5 id="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${toBeSearched[
-									i
-								].capital}</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-                `;
+					output += countryNode(toBeSearched[i], toBeSearched[i].id);
 				}
 			}
 
