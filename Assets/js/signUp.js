@@ -27,7 +27,9 @@ form.addEventListener('submit', async (e) => {
 		error_txt.style.color = 'red';
 		return;
 	}
-	create_Acount({
+
+	console.log(uname.value, fname.value, lname.value, email.value, psd.value, dob.value);
+	await create_Acount({
 		uname: uname.value,
 		fname: fname.value,
 		lname: lname.value,
@@ -38,10 +40,11 @@ form.addEventListener('submit', async (e) => {
 		admin: false,
 		balance: 0
 	});
-	window.location = 'login.html';
+
 	error_txt.innerText = '';
 	form.reset();
 	console.log(psd.value, cpsd.value);
+	window.location = 'login.html';
 });
 
 // form.addEventListener('click', () => {
@@ -67,12 +70,12 @@ function create_Acount(user) {
 		.transaction('rw', db.users, function() {
 			db.users
 				.add(user)
-				.then((val) => {
-					console.log(val);
-					return true;
-				})
+				// .then((val) => {
+				// 	console.log(val);
+				// 	return true;
+				// })
 				.catch((val) => {
-					console.log(val);
+					console.log('Error' + val);
 					return false;
 				});
 		})
@@ -81,17 +84,19 @@ function create_Acount(user) {
 		});
 }
 
-console.log(
+try {
 	create_Acount({
-		fname: 'Semere',
-		lname: 'Habtu',
-		uname: 'Semeriuss',
+		fname: 'Amanuel',
+		lname: 'Debebe',
+		uname: 'AmanD',
 		psd: '123',
 		email: 'my@email.com',
 		admin: true,
 		balance: 0
-	})
-);
+	});
+} catch (error) {
+	console.log(error);
+}
 
 // function sumbitted(val) {
 // 	console.log(val);
