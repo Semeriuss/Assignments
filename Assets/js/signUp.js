@@ -83,11 +83,11 @@ function create_Acount(user) {
 
 console.log(
 	create_Acount({
-		fname: 'aman',
-		lname: 'debebe',
-		uname: 'amand',
+		fname: 'Semere',
+		lname: 'Habtu',
+		uname: 'Semeriuss',
 		psd: '123',
-		email: 'aman',
+		email: 'my@email.com',
 		admin: true,
 		balance: 0
 	})
