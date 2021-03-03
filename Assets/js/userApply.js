@@ -14,6 +14,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     displayUserPolicyCategory();	
 });
 function callback(e) {
+	console.log("Checking...");
     var e = window.e || e;
 	var input = {};
 	// alert("Here is " + e.target.parentElement.classList + "    " + e.target.classList );
@@ -31,20 +32,17 @@ function callback(e) {
 	}	
 } 
 
-if (document.addEventListener){
-	document.addEventListener('click', function (event) {
-		event.preventDefault();
-		if(event.target.classList == "fa fa-plus-circle"){
-			callback(event);
-		}else{
-		}
-	});
-}else{
-	// document.attachEvent('onclick', function (event) {
-	// 	event.preventDefault();
-	// 	callback(event);
-	// });
-	console.log("OK");
+function clicked(){
+	if (document.addEventListener){
+		document.addEventListener('click', function (event) {
+			event.preventDefault();
+			if(event.target.classList == "fa fa-plus-circle"){
+				console.log("Clicked Check");
+				callback(event);
+			}else{
+			}
+		});
+	}
 }
 
 function applyPolicy(textObj) {
@@ -53,7 +51,7 @@ function applyPolicy(textObj) {
 			db.pending_policies
 				.add(textObj)
 				.then((val) => {
-					console.log("Worked.." + val);
+					// console.log("Worked.." + val);
 					return true;
 				})
 				.catch((val) => {
@@ -69,14 +67,17 @@ function applyPolicy(textObj) {
 
 const userTablePolicyRow = document.querySelector('.userPolicyRowData');
 function displayUserPolicyCategory() {
+
 	return db
-		.transaction('r', db.policies, function() {
+		.transaction('rw', db.policies, db.pending_policies, function() {
 			db.policies
-				.each((val) => insertUserPolicyElement(val))
-				.then((res) => {
-					// console.log(res);
-					return true;
-				})
+				.each((val) => {
+					return checkPend(val)
+				}) //insertUserPolicyElement(val))
+				// .then((res) => {
+				// 	 console.log("Check");
+				// 	return true;
+				// })
 				.catch((res) => {
 					console.log(res);
 					return false;
@@ -86,8 +87,34 @@ function displayUserPolicyCategory() {
 			console.error(e.stack);
 		});
 }
+function checkPend(value) {
+	return db.pending_policies
+		.each((val) => {
+			console.log("Check");
+		if(val.uname == sessionStorage.getItem('uname') && value.name == val.policy_name){
+			// console.log("Checking a Third Time!!!");
+			insertUserPolicyElement(value, true);
+		}else{
+			insertUserPolicyElement(value, false);
+		}
+	}).catch((res) => {
+		console.log(res);
+		return false;
+	});
+}
 
-function insertUserPolicyElement(objText) {
+function checkBalance(user, policy) {
+	console.log("CHECK BALANCE");
+	return db.users
+		.get({uname: user }).then((customer) => {
+			if(customer.balance >= policy.premium){return true;}
+			else{return false;}
+		})
+
+}
+
+function insertUserPolicyElement(objText, bool) {
+	// console.log("Checking..");
 	const tr = document.createElement('tr');
 	const th = document.createElement('th');
 	th.setAttribute('scope', 'row');
@@ -114,7 +141,11 @@ function insertUserPolicyElement(objText) {
 	td5.className = 'policyDate';
 	td5.appendChild(document.createTextNode(moment(objText.date).format('YYYY-MM-DD')));
 	const link = document.createElement('a');
-	link.innerHTML = `<a class="app" href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>`;
+	if(!bool){
+		link.innerHTML = `<a class="app" href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>`;
+	}else{
+		link.innerHTML = `<a onclick="clicked()" class="app" href="#"><i class="fas fa-vote-yea" aria-hidden="true"></i></a>`;
+	}
 	link.setAttribute('data-policy', `${objText.name}`);
 	const td6 = document.createElement('td');
 	td6.className = 'applyLink';
