@@ -91,12 +91,14 @@ a:hover {
 }
 
 #card-body {
-	color:darkblue
+	color:darkblue;
+	background-color:lightyellow;
 }
 
 #imgs {
 width: fit-content;
-height: fit-content;
+background-size: cover ;
+
 
 }
 
@@ -121,7 +123,7 @@ height: fit-content;
    
   }
 #imgs:hover{
-	border-radius: 0%;
+	border-radius: 50%;
 }
 
 #names {
@@ -131,3 +133,10 @@ height: fit-content;
 /* #capital-names{
 
 } */
+.container{
+margin-top: 5rem;
+}
+.img-thumbnails{
+box-shadow: black;
+background-color: lightyellow;
+}

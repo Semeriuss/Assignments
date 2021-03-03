@@ -239,11 +239,11 @@ function searchCountries() {
 }
 
 function countryNode(country, index) {
-	return `<div class="col-md-4 mr-1 mb-4">
+	return `<div class="col-md-4 mr-1 mb-4 row-eq-height">
                         <div class="card" id="card">
                         <a href="detail.html?id=${index}">
-                            <div class="card-body" id="card-body">
-                                <img id="imgs" style="width: 20rem; height: 10rem;" class="card-img-top img-fluid" src="${country.flag}" alt="">
+                            <div class="card-body "  style="width=30% height=30%" id="card-body">
+                                <img id="imgs" style="width:fit-content; height=5%;" class="card-img-top img-fluid img-thumbnail border-0" src="${country.flag}" alt="">
                                 <h4 id="names" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="card-title mt-2">${country.name}</h4>
                                 <h5 id="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${country.capital}</h5>
                             </div>
