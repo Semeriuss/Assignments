@@ -98,6 +98,20 @@ try {
 	console.log(error);
 }
 
+try {
+	create_Acount({
+		fname: 'Biniyam',
+		lname: 'Abiy',
+		uname: 'Bini',
+		psd: '123456',
+		email: 'bini@email.com',
+		admin: false,
+		balance: 0
+	});
+} catch (error) {
+	console.log(error);
+}
+
 // function sumbitted(val) {
 // 	console.log(val);
 // }
