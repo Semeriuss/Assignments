@@ -1,5 +1,3 @@
-const userTablePolicyRow = document.querySelector('.userPolicyRowData');
-
 window.addEventListener('DOMContentLoaded', (event) => {
 	console.log('DOM fully loaded and parsed');
 
@@ -9,7 +7,6 @@ function callback(e) {
 	console.log('Checking...');
 	var e = window.e || e;
 	var input = {};
-
 	var con = confirm('Are you sure you want to apply to this insurance?');
 	if (con) {
 		var policyName = e.target.parentNode.parentElement.getAttribute('data-policy');
@@ -24,6 +21,7 @@ function callback(e) {
 }
 
 function clicked(pname) {
+	console.log('GERE');
 	// if (document.addEventListener) {
 	// 	document.addEventListener('click', function(event) {
 	// 		event.preventDefault();
@@ -40,21 +38,24 @@ function clicked(pname) {
 	// alert("Here is " + e.target.parentElement.classList + "    " + e.target.classList );
 	var con = confirm('Are you sure you want to apply to this insurance?');
 	if (con) {
+		console.log();
 		applyPolicy(sessionStorage.getItem('uname'), pname);
 	} else {
 		return false;
 	}
 }
 
-function applyPolicy(uname, pname) {
-	console.log('BREAK 1');
+function applyPolicy(user, pname) {
 	return db
 		.transaction('rw', db.pending_policies, function() {
 			db.pending_policies
-				.add({ uname: uname, policy_name: pname })
-				.then((val) => console.log('BREAK 2'))
-				.catch((e) => {
-					console.log(e.stack);
+				.put({ uname: user, policy_name: pname })
+				.then((val) => {
+					// console.log("Worked.." + val);
+					return true;
+				})
+				.catch((val) => {
+					console.log('Some Error Happened' + val);
 					return false;
 				});
 		})
@@ -63,18 +64,14 @@ function applyPolicy(uname, pname) {
 		});
 }
 
+const userTablePolicyRow = document.querySelector('.userPolicyRowData');
 function displayUserPolicyCategory() {
 	return db
 		.transaction('rw', db.policies, db.pending_policies, function() {
 			db.policies
 				.each((val) => {
-					checkPend(val).then((value) => {
-						console.log(value);
-						if (typeof value == 'undefined') {
-							value = false;
-						}
-						insertUserPolicyElement(val, value);
-					});
+					// return checkPend(val);
+					insertUserPolicyElement(val, false);
 				})
 				.catch((res) => {
 					console.log(res);
@@ -88,12 +85,10 @@ function displayUserPolicyCategory() {
 function checkPend(value) {
 	return db.pending_policies
 		.each((val) => {
+			console.log('Check');
 			if (val.uname == sessionStorage.getItem('uname') && value.name == val.policy_name) {
-				console.log('BREAK A');
-				return true;
-			} else {
-				console.log('BREAK B');
-				return false;
+				console.log('Checking a Third Time!!!');
+				insertUserPolicyElement(value, true);
 			}
 		})
 		.catch((res) => {
@@ -103,6 +98,7 @@ function checkPend(value) {
 }
 
 function checkBalance(user, policy) {
+	console.log('CHECK BALANCE');
 	return db.users.get({ uname: user }).then((customer) => {
 		if (customer.balance >= policy.premium) {
 			return true;
@@ -113,6 +109,7 @@ function checkBalance(user, policy) {
 }
 
 function insertUserPolicyElement(objText, bool) {
+	// console.log("Checking..");
 	const tr = document.createElement('tr');
 	const th = document.createElement('th');
 	th.setAttribute('scope', 'row');
@@ -140,9 +137,9 @@ function insertUserPolicyElement(objText, bool) {
 	td5.appendChild(document.createTextNode(moment(objText.date).format('YYYY-MM-DD')));
 	const link = document.createElement('a');
 	if (!bool) {
-		link.innerHTML = `<button  class="app" onclick="clicked('${objText.name}')"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>`;
+		link.innerHTML = `<button onclick="clicked('${objText.name}')" class="app" href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>`;
 	} else {
-		link.innerHTML = `<a  class="app" href="#"><i class="fas fa-vote-yea" aria-hidden="true"></i></a>`;
+		link.innerHTML = `<a class="app" href="#"><i class="fas fa-vote-yea" aria-hidden="true"></i></a>`;
 	}
 	link.setAttribute('data-policy', `${objText.name}`);
 	const td6 = document.createElement('td');
@@ -159,3 +156,7 @@ function insertUserPolicyElement(objText, bool) {
 	tr.appendChild(td6);
 	userTablePolicyRow.appendChild(tr);
 }
+
+//{ uname: 'checking1', policy_name: "first policy" }
+// data-uname='window.sessionStorage.getItem('uname')' data-policy='${objText.name}'
+// '{uname: ${window.sessionStorage.getItem('uname')}, policy_name: ${objText.name}}'
