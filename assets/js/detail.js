@@ -12,13 +12,18 @@ function display(country) {
                 <div class="row my-auto">
                 
                         ${flag(country)}
-                        ${TimeZone(country.timezones)}  
+                       
                     ${detailInfo(country)}
                   
+                   <div class="row my-auto">
 
             ${Languages(country.languages)}
+            </div>
+
+            <div class="row my-auto">
             ${currency(country.currencies)}
-            
+              ${TimeZone(country.timezones)} 
+              </div>
            
 
 
@@ -33,13 +38,13 @@ function display(country) {
 
 function detailInfo(country) {
 	return ` 
-                    <div class="row rowback">
+                    <div class="row rowback m-5 ">
                     <div class="card col-md-8 my-2 mx-auto">
                     <div class="row ">
                     <div class="row">
     
                         <div class="col-md-6">
-                            <h2>Name</h2>
+                            <h2 class="detailHeading">Name</h2>
                         </div>
                     <div class="col-md-6">
                         <h2>${country.name}</h2>
@@ -53,7 +58,7 @@ function detailInfo(country) {
                 <div class="row">
                     <div class="col-md-6">
                     
-                        <h2 >Native Name</h2>
+                        <h2 class="detailHeading">Native Name</h2>
                     </div>
                     <div class="col-md-6">
                         <h2>${country.nativeName}</h2>
@@ -64,7 +69,7 @@ function detailInfo(country) {
                     
                                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Region</h2>
+                        <h2 class="detailHeading">Region</h2>
                     </div>
                     <div class="col-md-6">
                         <h2>${country.region}</h2>
@@ -74,7 +79,7 @@ function detailInfo(country) {
 
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Sub-region</h2>
+                        <h2 class="detailHeading">Sub-region</h2>
                     </div>
                     <div class="col-md-6">
                         <h2>${country.subregion}</h2>
@@ -84,7 +89,7 @@ function detailInfo(country) {
 
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Population</h2>
+                        <h2 class="detailHeading">Population</h2>
                     </div>
                     <div class="col-md-6">
                         <h2>${country.population}</h2>
@@ -94,7 +99,7 @@ function detailInfo(country) {
 
                             <div class="row">
                     <div class="col-md-6">
-                        <h2>Area</h2>
+                        <h2 class="detailHeading">Area</h2>
                     </div>
                     <div class="col-md-6">
                         <h2>${country.area}</h2>
@@ -142,7 +147,7 @@ function flag(country) {
 }
 
 function currency(lst) {
-	let output = `<div class="card col-md-8 my-auto mx-auto">
+	let output = `<div class="card col-md-8 my-3 mx-auto">
                     <div class="col-md-6 ">
                         <table class="table">
                         <h4 class="text">Currency</h4>`;
@@ -181,7 +186,6 @@ function currency(lst) {
 	});
 
 	return output + '</table> </div> </div>';
-
 }
 function Languages(lst) {
 	let output = `<div class="card col-md-8 my-auto mx-auto">
@@ -221,10 +225,9 @@ function TimeZone(lst) {
 		result += `<li class="list-group-item">${element}</li>`;
 	});
 
-	let output = 
-    `                <!-- TimeZone -->
-    <div class="card>"
-                <div class="row my-auto mx-auto">
+	let output = `                <!-- TimeZone -->
+    <div class="card">
+                <div class="row my-3 mx-auto">
                     <h4 class="text-muted">TimeZone</h4>
                     <ul class="list-group">
                        ${result}
@@ -233,8 +236,6 @@ function TimeZone(lst) {
 
 	return output;
 }
-
-
 
 // console.log(id);
 document.addEventListener('DOMContentLoaded', () => {
