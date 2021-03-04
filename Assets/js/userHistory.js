@@ -23,9 +23,9 @@ function addDemo(title) {
 }
 
 
-addDemo({ uname: 'checking1', approved_policy: "first policy"});
-addDemo({ uname: 'checking1', approved_policy: "second policy"});
-addDemo({ uname: 'checkandLovely', approved_policy: "third policy"});
+// addDemo({ uname: 'checking1', approved_policy: "first policy"});
+// addDemo({ uname: 'checking1', approved_policy: "second policy"});
+// addDemo({ uname: 'checkandLovely', approved_policy: "third policy"});
 
 
 
@@ -37,8 +37,8 @@ function displayUserHistory() {
 		.transaction('r', db.approved_policies, function() {
 			db.approved_policies
 				.each((element) => {
-                    if (element.uname == userName.value) {
-                        insertElement(element)
+                    if (element.uname == sessionStorage.getItem("uname")) {
+                        insertElement(element);
                     }
                 })
 				.then((res) => {
