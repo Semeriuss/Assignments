@@ -44,7 +44,7 @@ function loadDataNew() {
 			console.log(countries);
 			let display = '';
 			countries.forEach(function(country, index) {
-				display += countryNode(country, index);
+				display += countryNode(country);
 			});
 			appLi.innerHTML = display;
 		})
@@ -61,7 +61,7 @@ function loadDataNewAsia() {
 			console.log(countries);
 			let display = '';
 			countries.forEach(function(country, index) {
-				display += countryNode(country, index);
+				display += countryNode(country);
 			});
 			appLiAsia.innerHTML = display;
 		})
@@ -78,7 +78,7 @@ function loadDataNewAustralia() {
 			console.log(countries);
 			let display = '';
 			countries.forEach(function(country, index) {
-				display += countryNode(country, index);
+				display += countryNode(country);
 			});
 			appLiAustralia.innerHTML = display;
 		})
@@ -95,7 +95,7 @@ function loadDataNewEurope() {
 			console.log(countries);
 			let display = '';
 			countries.forEach(function(country, index) {
-				display += countryNode(country, index);
+				display += countryNode(country);
 			});
 			appLiEurope.innerHTML = display;
 		})
@@ -112,7 +112,7 @@ function loadDataNewAfrica() {
 			console.log(countries);
 			let display = '';
 			countries.forEach(function(country, index) {
-				display += countryNode(country, index);
+				display += countryNode(country);
 			});
 			appLiAfrica.innerHTML = display;
 		})
@@ -129,7 +129,7 @@ function loadDataNewNorthAmerica() {
 			console.log(countries);
 			let display = '';
 			countries.forEach(function(country, index) {
-				display += countryNode(country, index);
+				display += countryNode(country);
 			});
 			appLiNorthAmerica.innerHTML = display;
 		})
@@ -146,7 +146,7 @@ function loadDataNewCentralAmerica() {
 			console.log(countries);
 			let display = '';
 			countries.forEach(function(country, index) {
-				display += countryNode(country, index);
+				display += countryNode(country);
 			});
 			appLiCentralAmerica.innerHTML = display;
 		})
@@ -163,7 +163,7 @@ function loadDataNewSouthAmerica() {
 			console.log(countries);
 			let display = '';
 			countries.forEach(function(country, index) {
-				display += countryNode(country, index);
+				display += countryNode(country);
 			});
 			appLiSouthAmerica.innerHTML = display;
 		})
@@ -179,8 +179,8 @@ function loadDataNewCaribbean() {
 		.then(function(countries) {
 			console.log(countries);
 			let display = '';
-			countries.forEach(function(country, index) {
-				display += countryNode(country, index);
+			countries.forEach(function(country) {
+				display += countryNode(country);
 			});
 			appLiCaribbean.innerHTML = display;
 		})
@@ -206,7 +206,7 @@ function searchCountries() {
 			for (let i = 0; i < toBeSearched.length; i++) {
 				const searchContent = search.value.toUpperCase();
 				if (toBeSearched[i].name.toUpperCase().indexOf(searchContent) > -1) {
-					output += countryNode(toBeSearched[i], toBeSearched[i].id);
+					output += countryNode(toBeSearched[i]);
 				}
 			}
 
@@ -220,10 +220,10 @@ function searchCountries() {
 		});
 }
 
-function countryNode(country, index) {
+function countryNode(country) {
 	return `<div class="col-md-4 mb-4 row-eq-height">
                         <div class="card"  id="card">
-                        <a href="detail.html?id=${index}">
+                        <a href="detail.html?id=${country.name}">
                             <div class="card-body mx-3 "  id="card-body">
                                 <img id="imgs" style=" height=5%;" class="card-img-top img-fluid img-thumbnail" style="border: 2px solid #0000" src="${country.flag}" alt="">
                                 <h4 id="names"  class="card-title mt-2">${country.name}</h4>

@@ -12,6 +12,9 @@ export const requests = {
 	},
 	SUBREGION: (name) => {
 		return fetch(`${BASE_URL}subregion/${name}`);
+	},
+	FULL_NAME: (name) => {
+		return fetch(`${BASE_URL}name/${name}`);
 	}
 };
 

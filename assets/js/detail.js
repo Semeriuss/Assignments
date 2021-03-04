@@ -5,7 +5,7 @@ const main = document.querySelector('.detail');
 
 //read from q string
 const urlParams = new URLSearchParams(window.location.search);
-const id = Number(urlParams.get('id'));
+const id = urlParams.get('id');
 
 function display(country) {
 	let html = `<div class="card" id="dbody">
@@ -239,9 +239,23 @@ function TimeZone(lst) {
 
 // console.log(id);
 document.addEventListener('DOMContentLoaded', () => {
-	requests.ALL().then((val) => val.json()).then((val) => {
-		main.innerHTML = display(val[id]);
-	});
+	// requests.().then((val) => val.json()).then((val) => {
+
+	// 	main.innerHTML = display(val);
+	// });
+
+	console.log(id);
+
+	requests
+		.FULL_NAME(id)
+		.then((val) => {
+			return val.json();
+			// main.innerHTML = display(val.json());
+		})
+		.then((val) => {
+			console.log(val);
+			main.innerHTML = display(val[0]);
+		});
 
 	//loadDataNew();
 });
