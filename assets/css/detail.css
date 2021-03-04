@@ -1,19 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
 #body{
-    background-color: black;
+    background-color: lightyellow;
+    font-family: 'Merriweather', serif;
     
 }
 #dflag{
-    width: 50%;
+    width: 40%;
     height: 20%;
-    border: beige;
+    border: none;
     align-items: center;
-    box-shadow: 3px 3px 3px 3px white;
+    box-shadow:10px 10px 10px 10px rgba(0, 0, 0, 0.764);
+   
+}
+#dflag:hover{
+	transform: scale(1.15);
+	transition: transform 550ms;
+	box-shadow:8px 8px rgba(0, 0, 0, 0.931) ;
 }
 .card {
-    background-color: black;
+    height: fit-content;
     
 }
 .cardbody {
     background-color:rgb(5, 5, 91);
     color:black;
+    height: 20%;
+}
+
+#dbody{
+    background-color: lightyellow;
+    margin:1rem;
+    box-shadow:10px 10px 10px 10px rgba(0, 0, 0, 0.764);
+    font-size: smaller; 
 }

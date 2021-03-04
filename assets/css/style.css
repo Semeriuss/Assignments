@@ -34,7 +34,6 @@ a:active {
 }
 
 a:hover {
-	background-color: rgb(67, 123, 172);
 	color: rgb(95, 149, 194);
 	transform: scale(1.15);
 	transition: transform 550ms;
@@ -94,13 +93,13 @@ a:hover {
 
 #card-body {
 	color:darkblue;
-	background-color:lightyellow;
+	
 }
 
 #imgs {
 width: fit-content;
 background-size: cover ;
-box-shadow: 4px 4px thistle;
+background-color:  rgb(166, 166, 144);
 
 
 }
@@ -139,6 +138,15 @@ margin-top: 5rem;
 }
 .img-thumbnails{
 box-shadow: black;
-background-color:black
+background-color:black;
 
 }
+.img-thumbnails:hover{
+	background-color: rgb(0, 0, 0);
+	color: rgb(95, 149, 194);
+	transform: scale(1.15);
+	transition: transform 550ms;
+	border: 0;
+
+}
+

@@ -8,21 +8,23 @@ const urlParams = new URLSearchParams(window.location.search);
 const id = Number(urlParams.get('id'));
 
 function display(country) {
-	let html = `
+	let html = `<div class="card" id="dbody">
                 <div class="row my-auto">
                 
                         ${flag(country)}
+                        ${TimeZone(country.timezones)}  
                     ${detailInfo(country)}
-              
-            ${currency(country.currencies)}
+                  
+
             ${Languages(country.languages)}
+            ${currency(country.currencies)}
             
-            ${TimeZone(country.timezones)}
+           
 
 
             
 
-            </div>
+            </div></div>
     
     `;
 
@@ -32,8 +34,7 @@ function display(country) {
 function detailInfo(country) {
 	return ` 
                     <div class="row rowback">
-                    <div class="card col-md-6 my-5 bg-dark ">
-                    <div class="cardbody">
+                    <div class="card col-md-8 my-2 mx-auto">
                     <div class="row ">
                     <div class="row">
     
@@ -45,6 +46,7 @@ function detailInfo(country) {
                     </div>
                 </div>
                 </div>
+                
                 <!-- End of Name -->
 
 
@@ -98,13 +100,12 @@ function detailInfo(country) {
                         <h2>${country.area}</h2>
                     </div>
                 </div>
-                </div>
+                
                 <!-- End of Area -->
                 </div>
                 
 
-                <div class="card col-md-6">
-                <div class="cardbody">
+                <div class="card col-md-8 my-auto mx-auto">
                 <div class="row">
                     <div class="">
                         <table class="table">
@@ -141,7 +142,7 @@ function flag(country) {
 }
 
 function currency(lst) {
-	let output = `<div class="card col-md-6 ">
+	let output = `<div class="card col-md-8 my-auto mx-auto">
                     <div class="col-md-6 ">
                         <table class="table">
                         <h4 class="text">Currency</h4>`;
@@ -183,7 +184,7 @@ function currency(lst) {
 
 }
 function Languages(lst) {
-	let output = `<div class="card col-md-6">
+	let output = `<div class="card col-md-8 my-auto mx-auto">
     <div class="col-md-6">
     <h4 class="text-muted">Language</h4>`;
 	lst.forEach((element) => {
@@ -220,13 +221,15 @@ function TimeZone(lst) {
 		result += `<li class="list-group-item">${element}</li>`;
 	});
 
-	let output = `                <!-- TimeZone -->
-                <div class="row">
+	let output = 
+    `                <!-- TimeZone -->
+    <div class="card>"
+                <div class="row my-auto mx-auto">
                     <h4 class="text-muted">TimeZone</h4>
                     <ul class="list-group">
                        ${result}
                     </ul>
-                </div> </div> </div>`;
+                 </div>`;
 
 	return output;
 }
