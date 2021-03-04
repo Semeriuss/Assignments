@@ -7,30 +7,154 @@ const main = document.querySelector('.detail');
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 
-function display(country) {
-	let html = `<div class="card" id="dbody">
-                <div class="row my-auto">
-                
-                        ${flag(country)}
-                       
-                    ${detailInfo(country)}
-                  
-                   <div class="row my-auto">
-
-            ${Languages(country.languages)}
+function disp(country){
+    let html = `
+    <div class="card" id="dbody">
+        <div class="row my-auto">
+            <div class="d-flex justify-content-center  my-auto ">
+                <img src=${country.flag} class="img" id="dflag" alt="">
             </div>
+        </div>
 
-            <div class="row my-auto">
-            ${currency(country.currencies)}
-              ${TimeZone(country.timezones)} 
-              </div>
-           
+        <div class="row rowback m-5" style="background-color:antiquewhite;">
+            <div class="card col-md-8 my-2 mx-auto">
+                <div class="row ">
+    
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="detailHeading">Name</h2>
+                </div>
+                <div class="col-md-6">
+                    <h2>${country.name}</h2>
+                </div>
+            </div>
+        
+        
+        <!-- End of Name -->
 
+
+        <div class="row">
+            <div class="col-md-6">
+            
+                <h2 class="detailHeading">Native Name</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>${country.nativeName}</h2>
+            </div>
+        </div>
+        <!-- End of Native Name -->
 
             
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="detailHeading">Region</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>${country.region}</h2>
+            </div>
+        </div>
+        <!-- End of Region -->
 
-            </div></div>
-    
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="detailHeading">Sub-region</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>${country.subregion}</h2>
+            </div>
+        </div>
+        <!-- End of Sub-region -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="detailHeading">Population</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>${country.population}</h2>
+            </div>
+        </div>
+        <!-- End of Population -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="detailHeading">Area</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>${country.area}</h2>
+            </div>
+        </div>
+        
+        <!-- End of Area -->
+        </div>
+        </div>
+        
+        <div class="card col-md-8 my-auto mx-auto">
+        <div class="row">
+            <div class="">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <h4 class="text-muted">Location</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Longtitude</th>
+                        <th>${country.latlng[0]}</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Latitude
+                        </th>
+                        <th>
+                            ${country.latlng[1]}
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        </div>
+            <div>
+            ${Languages(country.languages)}
+            </div>
+            <div>
+            ${currency(country.currencies)} 
+            </div>
+            <div>
+            ${TimeZone(country.timezones)} 
+            </div>
+        </div>
+        
+            
+
+
+        
+
+   
+            
+        </div>
+    </div>    
+    `;
+
+return html;
+   
+}
+
+function display(country) {
+	let html = `<div class="card" id="dbody">
+                    <div class="row my-auto">
+                    
+                        ${flag(country)}
+                        
+                        ${detailInfo(country)}
+
+                        ${Languages(country.languages)}
+
+                        ${currency(country.currencies)} 
+
+                        ${TimeZone(country.timezones)} 
+                        
+                    </div>
+                </div>    
     `;
 
 	return html;
@@ -38,104 +162,104 @@ function display(country) {
 
 function detailInfo(country) {
 	return ` 
-                    <div class="row rowback m-5 ">
-                    <div class="card col-md-8 my-2 mx-auto">
-                    <div class="row ">
-                    <div class="row">
+        <div class="row rowback m-5 bg-dark">
+            <div class="card col-md-8 my-2 mx-auto">
+                <div class="row ">
     
-                        <div class="col-md-6">
-                            <h2 class="detailHeading">Name</h2>
-                        </div>
-                    <div class="col-md-6">
-                        <h2>${country.name}</h2>
-                    </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="detailHeading">Name</h2>
                 </div>
+                <div class="col-md-6">
+                    <h2>${country.name}</h2>
                 </div>
-                
-                <!-- End of Name -->
+            </div>
+        
+        
+        <!-- End of Name -->
 
 
-                <div class="row">
-                    <div class="col-md-6">
-                    
-                        <h2 class="detailHeading">Native Name</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <h2>${country.nativeName}</h2>
-                    </div>
-                </div>
-                <!-- End of Native Name -->
+        <div class="row">
+            <div class="col-md-6">
+            
+                <h2 class="detailHeading">Native Name</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>${country.nativeName}</h2>
+            </div>
+        </div>
+        <!-- End of Native Name -->
 
-                    
-                                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="detailHeading">Region</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <h2>${country.region}</h2>
-                    </div>
-                </div>
-                <!-- End of Region -->
+            
+                        <div class="row">
+            <div class="col-md-6">
+                <h2 class="detailHeading">Region</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>${country.region}</h2>
+            </div>
+        </div>
+        <!-- End of Region -->
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="detailHeading">Sub-region</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <h2>${country.subregion}</h2>
-                    </div>
-                </div>
-                <!-- End of Sub-region -->
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="detailHeading">Sub-region</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>${country.subregion}</h2>
+            </div>
+        </div>
+        <!-- End of Sub-region -->
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="detailHeading">Population</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <h2>${country.population}</h2>
-                    </div>
-                </div>
-                <!-- End of Population -->
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="detailHeading">Population</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>${country.population}</h2>
+            </div>
+        </div>
+        <!-- End of Population -->
 
-                            <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="detailHeading">Area</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <h2>${country.area}</h2>
-                    </div>
-                </div>
-                
-                <!-- End of Area -->
-                </div>
-                
-
-                <div class="card col-md-8 my-auto mx-auto">
-                <div class="row">
-                    <div class="">
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <h4 class="text-muted">Location</h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Longtitude</th>
-                                <th>${country.latlng[0]}</th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    Latitude
-                                </th>
-                                <th>
-                                    ${country.latlng[1]}
-                                </th>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                </div>
-                </div>
+                    <div class="row">
+            <div class="col-md-6">
+                <h2 class="detailHeading">Area</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>${country.area}</h2>
+            </div>
+        </div>
+        
+        <!-- End of Area -->
+        </div>
+        </div>
+        
+        <div class="card col-md-8 my-auto mx-auto">
+        <div class="row">
+            <div class="">
+                <table class="table">
+                    <tr>
+                        <td>
+                            <h4 class="text-muted">Location</h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Longtitude</th>
+                        <th>${country.latlng[0]}</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Latitude
+                        </th>
+                        <th>
+                            ${country.latlng[1]}
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        </div>
+        </div>
 `;
 }
 
@@ -147,8 +271,8 @@ function flag(country) {
 }
 
 function currency(lst) {
-	let output = `<div class="card col-md-8 my-3 mx-auto">
-                    <div class="col-md-6 ">
+	let output = `<div class="card col-md-6 my-3 mx-auto">
+                    <div class="col-md-6">
                         <table class="table">
                         <h4 class="text">Currency</h4>`;
 
@@ -188,9 +312,10 @@ function currency(lst) {
 	return output + '</table> </div> </div>';
 }
 function Languages(lst) {
-	let output = `<div class="card col-md-8 my-auto mx-auto">
+    // <div class="row rowback m-5">
+	let output = `<div class="card col-md-6 my-3 mx-auto">
     <div class="col-md-6">
-    <h4 class="text-muted">Language</h4>`;
+    <h4>Language</h4>`;
 	lst.forEach((element) => {
 		output += `  
                         <table class="table">
@@ -226,7 +351,7 @@ function TimeZone(lst) {
 	});
 
 	let output = `                <!-- TimeZone -->
-    <div class="card">
+    <div class="card col-md-6 mx-auto mb-3">
                 <div class="row my-3 mx-auto">
                     <h4 class="text-muted">TimeZone</h4>
                     <ul class="list-group">
@@ -254,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 		.then((val) => {
 			console.log(val);
-			main.innerHTML = display(val[0]);
+			main.innerHTML = disp(val[0]);
 		});
 
 	//loadDataNew();

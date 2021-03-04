@@ -224,8 +224,8 @@ function countryNode(country) {
 	return `<div class="col-md-4 mb-4 row-eq-height">
                         <div class="card"  id="card">
                         <a href="detail.html?id=${country.name}">
-                            <div class="card-body mx-3 "  id="card-body">
-                                <img id="imgs" style=" height=5%;" class="card-img-top img-fluid img-thumbnail" style="border: 2px solid #0000" src="${country.flag}" alt="">
+                            <div class="card-body mx-3" style="border: 0;"  id="card-body">
+                                <img id="imgs" class="card-img-top img-fluid img-thumbnail" src="${country.flag}" alt="">
                                 <h4 id="names"  class="card-title mt-2">${country.name}</h4>
                                 <h5 id="captial-names" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" class="card-title">${country.capital}</h5>
                             </div>
