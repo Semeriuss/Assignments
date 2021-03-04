@@ -24,14 +24,6 @@ $(document).ready(function() {
 	});
 });
 
-
-
-
-
-
-
-
-
 var db = new Dexie('RETEX');
 
 db.version(1).stores({
@@ -39,12 +31,10 @@ db.version(1).stores({
 	policies: '++id,&name, maincat, subcat,description,premium,sum_assured, date',
 	main_category: '++id,&name, date',
 	sub_category: '++id,&name, maincat, date',
-	pending_policies: '++id, uname,policy_name'
+	pending_policies: '++id, uname, policy_name'
 });
 
-if (document.getElementById("USER") != null) {
-	const USER = document.getElementById("USER");
-	USER.innerText = `${sessionStorage.getItem("uname")}`;
+if (document.getElementById('USER') != null) {
+	const USER = document.getElementById('USER');
+	USER.innerText = `${sessionStorage.getItem('uname')}`;
 }
-
-

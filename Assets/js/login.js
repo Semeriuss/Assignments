@@ -35,7 +35,7 @@ async function login(uname, psd) {
 			sessionStorage.setItem('uname', uname);
 			return;
 		} else {
-			window.location = 'userPage.html';
+			window.location = 'userApply.html';
 			sessionStorage.setItem('uname', uname);
 		}
 	};
@@ -47,14 +47,16 @@ async function login(uname, psd) {
 	printAddress();
 }
 
-// login('bini2', '1231');
-// let a = await db.users.get(2);
-// console.log(a);
-
-// let res = git() => {
-// 	return .then((a) => {
-// 		return a;"
-// 	});
-// };
-
-// console.log(res());
+try {
+	create_Acount({
+		fname: 'Amanuel',
+		lname: 'Debebe',
+		uname: 'AmanD',
+		psd: '123',
+		email: 'my@email.com',
+		admin: true,
+		balance: 0
+	});
+} catch (error) {
+	console.log(error);
+}
