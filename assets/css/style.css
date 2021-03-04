@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
-#indexbody{
+#indexbody {
 	background-color: lightyellow;
 	font-family: 'Merriweather', serif;
 }
 ::-webkit-scrollbar {
 	width: 12px;
 
-	background-color: lightyellow;
+	background-color: rgb(83, 83, 80);
 }
 ::-webkit-scrollbar-thumb {
-	background-color:lightyellow
+	background-color: rgb(238, 238, 210);
 	height: 20px;
 	border-radius: 4px;
 }
@@ -22,7 +22,7 @@
 	border: 0;
 	background-color: rgb(39, 53, 65);
 	color: white;
-	float:right;
+	float: right;
 }
 
 a:link,
@@ -38,7 +38,6 @@ a:hover {
 	transform: scale(1.15);
 	transition: transform 550ms;
 	border: 0;
-
 }
 
 #home-tab,
@@ -53,7 +52,7 @@ a:hover {
 #nAmerica-tab,
 #cAmerica-tab,
 #sAmerica-tab,
-#caribbean-tab{
+#caribbean-tab {
 	border: 0;
 }
 /* #ex1-tab-1, #ex1-tab-2, #ex1-tab-3, #ex1-tab-4, #ex1-tab-5, #ex1-tab-6, #ex1-tab-7:active{
@@ -88,43 +87,36 @@ a:hover {
 	border: none;
 	background-color: lightyellow;
 	border-radius: 0;
-	
 }
 
 #card-body {
-	color:darkblue;
-	
+	color: darkblue;
 }
 
 #imgs {
-width: fit-content;
-background-size: cover ;
-background-color:  rgb(166, 166, 144);
-
-
+	width: fit-content;
+	background-size: cover;
+	background-color: rgb(166, 166, 144);
 }
 
-.row-eq-height{
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0;
-  }
-  .row-eq-height [class*="col-"]{
-    padding: 0;
-  }
-  .img-container{  
-    
-    margin-left: 0;
-  }
-  .row-eq-height img{
-    border: 0;
-    width: 100%;
-    height: 18rem;
-   
-  }
-
+.row-eq-height {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 0;
+}
+.row-eq-height [class*="col-"] {
+	padding: 0;
+}
+.img-container {
+	margin-left: 0;
+}
+.row-eq-height img {
+	border: 0;
+	width: 100%;
+	height: 18rem;
+}
 
 #names {
 	font-size: 1.8rem;
@@ -133,20 +125,17 @@ background-color:  rgb(166, 166, 144);
 /* #capital-names{
 
 } */
-.container{
-margin-top: 5rem;
+.container {
+	margin-top: 5rem;
 }
-.img-thumbnails{
-box-shadow: black;
-background-color:black;
-
+.img-thumbnails {
+	box-shadow: rgb(80, 78, 78);
+	background-color: rgb(58, 56, 56);
 }
-.img-thumbnails:hover{
+.img-thumbnails:hover {
 	background-color: rgb(0, 0, 0);
 	color: rgb(95, 149, 194);
 	transform: scale(1.15);
 	transition: transform 550ms;
 	border: 0;
-
 }
-
