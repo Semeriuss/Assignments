@@ -39,7 +39,9 @@ db.version(1).stores({
 	policies: '++id,&name, maincat, subcat,description,premium,sum_assured, date',
 	main_category: '++id,&name, date',
 	sub_category: '++id,&name, maincat, date',
-	pending_policies: '++id, uname,policy_name'
+	pending_policies: '++id, uname,policy_name', 
+	approved_policies: '++id, uname, approved_policy', 
+	disapproved_policies: '++id, uname, disapproved_policy'
 });
 
 if (document.getElementById("USER") != null) {

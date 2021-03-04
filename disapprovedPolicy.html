@@ -22,7 +22,6 @@
 
 
   </head>
-
   <body id="admin-page">
     <!--Section to the left(sidebar)-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top  sidebar-bg-blue">
@@ -153,34 +152,23 @@
         <section style="width: 100%;" >
         <div class="container-fluid" id="main">
 
-          <div class="mx-3 ">
-            <h3 class="text-light ml-4 mx-3 mt-2">Add Insurance SubCategory !</h3>
+          <table class="table bg-light mt-5 mr-3 ml-2 table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Customer's User name</th>
+                <th scope="col">Disapproved Policy name</th>
+              </tr>
+            </thead>
+            <tbody class="disapprovedrowData">
+              <!-- main category list goes here -->
+            </tbody>
+          </table>
+
           </div>
-          <form class="  contactus  pt-3 pl-3 px-5" id="form">
-            <p class="text-white">Fill the Information</p>
-            <hr style="background-color: aliceblue;">
-            <div class="form-group mt-4">
-              <label class="text-white" for="category">Category: *</label><br>
-              <select style="width: 24.5rem;" name="category" id="cat">
-
-              </select>
-            </div>
-            <div class="form-group mt-4">
-              <label class="text-white" for="name">Sub Category Name: *</label>
-              <input style="width: 24.5rem;" type="text" required id="name" class="form-control bg-light">
-            </div>
-            <div class="row">
-              <div class="col-md-12 mb-4 mt-2">
-                <button class="btn btn-warning px-5 p-2 mb-2">ADD</button>
-              </div>
-            </div>
-          </form>
-
-        </div>
-        </section>
-      </div>
-
-
+          </Section>
+          </div>
+        
 
 
 
@@ -195,6 +183,8 @@
       <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
             crossorigin="anonymous"></script> -->
+
+
       <!-- BOOTSTRAP 4.6 JS -->
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -207,7 +197,7 @@
         crossorigin="anonymous"></script>
 
       <script src="./Assets/js/app.js"></script>
-      <script src="./Assets/js/addSubCat.js"></script>
+      <script src="./Assets/js/disapprovedPolicy.js"></script>
   </body>
 
 </html>
