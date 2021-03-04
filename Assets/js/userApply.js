@@ -21,21 +21,6 @@ function callback(e) {
 }
 
 function clicked(pname) {
-	console.log('GERE');
-	// if (document.addEventListener) {
-	// 	document.addEventListener('click', function(event) {
-	// 		event.preventDefault();
-	// 		if (event.target.classList == 'fa fa-plus-circle') {
-	// 			console.log('Clicked Check');
-	// 			callback(event);
-	// 		} else {
-	// 		}
-	// 	});
-	// }
-	// console.log('Checking...');
-	// var e = window.e || e;
-	// var input = {};
-	// alert("Here is " + e.target.parentElement.classList + "    " + e.target.classList );
 	var con = confirm('Are you sure you want to apply to this insurance?');
 	if (con) {
 		console.log();
@@ -51,7 +36,6 @@ function applyPolicy(user, pname) {
 			db.pending_policies
 				.put({ uname: user, policy_name: pname })
 				.then((val) => {
-					// console.log("Worked.." + val);
 					return true;
 				})
 				.catch((val) => {
@@ -70,7 +54,6 @@ function displayUserPolicyCategory() {
 		.transaction('rw', db.policies, db.pending_policies, function() {
 			db.policies
 				.each((val) => {
-					// return checkPend(val);
 					insertUserPolicyElement(val, false);
 				})
 				.catch((res) => {
@@ -85,7 +68,6 @@ function displayUserPolicyCategory() {
 function checkPend(value) {
 	return db.pending_policies
 		.each((val) => {
-			console.log('Check');
 			if (val.uname == sessionStorage.getItem('uname') && value.name == val.policy_name) {
 				console.log('Checking a Third Time!!!');
 				insertUserPolicyElement(value, true);
@@ -109,7 +91,6 @@ function checkBalance(user, policy) {
 }
 
 function insertUserPolicyElement(objText, bool) {
-	// console.log("Checking..");
 	const tr = document.createElement('tr');
 	const th = document.createElement('th');
 	th.setAttribute('scope', 'row');
@@ -156,7 +137,3 @@ function insertUserPolicyElement(objText, bool) {
 	tr.appendChild(td6);
 	userTablePolicyRow.appendChild(tr);
 }
-
-//{ uname: 'checking1', policy_name: "first policy" }
-// data-uname='window.sessionStorage.getItem('uname')' data-policy='${objText.name}'
-// '{uname: ${window.sessionStorage.getItem('uname')}, policy_name: ${objText.name}}'

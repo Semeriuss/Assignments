@@ -54,51 +54,6 @@ function addPolicyDemo(title) {
 			console.error(e.stack);
 		});
 }
-// addPolicyDemo({
-// 	name: 'Policy V',
-// 	maincat: 'Life-Insurance',
-// 	subcat: 'Health',
-// 	description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
-// 	premium: '500',
-// 	sum_assured: '20,000',
-// 	date: new Date().toUTCString()
-// });
-// addPolicyDemo({
-// 	name: 'Policy W',
-// 	maincat: 'Property-Insurance',
-// 	subcat: 'Motor',
-// 	description: 'Illo quisquam perspiciatis velit necessitatibus ducimus natus',
-// 	premium: '500',
-// 	sum_assured: '20,000',
-// 	date: new Date().toUTCString()
-// });
-// addPolicyDemo({
-// 	name: 'Policy X',
-// 	maincat: 'Fire-Insurance',
-// 	subcat: 'Cycle',
-// 	description: 'Itaque numquam omnis ut autem, modi culpa sapiente exercitationem',
-// 	premium: '500',
-// 	sum_assured: '20,000',
-// 	date: new Date().toUTCString()
-// });
-// addPolicyDemo({
-// 	name: 'Policy Y',
-// 	maincat: 'Liability-Insurance',
-// 	subcat: 'Travel',
-// 	description: 'Omnis modi culpa sapiente veniam aperiam ratione assumenda!',
-// 	premium: '500',
-// 	sum_assured: '20,000',
-// 	date: new Date().toUTCString()
-// });
-// addPolicyDemo({
-// 	name: 'Policy Z',
-// 	maincat: 'Guarantee-Insurance',
-// 	subcat: 'Mobile',
-// 	description: 'Sapiente exercitationem veniam aperiam ratione assumenda!',
-// 	premium: '500',
-// 	sum_assured: '20,000',
-// 	date: new Date().toUTCString()
-// });
 
 const tablePolicyRow = document.querySelector('.policyRowData');
 function displayPolicyCategory() {
@@ -107,7 +62,6 @@ function displayPolicyCategory() {
 			db.policies
 				.each((val) => insertPolicyElement(val))
 				.then((res) => {
-					// console.log(res);
 					return true;
 				})
 				.catch((res) => {

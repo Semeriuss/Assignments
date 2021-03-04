@@ -1,54 +1,3 @@
-// $('#edit').click(function() {
-// 	var name = $('#name').val();
-// 	var cat = $('#cat').val();
-// 	var str = 'You Have Successfully Edited an Insurance Sub Category';
-// 	$('#modal_body').html(str);
-// 	updateSubCat({ name: cat, maincat: name, date: new Date().toUTCString() });
-// });
-
-// function updateSubCat(input) {
-// 	return db
-// 		.transaction('rw', db.sub_category, () => {
-// 			db.policies
-// 				.update(input.id, { input })
-// 				.then((val) => {
-// 					return true;
-// 				})
-// 				.catch(() => {
-// 					return false;
-// 				});
-// 		})
-// 		.catch((e) => {
-// 			console.log(e);
-// 		});
-// }
-
-// function addSubDemo(title) {
-// 	return db
-// 		.transaction('rw', db.sub_category, function() {
-// 			db.sub_category
-// 				.put(title)
-// 				.then((val) => {
-// 					// console.log("Worked.." + val);
-// 					return true;
-// 				})
-// 				.catch((val) => {
-// 					console.log('Some Error Happened' + val);
-// 					return false;
-// 				});
-// 		})
-// 		.catch(function(e) {
-// 			console.error(e.stack);
-// 		});
-// }
-
-
-// addSubDemo({name: "Health", maincat: "Life-Insurance", date: new Date().toUTCString()});
-// addSubDemo({name: "Motor", maincat: "Property-Insurance", date: new Date().toUTCString()});
-// addSubDemo({name: "Cycle", maincat: "Fire-Insurance", date: new Date().toUTCString()});
-// addSubDemo({name: "Travel", maincat: "Liability-Insurance", date: new Date().toUTCString()});
-// addSubDemo({name: "Mobile", maincat: "Guarantee-Insurance", date: new Date().toUTCString()});
-
 const tableSubRow = document.querySelector('.subRowData');
 const tableSubRow1 = document.querySelector('.subRowData1');
 const tableSubRow2 = document.querySelector('.subRowData2');
@@ -61,7 +10,6 @@ function displaySubCategory() {
 			db.sub_category
 				.each((val) => insertSubElement(val))
 				.then((res) => {
-					// console.log(res);
 					return true;
 				})
 				.catch((res) => {
@@ -140,4 +88,3 @@ var modal = `
 `;
 
 displaySubCategory();
-

@@ -40,3 +40,14 @@ if (document.getElementById('USER') != null) {
 	const USER = document.getElementById('USER');
 	USER.innerText = `${sessionStorage.getItem('uname')}`;
 }
+
+
+
+
+
+
+
+
+
+
+

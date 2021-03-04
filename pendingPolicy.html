@@ -8,8 +8,6 @@
 
     <link rel="stylesheet" href="./Assets/css/style.css">
     <!-- BOOTSTRAP 5 CSS -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <!-- Fontawesome -->
@@ -22,134 +20,146 @@
 
 
   </head>
+
   <body id="admin-page">
     <!--Section to the left(sidebar)-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top  sidebar-bg-blue">
-  
-      
-     
+
+
+
       <!-- sidebar toggle -->
-      <button class="navbar-toggler ml-auto btn btn-link border-0  " type="button" id="sidebar" aria-label="Toggle navigation">
+      <button class="navbar-toggler ml-auto btn btn-link border-0  " type="button" id="sidebar"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-        
+
       </button>
     </nav>
     <div class="d-flex wrapper wrapper-navbar-used wrapper-navbar-fixed">
 
       <nav role="navigation" class="sidebar sidebar-bg-white" id="navigation">
-    
+
         <!-- sidebar -->
         <div class="sidebar-menu ">
-          
-          
+
+
           <div class="sidebar-menu-fixed">
-            <ul class="nav flex-column mx-2 my-3">  
-    <!--Section to the left(sidebar)-->
-    
-      
-        <li class ="nav-item">
-          
-            
-          <div class="row py-1 px-5" style="color: white;">
-            <div class="dropdown "style="color:white">
-              <a type="button" id="dropdownMenu" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle fa-3x"></i></a>
-
-              <div class="dropdown-menu dropdown-primary">
-                <a class="dropdown-item" href="editUserProfile.html"><i class="fas fa-user-edit"></i>&nbsp;Edit
-                  Profile</a>
-                <a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i>&nbsp;Log Out</a>
-
-              </div>
-            </div>
-            <div>
-              <div id="USER" class="pl-2 pt-1" style="font-size: larger;"></div>
-                  <div style="opacity: 0.6; font-size: medium;">Admin</div>
-              </div>
-            
-              <!-- <p >Biniyam Abiy <br> Admin</p> -->
-            </div>
-            
-          
-        </li>
-          <li class="divder"></li>
-          <li class="nav-item">
-          <div class="py-2"
-            style="font-size: 0.7rem; opacity: 0.6; color: white;">MAIN MENU</div>
-            </li>
-            
-            <hr style="background-color: white;">
-            <li class="nav-item">
-          <div class="pl-0" style="color: white; font-size: 0.8em; "><a href="./adminPage.html" class="functionality-links"><span><i
-                class="fas fa-chart-bar pr-2"></i></span><span>Dashboard</span></a></div>
-            </li>
-            <hr style="background-color: white;">
-            <li class="nav-item">
-          <div  style="color: white; font-size: 1.1em; ">
-            <span><i class="fas fa-list-ul pr-2"></i></span><span>Insurance Category</span>
-            <div class=" pl-4" style="font-size: 0.8em;"><a href="./addCategory.html"
-                class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Add Category</a></div>
-            <div class=" pl-4" style="font-size: 0.8em;"><a  href="./mainCategoryDisplay.html" class="functionality-links"><span><i
-                    class="fas fa-pen-nib pr-2"></i></span>Manage Category</a></div>
-          </div>
-          </li>
-          <hr style="background-color: white;">
-          <li class="nav-item">
-            
-           
-          <div class="" style="color: white; font-size: 1.1rem;">
-            <span><i class="fas fa-list-ul pr-2"></i></span><span>Insurance SubCategory</span>
-            <div class=" pl-4" style="font-size: 0.8em;"><a  href="./addSubCategory.html"
-                class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Add SubCategory</a>
-            </div>
-            <div class="pl-4" style="font-size: 0.8em;"><a  href="./subCategoryDisplay.html" class="functionality-links"><span><i
-                    class="fas fa-pen-nib pr-2"></i></span>Manage SubCategory</a></div>
-          </div>
-          </li>
-          <hr style="background-color: white;">
-          <li class="nav-item">
-          
-          <div class="" style="color: white; font-size: 1.1rem;">
-            <span><i class="fas fa-list-ul pr-2"></i></span><span>Insurance Policy</span>
-            <div class="pl-4" style="font-size: 0.8em;"><a  href="./addPolicy.html"
-                class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Add Policy</a></div>
-            <div class="pl-4" style="font-size: 0.8em;"><a  href="./policyDisplay.html" class="functionality-links"><span><i
-                    class="fas fa-pen-nib pr-2"></i></span>Manage Policy</a></div>
-          </div>
-          </li>
-          <li class="nav-item">
-            <hr style="background-color: white;">
-            
-          <div class="" style="color: white; font-size: 1.1rem;">
-            <span><i class="fas fa-list-ul pr-2"></i></span><span>Users</span>
-            <div class="pl-4" style="font-size: 0.8em;"><a href="./addUserBalance.html"
-                class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Add Balance</a></div>
-          </div>
-          </li>
-          <hr style="background-color: white;">
-          <li class="nav-item">
-            
-          <div class="" style="color: white; font-size: 1.1rem;">
-            <span><i class="fas fa-list-ul pr-2"></i></span><span>Policy Holders(apply by users)</span>
-            <div class="pl-4" style="font-size: 0.8em;"><a href="./pendingPolicy.html" class="functionality-links"><span><i
-                    class="fas fa-plus-circle pr-2"></i></span>Pending Policy</a></div>
-            <div class="pl-4" style="font-size: 0.8em;"><a  href="./approvedPolicy.html" class="functionality-links"><span><i
-                    class="fas fa-pen-nib pr-2"></i></span>Approved Policy</a></div>
-            <div class="pl-4" style="font-size: 0.8em;"><a href="./disapprovedPolicy.html" class="functionality-links"><span><i
-                    class="fas fa-times-circle pr-2"></i></span>Disapproved Policy</a></div>
-          </div>
-          </li>
-          
-        </div>
-        </ul>
-        
-      
-        </nav>
-        
-        
+            <ul class="nav flex-column mx-2 my-3">
+              <!--Section to the left(sidebar)-->
 
 
-        <section style="width: 100%;" >
+              <li class="nav-item">
+
+
+                <div class="row py-1 px-5" style="color: white;">
+                  <div class="dropdown " style="color:white">
+                    <a type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false"><i class="fas fa-user-circle fa-3x"></i></a>
+
+                    <div class="dropdown-menu dropdown-primary">
+                      <a class="dropdown-item" href="editUserProfile.html"><i class="fas fa-user-edit"></i>&nbsp;Edit
+                        Profile</a>
+                      <a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i>&nbsp;Log Out</a>
+
+                    </div>
+                  </div>
+                  <div>
+                    <div id="USER" class="pl-2 pt-1" style="font-size: larger;"></div>
+                    <div style="opacity: 0.6; font-size: medium;">Admin</div>
+                  </div>
+
+                  <!-- <p >Biniyam Abiy <br> Admin</p> -->
+                </div>
+
+
+              </li>
+              <li class="divder"></li>
+              <li class="nav-item">
+                <div class="py-2" style="font-size: 0.7rem; opacity: 0.6; color: white;">MAIN MENU</div>
+              </li>
+
+              <hr style="background-color: white;">
+              <li class="nav-item">
+                <div class="pl-0" style="color: white; font-size: 0.8em; "><a href="./adminPage.html"
+                    class="functionality-links"><span><i
+                        class="fas fa-chart-bar pr-2"></i></span><span>Dashboard</span></a></div>
+              </li>
+              <hr style="background-color: white;">
+              <li class="nav-item">
+                <div style="color: white; font-size: 1.1em; ">
+                  <span><i class="fas fa-list-ul pr-2"></i></span><span>Insurance Category</span>
+                  <div class=" pl-4" style="font-size: 0.8em;"><a href="./addCategory.html"
+                      class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Add Category</a>
+                  </div>
+                  <div class=" pl-4" style="font-size: 0.8em;"><a href="./mainCategoryDisplay.html"
+                      class="functionality-links"><span><i class="fas fa-pen-nib pr-2"></i></span>Manage Category</a>
+                  </div>
+                </div>
+              </li>
+              <hr style="background-color: white;">
+              <li class="nav-item">
+
+
+                <div class="" style="color: white; font-size: 1.1rem;">
+                  <span><i class="fas fa-list-ul pr-2"></i></span><span>Insurance SubCategory</span>
+                  <div class=" pl-4" style="font-size: 0.8em;"><a href="./addSubCategory.html"
+                      class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Add
+                      SubCategory</a>
+                  </div>
+                  <div class="pl-4" style="font-size: 0.8em;"><a href="./subCategoryDisplay.html"
+                      class="functionality-links"><span><i class="fas fa-pen-nib pr-2"></i></span>Manage SubCategory</a>
+                  </div>
+                </div>
+              </li>
+              <hr style="background-color: white;">
+              <li class="nav-item">
+
+                <div class="" style="color: white; font-size: 1.1rem;">
+                  <span><i class="fas fa-list-ul pr-2"></i></span><span>Insurance Policy</span>
+                  <div class="pl-4" style="font-size: 0.8em;"><a href="./addPolicy.html"
+                      class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Add Policy</a>
+                  </div>
+                  <div class="pl-4" style="font-size: 0.8em;"><a href="./policyDisplay.html"
+                      class="functionality-links"><span><i class="fas fa-pen-nib pr-2"></i></span>Manage Policy</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <hr style="background-color: white;">
+
+                <div class="" style="color: white; font-size: 1.1rem;">
+                  <span><i class="fas fa-list-ul pr-2"></i></span><span>Users</span>
+                  <div class="pl-4" style="font-size: 0.8em;"><a href="./addUserBalance.html"
+                      class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Add Balance</a>
+                  </div>
+                </div>
+              </li>
+              <hr style="background-color: white;">
+              <li class="nav-item">
+
+                <div class="" style="color: white; font-size: 1.1rem;">
+                  <span><i class="fas fa-list-ul pr-2"></i></span><span>Policy Holders(apply by users)</span>
+                  <div class="pl-4" style="font-size: 0.8em;"><a href="./pendingPolicy.html"
+                      class="functionality-links"><span><i class="fas fa-plus-circle pr-2"></i></span>Pending Policy</a>
+                  </div>
+                  <div class="pl-4" style="font-size: 0.8em;"><a href="./approvedPolicy.html"
+                      class="functionality-links"><span><i class="fas fa-pen-nib pr-2"></i></span>Approved Policy</a>
+                  </div>
+                  <div class="pl-4" style="font-size: 0.8em;"><a href="./disapprovedPolicy.html"
+                      class="functionality-links"><span><i class="fas fa-times-circle pr-2"></i></span>Disapproved
+                      Policy</a></div>
+                </div>
+              </li>
+
+          </div>
+          </ul>
+
+
+      </nav>
+
+
+
+
+      <section style="width: 100%;">
         <div class="container-fluid" id="main">
 
           <table class="table bg-light mt-5 mr-3 ml-2 table-striped">
@@ -166,39 +176,26 @@
             </tbody>
           </table>
 
-          </div>
-          </Section>
-          </div>
-        
+        </div>
+      </Section>
+    </div>
 
 
+    <!-- BOOTSTRAP 5 JS -->
 
+    <!-- BOOTSTRAP 4.6 JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+      integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+      crossorigin="anonymous"></script>
 
-
-
-
-
-
-
-      <!-- BOOTSTRAP 5 JS -->
-      <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-            crossorigin="anonymous"></script> -->
-
-
-      <!-- BOOTSTRAP 4.6 JS -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
-        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
-        crossorigin="anonymous"></script>
-
-      <script src="./Assets/js/app.js"></script>
-      <script src="./Assets/js/pendDisplay.js"></script>
+    <script src="./Assets/js/app.js"></script>
+    <script src="./Assets/js/pendDisplay.js"></script>
   </body>
 
 </html>

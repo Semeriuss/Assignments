@@ -47,37 +47,14 @@ form.addEventListener('submit', async (e) => {
 	window.location = 'login.html';
 });
 
-// form.addEventListener('click', () => {
-// 	if (psd.value == cpsd.value) {
-// 		console.log('CHECK');
-// 		create_Acount({
-// 			uname: uname.value,
-// 			fname: fname.value,
-// 			lname: lname.value,
-// 			psd: psd.value,
-// 			dob: dob.value,
-// 			admin: false,
-// 			balance: 0
-// 		});
-// 		console.log('SIGN UP');
-// 	} else {
-// 		console.log('psd cpsd not match');
-// 	}
-// });
 function create_Acount(user) {
 	console.log('USER');
 	return db
 		.transaction('rw', db.users, function() {
-			db.users
-				.add(user)
-				// .then((val) => {
-				// 	console.log(val);
-				// 	return true;
-				// })
-				.catch((val) => {
-					console.log('Error' + val);
-					return false;
-				});
+			db.users.catch((val) => {
+				console.log('Error' + val);
+				return false;
+			});
 		})
 		.catch((e) => {
 			console.error(e.stack);
@@ -111,7 +88,3 @@ try {
 } catch (error) {
 	console.log(error);
 }
-
-// function sumbitted(val) {
-// 	console.log(val);
-// }

@@ -4,7 +4,7 @@ var form = document.querySelector('#form');
 
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
-	// console.log(insurance_input.value);
+
 	addBalance(username.value, balance.value);
 	form.reset();
 });

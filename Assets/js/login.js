@@ -24,9 +24,8 @@ async function login(uname, psd) {
 	});
 	const printAddress = async () => {
 		const a = await account;
-		console.log(a);
+
 		if (typeof a == 'undefined') {
-			// console.log('AAa');
 			alert('Invalid Password or Username');
 			return;
 		}

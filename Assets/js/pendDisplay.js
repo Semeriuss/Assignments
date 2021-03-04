@@ -24,22 +24,19 @@ function addAproved(objText, o) {
 		db.pending_policies.where({ uname: objText, policy_name: o }).delete().catch((e) => {
 			console.log(e);
 		});
-		db.approved_policies.put({ uname: objText, policy_name: o });
+		db.approved_policies.put({ uname: objText, approved_policy: o });
 	});
 }
 
 function addDisaproved(objText, o) {
 	console.log(objText);
-	db.transaction('rw', db.pending_policies, db.disaproved_policies, db.users () => {
+	db.transaction('rw', db.pending_policies, db.disaproved_policies, () => {
 		db.pending_policies.where({ uname: objText, policy_name: o }).delete().catch((e) => {
 			console.log(e);
 		});
-		db.disaproved_polices.put({ uname: objText, policy_name: o });
+		db.disaproved_polices.put({ uname: objText, disapproved_policy: o });
 	});
 }
-// addDemo({ uname: 'checking1', policy_name: "first policy" });
-// addDemo({ uname: 'Lovely1', policy_name: "second policy" });
-// addDemo({ uname: 'checkandLovely', policy_name: "third policy" });
 
 function displayPendingPolicies() {
 	return db

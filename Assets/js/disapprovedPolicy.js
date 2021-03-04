@@ -21,12 +21,6 @@ function addDemo(title) {
 }
 
 
-// addDemo({ uname: 'checking1', policy_name: "first policy" });
-// addDemo({ uname: 'Lovely1', policy_name: "second policy" });
-// addDemo({ uname: 'checkandLovely', policy_name: "third policy" });
-
-
-
 
 
 
@@ -61,14 +55,7 @@ function insertElement(disapprovedPolicy) {
 	const td2 = document.createElement('td');
 	td2.className = 'disapprovedPolicy';
 	td2.appendChild(document.createTextNode(disapprovedPolicy.disapproved_policy));
-	// const link = document.createElement('a');
-	// link.innerHTML = `<a href="#"><i class ="fas fa-vote-yea"></i></a>`;
-    // const link2 = document.createElement('a');
-	// link2.innerHTML = `<a href="#"><i class ="fas fa-times-circle ml-3"></i></a>`;
-	// const td3 = document.createElement('td');
-	// td3.className = 'editLink';
-	// td3.appendChild(link);
-    // td3.appendChild(link2);
+
 	tr.appendChild(td0);
 	tr.appendChild(td);
 	tr.appendChild(td2);
