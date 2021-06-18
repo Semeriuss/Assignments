@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+#indexbody {
+	background-color: white;
+	font-family: 'Merriweather', serif;
+}
+::-webkit-scrollbar {
+	width: 12px;
+
+	background-color: rgb(83, 83, 80);
+}
+::-webkit-scrollbar-thumb {
+	background-color: rgb(238, 238, 210);
+	height: 20px;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgb(146, 138, 138);
+}
+
+#example-search-input {
+	border: 0;
+	background-color: rgb(39, 53, 65);
+	color: white;
+	float: right;
+}
+
+a:link,
+a:visited,
+a:active {
+	text-decoration: none;
+	color: black;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+a:hover {
+	color: rgb(95, 149, 194);
+	transform: scale(1.15);
+	transition: transform 550ms;
+	border: 0;
+}
+
+#home-tab,
+#asia-tab,
+#africa-tab,
+#europe-tab,
+#australia-tab {
+	background-color: rgb(39, 53, 65);
+	color: white;
+	border: 0;
+}
+#nAmerica-tab,
+#cAmerica-tab,
+#sAmerica-tab,
+#caribbean-tab {
+	border: 0;
+}
+/* #ex1-tab-1, #ex1-tab-2, #ex1-tab-3, #ex1-tab-4, #ex1-tab-5, #ex1-tab-6, #ex1-tab-7:active{
+    background-color: black;
+    border-radius: 0;
+} */
+
+.nav-item {
+	background-color: rgb(39, 53, 65);
+}
+
+#spinner {
+	border: 0;
+	background-color: rgb(39, 53, 65);
+}
+.input-group {
+	background-color: rgb(39, 53, 65);
+	border-bottom: 1px solid rgb(70, 66, 66);
+	border-top: 1px solid rgb(70, 66, 66);
+	float: right;
+}
+
+#ex1-content {
+	background-color: rgb(39, 53, 65);
+}
+
+/* #view{
+    
+} */
+
+#card {
+	border: 0;
+	background-color: white;
+	border-radius: 0;
+}
+
+#card-body {
+	color: darkblue;
+	border: 0;
+}
+
+
+.row-eq-height {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 0;
+}
+.row-eq-height [class*="col-"] {
+	padding: 0;
+}
+.img-container {
+	margin-left: 0;
+}
+.row-eq-height img {
+	border: 0;
+	width: 100%;
+}
+
+#names {
+	font-size: 1.8rem;
+}
+
+/* #capital-names{
+
+} */
+.container {
+	margin-top: 5rem;
+}
+.img-thumbnails {
+	box-shadow: rgb(80, 78, 78);
+	background-color: rgb(58, 56, 56);
+}
+.img-thumbnails:hover {
+	background-color: rgb(0, 0, 0);
+	color: rgb(95, 149, 194);
+	transform: scale(1.15);
+	transition: transform 550ms;
+	border: 0;
+}

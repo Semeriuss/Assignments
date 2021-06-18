@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World countries</title>
+    <!-- linked the style -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- BOOTSTRAP 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- AUTOCOMPLTE CSS -->
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@8.3.2/dist/css/autoComplete.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./assets/img/world.ico" type="image/x-icon">
+  </head>
+
+  <body id="indexbody">
+    <!-- Tabs navs -->
+    <ul class="nav nav-tabs fixed-top" id="myTab" role="tablist" style="border: 0; background-color: rgb(39, 53, 65);">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active my-2" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+          role="tab" aria-controls="home" aria-selected="true">Global</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link my-2" id="asia-tab" data-bs-toggle="tab" data-bs-target="#asia" type="button" role="tab"
+          aria-controls="asia" aria-selected="false">Asia</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link my-2" id="africa-tab" data-bs-toggle="tab" data-bs-target="#africa" type="button"
+          role="tab" aria-controls="africa" aria-selected="false">Africa</button>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white " style="font-size: 1.3rem; color: white; margin-top: 0rem;"
+          data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Americas</a>
+        <ul class="dropdown-menu" style="font-size: 0.9rem;">
+          <li><button class="nav-link" id="nAmerica-tab" data-bs-toggle="tab" data-bs-target="#nAmerica" type="button"
+              role="tab" aria-controls="nAmerica" aria-selected="false">North America</button></li>
+          <li><button class="nav-link" id="cAmerica-tab" data-bs-toggle="tab" data-bs-target="#cAmerica" type="button"
+              role="tab" aria-controls="cAmerica" aria-selected="false">Central America</button></li>
+          <li><button class="nav-link" id="sAmerica-tab" data-bs-toggle="tab" data-bs-target="#sAmerica" type="button"
+              role="tab" aria-controls="sAmerica" aria-selected="false">South America</button></li>
+          <li><button class="nav-link" id="caribbean-tab" data-bs-toggle="tab" data-bs-target="#caribbean" type="button"
+              role="tab" aria-controls="caribbean" aria-selected="false">Caribbean</button></li>
+        </ul>
+      </li>
+      <!-- <li class="nav-item" role="presentation">
+        <button class="nav-link" id="nAmerica-tab" data-bs-toggle="tab" data-bs-target="#nAmerica" type="button" role="tab" aria-controls="contact" aria-selected="false">North America</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="sAmerica-tab" data-bs-toggle="tab" data-bs-target="#sAmerica" type="button" role="tab" aria-controls="contact" aria-selected="false">South America</button>
+      </li> -->
+      <li class="nav-item" role="presentation">
+        <button class="nav-link my-2" id="europe-tab" data-bs-toggle="tab" data-bs-target="#europe" type="button"
+          role="tab" aria-controls="europe" aria-selected="false">Europe</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link my-2" id="australia-tab" data-bs-toggle="tab" data-bs-target="#australia" type="button"
+          role="tab" aria-controls="australia" aria-selected="false">Australia</button>
+      </li>
+
+
+      <!-- Tabs navs -->
+      <li id="">
+        <div class="  input-group col-md-12 px-2 my-3 mr-auto float-sm-right">
+          <input class="form-control  col-md-12" type="search" placeholder="Search countries..." id="search-input">
+        </div>
+      </li>
+    </ul>
+
+
+    <!-- Spinner -->
+    <div id="spinner">
+
+    </div>
+
+    <!-- Tabs content -->
+    <div class="container row-eq-height">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <!-- GLOBAL -->
+          <div class="row mx-1 my-1 mt-5 view" id="view">
+
+          </div>
+        </div>
+        <div class="tab-pane fade" id="asia" role="tabpanel" aria-labelledby="asia-tab">
+          <div class="row mx-1 my-1" id="viewAsia">
+            <div id="data-container">
+
+            </div>
+
+
+            <div id="pagination-container">
+
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="africa" role="tabpanel" aria-labelledby="africa-tab">
+          <div class="row mx-1 my-1" id="viewAfrica">
+            <div id="data-container">
+
+            </div>
+
+
+            <div id="pagination-container">
+
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nAmerica" role="tabpanel" aria-labelledby="nAmerica-tab">
+          <div class="row mx-1 my-1" id="viewNorthAmerica">
+            <div id="data-container">
+
+            </div>
+
+
+            <div id="pagination-container">
+
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="cAmerica" role="tabpanel" aria-labelledby="cAmerica-tab">
+          <div class="row mx-1 my-1" id="viewCentralAmerica">
+            <div id="data-container">
+
+            </div>
+
+
+            <div id="pagination-container">
+
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="sAmerica" role="tabpanel" aria-labelledby="sAmerica-tab">
+          <div class="row mx-1 my-1" id="viewSouthAmerica">
+            <div id="data-container">
+
+            </div>
+
+
+            <div id="pagination-container">
+
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="caribbean" role="tabpanel" aria-labelledby="caribbean-tab">
+          <div class="row mx-1 my-1" id="viewCaribbean">
+            <div id="data-container">
+
+            </div>
+
+
+            <div id="pagination-container">
+
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="europe" role="tabpanel" aria-labelledby="europe-tab">
+          <div class="row mx-1 my-1" id="viewEurope">
+            <div id="data-container">
+
+            </div>
+
+
+            <div id="pagination-container">
+
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="australia" role="tabpanel" aria-labelledby="australia-tab">
+          <div class="row mx-1 my-1" id="viewAustralia">
+            <div id="data-container">
+
+            </div>
+
+
+            <div id="pagination-container">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tabs content -->
+
+
+
+    <!-- BOOTSTRAP 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"></script>
+
+    <!-- AUTOCOMLETE JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@8.3.2/dist/js/autoComplete.min.js"></script>
+
+    <!-- PAGINATION JS   -->
+    <script src="./assets/js/pagination.js"></script>
+
+    <!-- API JS -->
+    <script type="module" src="./assets/js/api.js"></script>
+    <!-- app.js -->
+    <script type="module" src="./assets/js/app.js"></script>
+    <script type="module" src="./assets/js/pag.js"></script>
+  </body>
+
+</html>
