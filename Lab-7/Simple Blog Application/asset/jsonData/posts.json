@@ -1,0 +1,27 @@
+[
+
+    {
+        "name": "Carter Stafford",
+        "image": "https://images.unsplash.com/photo-1613152385882-5ec242651a88?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        "postTitle": "The Newest in Fashion",
+        "date": "February 24 ,2021",
+        "postText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle"
+    },
+    {
+        "name": "Lindsay Mohawk",
+        "image": "https://images.unsplash.com/photo-1613116670954-16a187071736?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80",
+        "postTitle": "This Week in History",
+        "date": "January 29 ,2021",
+        "postText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle"
+    }, {
+        "name": "Junebug Elai",
+        "image": "https://images.unsplash.com/photo-1613146425927-6b31192a446d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
+        "postTitle": "New Technology Arrives",
+        "date": "January 1 ,2021",
+        "postText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galle"
+    }
+
+
+
+
+]
