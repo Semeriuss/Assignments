@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Semere H. Hagos</title>
+    <link rel="icon" href="image/contact.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Whole Class -->
+    <div class="whole">
+    <!-- This is the first step -->
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="index.html" rel="noopener noreferrer">Home</a>  
+        <a href="contact.html" >Contact</a>  
+        <a href="gallery.html" >Gallery</a> 
+        <a href="myworks.html" target="_blank">My Works</a>
+        <a href="blog.html" target="_blank">Blog</a> 
+    </div>
+    <header>
+        <div>
+            <p><img src="image/DSC_0083.JPG" alt="My Profile Picture" height=200px width=150px></p>
+            <h1>Semere Habtu / Contact</h1>
+            <h3>Sophomore, Addis Ababa University</h3>
+            <p>
+                A highly motivated university sophomore student, with diverse experience of
+                mentoring and counseling students and strong oral and written skills
+                developed through reading and extracurricular activities, presently pursuing a
+                Software Engineering major at Addis Ababa institute of Technology.
+            </p>
+        </div>
+    </header> 
+    <div class="border"></div>
+     <!-- Contact Form -->
+     <div class="form">
+    <h3>Leave your Comments here</h3>
+    <form enctype="utf-8" method="POST" action="mailto:semerehabtu131@gmail.com">
+                <div class="label">
+                <label for="fName">First Name &nbsp;</label>
+                
+                <br><br>            
+                <label for="lName">Last Name&nbsp;</label>
+                
+                <br><br>
+                <label for="email">Email:&nbsp;</label>
+                
+                <br><br>
+                <label for="password">Password&nbsp;</label>
+                
+                <br><br>           
+                
+                <label for="birthdate">Date of Birth&nbsp;</label>
+                
+                <br><br>           
+                            
+                <label for="tel">Phone number in the format (091)164-7293</label>
+                        
+                <br><br>
+                <label for="country">Choose your Country&nbsp;</label>
+                
+                <br><br>           
+                <label for="color">Your Color Suggestion</label>
+                
+                <br><br>           
+                <label for="comment">Your Feedback</label><br>
+                
+                <br><br><br><br><br><br><br><br></br>               
+                <label for="rating">Rate my Website</label>
+                <br><br>    
+            </div>            
+                <div id="input">
+                <input type="text" name="fName" id="fName" required pattern="[A-Z][a-z]{3,15}"><br><br> 
+                <input type="text" name="lName" id="lName" required pattern="[A-Z][a-z]{3,15}"><br><br> 
+                <input type="email" name="email" id="email"><br><br>  
+                <input type="password" name="password" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,}"><br><br>  
+                <input type="datetime-local" name="birthdate" id="birthdate"><br><br>   
+                (<input name="tel1" type="tel" pattern="[0-9]{3}" placeholder="###" aria-label="3-digit area code" size="2"/>)-
+                <input name="tel2" type="tel" pattern="[0-9]{3}" placeholder="###" aria-label="3-digit prefix" size="2"/> - 
+                <input name="tel3" type="tel" pattern="[0-9]{3}" placeholder="####" aria-label="4-digit number" size="3"/><br><br>  
+                <select name="country" id="country">
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="Luxembourg">Luxembourg</option>
+                    <option value="Liechtenstein">Liechtenstein</option>
+                    <option value="Czech Republic">Czech Republic</option>
+                </select><br><br>  
+                <input type="color" name="color" id="color"><br><br>  
+                <textarea name="comment" id="comment" placeholder="Your comments..." cols="30" rows="10"></textarea><br><br>  
+                <input type="range" name="rating" id="rating" min="0" max="10" value="1"><br><br> 
+                <input id="submit" type="submit"><br><br>   
+            </div>
+        </form>
+    </div>
+             
+             
+        <!-- Location -->
+    <div class="mapouter">
+        <div class="gmap_canvas">
+            <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Bole%20michael&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe><a href="https://www.embedgooglemap.net/blog/nordvpn-coupon-code/"></a></div><style>/*.mapouter{position:relative;text-align:right;height:500px;width:600px;}*/body.gmap_canvas {overflow:hidden;background:none/*!important;height:500px;width:600px;*/}</style></div>
+    <!-- Social Network -->
+    <div class="social">
+        <a href="http://www.twitter.com" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-glyphs/30/000000/twitter-circled.png" alt="Twitter"/></a> <br> 
+        <a href="http://www.linkedin.com" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/ios-glyphs/30/000000/linkedin-circled.png" alt="LinkedIn"/></a>  <br>
+        <a href="http://www.thinkspot.com" target="_blank" rel="noopener noreferrer"><img src="image/thinkspot.ico" width="26px" style="border-radius: 100%;" alt="Thinkspot"></a> <br> 
+    </div>
+    <div>
+        <br>
+    </div>
+    <div class="border"></div>
+    <!-- Footer -->
+    <div id="copyright">
+        <p>&copy; 2020, Semere H. Hagos<br />
+            All trademarks and registered trademarks appearing on
+            this site are the property of the mentioned owner.</p>
+    </div>
+    </div>
+</body>
+</html>
