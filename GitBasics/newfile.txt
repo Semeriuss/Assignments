@@ -1,0 +1,6 @@
+A git demonstration 
+A new string additions
+
+Another addition
+Last change
+Or is it?
