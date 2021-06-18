@@ -1,0 +1,356 @@
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: cyan;
+    }
+    .nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .nestedbox{
+        position: static;
+        width: fit-content;
+        height: max-content;
+    }
+    .content{
+        position: static;
+        width: max-content;
+        height: max-content;
+    }
+    .date{
+        padding: 10px;
+        position: static;
+    }
+    div .skills{
+        height: fit-content;
+        width: fit-content;
+        border: white 1px dashed;
+        background-color: #fbaf08;
+        position: static;
+    }
+    .stars{
+        width: fit-content;
+        height: fit-content;
+        border: white 1px dashed;
+        padding: 25px;
+        margin-left: 30px;
+        background-color: lavenderblush;
+        position: static;
+    }
+    .mapouter{
+        position: static;
+        height: fit-content;
+        width: fit-content;
+    }
+}
+body{
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6f5f3;
+    background-color: #7dce94;
+    background-color: #CAE4DB;
+    color: teal;
+}
+.nav a:link, a:visited{
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.nav a:active, a:hover{
+    background-color: #f88396;
+    color: #0d5353;
+    z-index: 1;
+}
+.nav{
+    margin-left: 25px;
+    position: fixed;
+    width: 800px;
+    z-index: 1;
+}
+.box{
+    width: fit-content;
+    border: white 1px dashed;
+    background-color: #33FF33;
+    padding: 10px;
+    margin: 30px;
+    margin-bottom: 15px;
+    margin-right: 600px;
+    line-height: 1.7em;
+    font-style: oblique;
+    color: #555555;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.nestedbox{
+    border: white 1px dashed;
+    background-color: #33FF33;
+    width: 522px;
+    padding: 10px;
+    margin: 30px;
+    height: 440px;
+    margin-bottom: 1px;
+    margin-left: 650px;
+    margin-right: 55px;
+    line-height: 1.7em;
+    font-style: oblique;
+    color: #555555;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: relative;
+    bottom: 492px;
+}
+.outerbox{
+    height: 490px;
+}
+.background{
+    border: white 1px dashed;
+    background-color:  #00ff00;
+    padding: 10px;
+    margin: 30px;
+    /* margin-top: 340px; */
+    margin-right: 250px;
+    line-height: 1.3em;
+    width: 1145px;
+    font-style: normal;
+    color: #353535;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.literary{
+    width: 563px;
+    height: 800px;
+    border: white 1px dashed;
+    padding: 25px;
+    margin-left: 30px;
+    background-color:#f2d53c;
+    /* position: relative;
+    bottom: 478px; */
+}
+.literary .content li{
+    padding: 1.19px;
+    list-style-type: square;
+}
+
+.head{
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+}
+.content{
+    position: relative;
+    bottom: 250px;
+}
+.skills{
+    width: fit-content;
+    height: 800px;
+    width: 495px;
+    border: white 1px dashed;
+    padding: 25px;
+    margin: 30px;
+    background-color: #fbaf08;
+    position: absolute;
+    left: 625.8px;
+    top: 1401px;
+    
+}
+.stars{
+    width: fit-content;
+    border: white 1px dashed;
+    padding: 25px;
+    margin-left: 30px;
+    background-color: lavenderblush;
+    position: relative;
+    left: 900px;
+    bottom: 1742px;
+}
+header{
+    width: fit-content;
+    border: white 1px dashed;
+	background-color: #a7cece;
+	padding: 25px;
+	padding-left: 100px;
+	/* margin: 30px;
+    margin-right: 250px; */
+    margin: auto;
+    margin-right: 50px;
+    margin-left: 25px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+	line-height: 1.9em;
+	font-style: italic;
+	color: #444444;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+header h1{
+    text-transform: uppercase;
+}
+header img{
+    border-radius: 50%;
+    float: left;
+    margin-right: 1.2rem;
+}
+header div{
+    margin-top: 50px;
+}
+.rows{
+    clear: both;
+    /* border-bottom: thin solid black; */
+    padding-bottom: 4px;
+ }
+.rows img {
+    float: left;
+    width: 30%;
+    margin: 1rem;
+ }
+.form{
+    border: white 1px dashed;
+    margin: 30px;
+    clear: both;
+    padding: 25px;
+    background-color: #76c1d4;
+    width: 590px;
+    color: midnightblue;
+ }
+ .form label{
+     text-align: left;
+ }
+.form input{
+    text-align: center;
+}
+.label{
+    float: left;
+}
+.mapouter{
+    position: absolute;
+    top: 375px;
+    left: 690px;
+    height: 370px;
+    width: 20px;
+}
+.date{
+    float: left;
+    padding: 10px;
+    position: relative;
+    bottom: 27.1px;
+}
+.work_heading{
+    font-weight: bold;
+}
+.title{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.tab{
+    margin-left: 430px;
+}
+.footer p{
+    border-bottom: 1px solid black;
+    border-top: thin solid black;
+    padding-bottom: 4px;
+    text-align: center;
+    clear: both;
+}
+.social{
+    position: fixed;
+    left: 4px;
+    bottom: 45px;
+}
+.social :hover{
+    background-color: #f88396;
+}
+#submit{
+    height: 37px;
+    float: right;
+    margin-right: 191px;
+    color: #353535;
+    background-color: peachpuff;
+}
+#copyright{
+	margin-top: 30px;
+	line-height: normal;
+	font-size: 50%;
+    text-align: center;
+    clear: both;
+    margin-right: 80px;
+}
+.quote{
+    padding-left: 90px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 900;
+    line-height: 1.7rem;
+    border-bottom: black 1px solid;
+    border-top: black 1px solid;
+}
+.quote span{
+    margin-left: 300px;
+    padding: 38px;
+}
+.whole{
+    margin: auto;
+}
+.border{
+    border-bottom: solid 1.1px black;
+}
+/* Second Question Specific */
+.box-1, .box-2, .box-3{
+    display: flex;
+}
+
+/* Question Three Specific */
+.flagset-1, .flagset-2, .flagset-3, .flagset-4{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+    padding: 25px;
+    border-bottom: 2px solid black;
+}
+.col-2, .col-3{
+    display: flex;
+}
+.flagsets{
+    justify-content: space-around;
+}
+.flagsets div p{
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+}
+/* Blog styles */
+body #bloghead{
+    position: fixed;
+    top: 5px;
+}
+div#content section{
+    padding: 25px;
+}
+
+section .title, section .date{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+}
+.containerbox{
+    display: flex;
+    justify-content: space-evenly;
+}
+div#encompass div a:link, a:visited, .further a:link{
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+div#encompass div a:active, a:hover, .further a:hover{
+    background-color: cornflowerblue;
+    color: lime;
+    z-index: 1;
+}
+.myWorks{
+    background-image: url(https://images.pexels.com/photos/3278087/pexels-photo-3278087.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+    background-position: top left;
+    background-repeat: no-repeat;
+}
